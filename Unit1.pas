@@ -201,6 +201,8 @@ type
     ADOQuery1C7_DIREITO: TBlobField;
     DataSource1: TDataSource;
     procedure Button1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure Compras1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -236,7 +238,23 @@ begin
         ADOQuery1.Open
       end
     else
+    if ComboBox1.ItemIndex = 2 then
+      begin
+        ADOQuery1.SQL.Add
+          ('select * from sc7010 JOIN sa2010 on a2_cod = c7_fornece where a2_cgc = ' + chr(39)+search+chr(39) +'and c7_filial = 01 order by c7_num desc');
+        ADOQuery1.Open
+      end
   end;
+
+procedure TForm1.Compras1Click(Sender: TObject);
+begin
+  Unit1.Form1.ShowModal;
+end;
+
+procedure TForm1.Sair1Click(Sender: TObject);
+begin
+  Form1.Close;
+end;
 
 end.
 
