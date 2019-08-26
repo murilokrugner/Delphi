@@ -3,54 +3,59 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 548
-  ClientWidth = 770
+  ClientWidth = 852
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesigned
   PixelsPerInch = 96
   TextHeight = 13
-  object Memo1: TMemo
-    Left = 8
-    Top = 8
-    Width = 754
-    Height = 89
-    Lines.Strings = (
-      '')
+  object Edit1: TEdit
+    Left = 488
+    Top = 59
+    Width = 169
+    Height = 21
     TabOrder = 0
   end
+  object ComboBox1: TComboBox
+    Left = 328
+    Top = 59
+    Width = 145
+    Height = 21
+    Style = csDropDownList
+    TabOrder = 1
+    Items.Strings = (
+      'N'#250'mero do Pedido'
+      'Nome do Fornecedor'
+      'CNPJ do Fornecedor')
+  end
   object Button1: TButton
-    Left = 32
-    Top = 113
+    Left = 663
+    Top = 57
     Width = 75
     Height = 25
-    Caption = 'Executar'
-    TabOrder = 1
+    Caption = 'Pesquisar'
+    TabOrder = 2
     OnClick = Button1Click
   end
   object DBGrid1: TDBGrid
-    Left = 8
-    Top = 168
-    Width = 754
-    Height = 273
+    Left = 16
+    Top = 104
+    Width = 730
+    Height = 409
     DataSource = DataSource1
-    TabOrder = 2
+    ReadOnly = True
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-  end
-  object Edit1: TEdit
-    Left = 456
-    Top = 115
-    Width = 273
-    Height = 21
-    TabOrder = 3
   end
   object ADOConnection1: TADOConnection
     Connected = True
@@ -59,8 +64,36 @@ object Form1: TForm1
       ';User ID=totvs;Initial Catalog=DBMOVITEC;Data Source=COMPRAS03'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
-    Left = 160
-    Top = 104
+    Left = 168
+    Top = 16
+  end
+  object MainMenu1: TMainMenu
+    Left = 248
+    Top = 16
+    object Inicio1: TMenuItem
+      Caption = 'Inicio'
+      object Sair1: TMenuItem
+        Caption = 'Sair'
+      end
+    end
+    object Pedidos1: TMenuItem
+      Caption = 'Pedidos'
+      object Compras1: TMenuItem
+        Caption = 'Compras'
+      end
+      object Vendas1: TMenuItem
+        Caption = 'Vendas'
+      end
+    end
+    object Relatrios1: TMenuItem
+      Caption = 'Relat'#243'rios'
+      object PedidosdeCompras1: TMenuItem
+        Caption = 'Pedidos de Compras'
+      end
+      object PedidosdeVenda1: TMenuItem
+        Caption = 'Pedidos de Venda'
+      end
+    end
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -68,9 +101,9 @@ object Form1: TForm1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'select * from sc7010')
-    Left = 256
-    Top = 104
+      'select * from sc7010 where C7_FILIAL = 01 order by c7_num desc')
+    Left = 24
+    Top = 16
     object ADOQuery1C7_NUM: TStringField
       FieldName = 'C7_NUM'
       Size = 6
@@ -714,7 +747,7 @@ object Form1: TForm1
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 336
-    Top = 104
+    Left = 96
+    Top = 16
   end
 end

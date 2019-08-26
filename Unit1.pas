@@ -5,15 +5,25 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls;
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Menus;
 
 type
   TForm1 = class(TForm)
-    Memo1: TMemo;
-    Button1: TButton;
-    DBGrid1: TDBGrid;
     ADOConnection1: TADOConnection;
+    Edit1: TEdit;
+    MainMenu1: TMainMenu;
+    Inicio1: TMenuItem;
+    Sair1: TMenuItem;
+    Pedidos1: TMenuItem;
+    Compras1: TMenuItem;
+    Vendas1: TMenuItem;
+    Relatrios1: TMenuItem;
+    PedidosdeCompras1: TMenuItem;
+    PedidosdeVenda1: TMenuItem;
+    ComboBox1: TComboBox;
+    Button1: TButton;
     ADOQuery1: TADOQuery;
+    DBGrid1: TDBGrid;
     ADOQuery1C7_FILIAL: TStringField;
     ADOQuery1C7_TIPO: TFloatField;
     ADOQuery1C7_ITEM: TStringField;
@@ -190,7 +200,6 @@ type
     ADOQuery1C7_OBRIGA: TBlobField;
     ADOQuery1C7_DIREITO: TBlobField;
     DataSource1: TDataSource;
-    Edit1: TEdit;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -206,11 +215,29 @@ implementation
 {$R *.dfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
+var
+  search, searchFornec, result:string;
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
-  ADOQuery1.SQL.Add(Memo1.Text);
-  ADOQuery1.Open;
-end;
+
+  search := Edit1.Text;
+
+  if ComboBox1.ItemIndex = 0 then
+    begin
+      ADOQuery1.SQL.Add('select * from sc7010 where c7_num like'+chr(39)+search+chr(39));
+      ADOQuery1.Open
+    end
+    else
+    if ComboBox1.ItemIndex = 1 then
+      begin
+        ADOQuery1.SQL.Add
+          ('select * from sc7010 JOIN sa2010 on a2_cod = c7_fornece where a2_nreduz = ' + chr(39)+search+chr(39) +'and c7_filial = 01 order by c7_num desc');
+        ADOQuery1.Open
+      end
+    else
+  end;
 
 end.
+
+
