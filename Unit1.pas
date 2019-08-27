@@ -24,6 +24,7 @@ type
     Button1: TButton;
     ADOQuery1: TADOQuery;
     DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
     ADOQuery1C7_FILIAL: TStringField;
     ADOQuery1C7_TIPO: TFloatField;
     ADOQuery1C7_ITEM: TStringField;
@@ -199,10 +200,10 @@ type
     ADOQuery1C7_PLOPELT: TStringField;
     ADOQuery1C7_OBRIGA: TBlobField;
     ADOQuery1C7_DIREITO: TBlobField;
-    DataSource1: TDataSource;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -216,9 +217,11 @@ implementation
 
 {$R *.dfm}
 
+uses Unit3;
+
 procedure TForm1.Button1Click(Sender: TObject);
 var
-  search, searchFornec, result:string;
+  search:string;
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
@@ -249,6 +252,27 @@ begin
 procedure TForm1.Compras1Click(Sender: TObject);
 begin
   Unit1.Form1.ShowModal;
+end;
+
+procedure TForm1.DBGrid1CellClick(Column: TColumn);
+var
+  select, selectCod:string;
+begin
+  Unit3.Form3.ADOQuery1.Close;
+  Unit3.Form3.ADOQuery1.SQL.Clear;
+  Unit3.Form3.ADOQuery2.Close;
+  Unit3.Form3.ADOQuery2.SQL.Clear;
+
+  select := DBGrid1.Fields[0].value;
+  //selectCod := DBGrid1.Fields[20].value;
+
+  Unit3.Form3.ADOQuery2.SQL.Add('select a2_nome from sa2010 JOIN sc7010 on c7_fornece = a2_cod where c7_num = '+chr(39)+select+chr(39));
+  Unit3.Form3.ADOQuery1.SQL.Add('select * from sc7010 where c7_num ='+chr(39)+select+chr(39));
+
+  Unit3.Form3.ADOQuery1.Open;
+  Unit3.Form3.ADOQuery2.Open;
+
+  Unit3.Form3.ShowModal;
 end;
 
 procedure TForm1.Sair1Click(Sender: TObject);
