@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'PEDIDOS DE COMPRA'
   ClientHeight = 548
-  ClientWidth = 852
+  ClientWidth = 1245
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,7 +23,7 @@ object Form1: TForm1
     TabOrder = 0
   end
   object ComboBox1: TComboBox
-    Left = 328
+    Left = 337
     Top = 59
     Width = 145
     Height = 21
@@ -65,11 +65,11 @@ object Form1: TForm1
       ';User ID=totvs;Initial Catalog=DBMOVITEC;Data Source=COMPRAS03'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
-    Left = 168
+    Left = 176
     Top = 16
   end
   object MainMenu1: TMainMenu
-    Left = 248
+    Left = 264
     Top = 16
     object Inicio1: TMenuItem
       Caption = 'Inicio'

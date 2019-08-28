@@ -15,11 +15,11 @@ object Form3: TForm3
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 592
+    Left = 560
     Top = 8
-    Width = 95
+    Width = 105
     Height = 33
-    Caption = 'PEDIDO'
+    Caption = 'PEDIDO:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -27,62 +27,403 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
   end
-  object DBGrid1: TDBGrid
-    Left = 8
-    Top = 96
-    Width = 1226
-    Height = 217
+  object DBText1: TDBText
+    Left = 671
+    Top = 8
+    Width = 113
+    Height = 33
+    DataField = 'C7_NUM'
     DataSource = DataSource1
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object PageControl1: TPageControl
     Left = 8
-    Top = 343
+    Top = 331
     Width = 1226
-    Height = 169
-    ActivePage = TabSheet2
+    Height = 193
+    ActivePage = TabSheet1
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      ExplicitWidth = 533
+      ExplicitLeft = 0
+      object Label8: TLabel
+        Left = 40
+        Top = 37
+        Width = 26
+        Height = 13
+        Caption = 'Frete'
+      end
+      object Label9: TLabel
+        Left = 40
+        Top = 104
+        Width = 50
+        Height = 13
+        Caption = 'Descontos'
+      end
+      object Label10: TLabel
+        Left = 432
+        Top = 40
+        Width = 34
+        Height = 13
+        Caption = 'Seguro'
+      end
+      object Label11: TLabel
+        Left = 880
+        Top = 104
+        Width = 101
+        Height = 13
+        Caption = 'Valor Total do Pedido'
+      end
+      object Label12: TLabel
+        Left = 432
+        Top = 104
+        Width = 90
+        Height = 13
+        Caption = 'Total dos Produtos'
+      end
+      object DBEdit7: TDBEdit
+        Left = 104
+        Top = 32
+        Width = 121
+        Height = 21
+        DataField = 'C7_FRETE'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit8: TDBEdit
+        Left = 104
+        Top = 96
+        Width = 121
+        Height = 21
+        DataField = 'C7_DESC'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object DBEdit9: TDBEdit
+        Left = 548
+        Top = 32
+        Width = 121
+        Height = 21
+        DataField = 'C7_SEGURO'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object DBEdit10: TDBEdit
+        Left = 548
+        Top = 96
+        Width = 121
+        Height = 21
+        DataField = 'C7_TOTAL'
+        DataSource = DataSource3
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object DBEdit11: TDBEdit
+        Left = 1008
+        Top = 96
+        Width = 121
+        Height = 21
+        DataField = 'total_pedido'
+        DataSource = DataSource4
+        ReadOnly = True
+        TabOrder = 4
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
+      OnContextPopup = TabSheet2ContextPopup
       ExplicitLeft = 0
+      object Label2: TLabel
+        Left = 24
+        Top = 24
+        Width = 33
+        Height = 16
+        Caption = 'Nome'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 24
+        Top = 72
+        Width = 45
+        Height = 13
+        Caption = 'Endere'#231'o'
+      end
+      object Label4: TLabel
+        Left = 24
+        Top = 128
+        Width = 78
+        Height = 13
+        Caption = 'Primeira Compra'
+      end
+      object Label5: TLabel
+        Left = 264
+        Top = 128
+        Width = 69
+        Height = 13
+        Caption = 'Ultima Compra'
+      end
+      object Label6: TLabel
+        Left = 887
+        Top = 32
+        Width = 42
+        Height = 13
+        Caption = 'Telefone'
+      end
+      object Label7: TLabel
+        Left = 887
+        Top = 72
+        Width = 33
+        Height = 13
+        Caption = 'Estado'
+      end
+      object DBEdit1: TDBEdit
+        Left = 80
+        Top = 24
+        Width = 457
+        Height = 21
+        DataField = 'a2_nome'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit2: TDBEdit
+        Left = 80
+        Top = 72
+        Width = 457
+        Height = 21
+        DataField = 'a2_end'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object DBEdit3: TDBEdit
+        Left = 352
+        Top = 120
+        Width = 121
+        Height = 21
+        DataField = 'a2_ultcom'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object DBEdit4: TDBEdit
+        Left = 116
+        Top = 120
+        Width = 121
+        Height = 21
+        DataField = 'a2_pricom'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object DBEdit5: TDBEdit
+        Left = 952
+        Top = 24
+        Width = 121
+        Height = 21
+        DataField = 'a2_tel'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object DBEdit6: TDBEdit
+        Left = 952
+        Top = 72
+        Width = 121
+        Height = 21
+        DataField = 'a2_est'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 5
+      end
     end
     object TabSheet3: TTabSheet
-      Caption = 'Frete/despesas'
+      Caption = 'Frete/Despesas'
       ImageIndex = 2
+      ExplicitLeft = 0
+      object Label13: TLabel
+        Left = 80
+        Top = 96
+        Width = 68
+        Height = 13
+        Caption = 'Valor do Frete'
+      end
+      object Label14: TLabel
+        Left = 565
+        Top = 40
+        Width = 64
+        Height = 13
+        Caption = 'Tipo de Frete'
+      end
+      object Label15: TLabel
+        Left = 565
+        Top = 104
+        Width = 41
+        Height = 13
+        Caption = 'Despesa'
+      end
+      object Label16: TLabel
+        Left = 984
+        Top = 32
+        Width = 34
+        Height = 13
+        Caption = 'Seguro'
+      end
+      object Label17: TLabel
+        Left = 911
+        Top = 104
+        Width = 107
+        Height = 13
+        Caption = 'Total (frete+despesa)'
+      end
+      object DBEdit12: TDBEdit
+        Left = 176
+        Top = 88
+        Width = 121
+        Height = 21
+        DataField = 'C7_FRETE'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit13: TDBEdit
+        Left = 651
+        Top = 32
+        Width = 121
+        Height = 21
+        DataField = 'C7_TPFRETE'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object DBEdit14: TDBEdit
+        Left = 651
+        Top = 96
+        Width = 121
+        Height = 21
+        DataField = 'C7_DESPESA'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object DBEdit15: TDBEdit
+        Left = 1040
+        Top = 24
+        Width = 121
+        Height = 21
+        DataField = 'C7_SEGURO'
+        DataSource = DataSource1
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object DBEdit16: TDBEdit
+        Left = 1040
+        Top = 96
+        Width = 121
+        Height = 21
+        DataField = 'total_frete'
+        DataSource = DataSource5
+        ReadOnly = True
+        TabOrder = 4
+      end
     end
     object TabSheet4: TTabSheet
-      Caption = 'Descontos'
-      ImageIndex = 3
-    end
-    object Impostos: TTabSheet
       Caption = 'Impostos'
-      ImageIndex = 4
+      ImageIndex = 3
       ExplicitLeft = 0
+      object Label18: TLabel
+        Left = 16
+        Top = 24
+        Width = 19
+        Height = 13
+        Caption = 'Cod'
+      end
+      object Label19: TLabel
+        Left = 120
+        Top = 24
+        Width = 46
+        Height = 13
+        Caption = 'Descri'#231#227'o'
+      end
+      object Label20: TLabel
+        Left = 264
+        Top = 24
+        Width = 65
+        Height = 13
+        Caption = 'Base Imposto'
+      end
+      object Label21: TLabel
+        Left = 440
+        Top = 24
+        Width = 39
+        Height = 13
+        Caption = 'Aliquota'
+      end
+      object Label22: TLabel
+        Left = 584
+        Top = 24
+        Width = 58
+        Height = 13
+        Caption = 'Vlr. Imposto'
+      end
+      object Label23: TLabel
+        Left = 129
+        Top = 64
+        Width = 25
+        Height = 13
+        Caption = 'ICMS'
+      end
+      object Label24: TLabel
+        Left = 129
+        Top = 104
+        Width = 14
+        Height = 13
+        Caption = 'IPI'
+      end
+      object DBEdit17: TDBEdit
+        Left = 584
+        Top = 56
+        Width = 121
+        Height = 21
+        DataField = 'valor_icms'
+        DataSource = DataSource6
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit18: TDBEdit
+        Left = 584
+        Top = 96
+        Width = 121
+        Height = 21
+        DataField = 'valor_ipi'
+        DataSource = DataSource7
+        ReadOnly = True
+        TabOrder = 1
+      end
     end
   end
-  object DBGrid2: TDBGrid
-    Left = 40
-    Top = 367
-    Width = 1073
-    Height = 120
-    DataSource = DataSource2
-    TabOrder = 2
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 88
+    Width = 1226
+    Height = 237
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -97,14 +438,14 @@ object Form3: TForm3
     DefaultDatabase = 'DBMOVITEC'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
-    Left = 152
+    Left = 32
     Top = 16
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 24
+    Left = 808
     Top = 16
     object ADOQuery1C7_ITEM: TStringField
       FieldName = 'C7_ITEM'
@@ -749,19 +1090,126 @@ object Form3: TForm3
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 80
+    Left = 112
     Top = 16
   end
   object DataSource2: TDataSource
     DataSet = ADOQuery2
-    Left = 304
-    Top = 24
+    Left = 176
+    Top = 16
   end
   object ADOQuery2: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 392
-    Top = 32
+    SQL.Strings = (
+      
+        'select a2_nome, a2_end, a2_pricom, a2_ultcom, a2_tel, a2_est fro' +
+        'm sa2010')
+    Left = 936
+    Top = 16
+    object ADOQuery2a2_nome: TStringField
+      FieldName = 'a2_nome'
+      Size = 40
+    end
+    object ADOQuery2a2_end: TStringField
+      FieldName = 'a2_end'
+      Size = 40
+    end
+    object ADOQuery2a2_pricom: TStringField
+      FieldName = 'a2_pricom'
+      Size = 8
+    end
+    object ADOQuery2a2_ultcom: TStringField
+      FieldName = 'a2_ultcom'
+      Size = 8
+    end
+    object ADOQuery2a2_tel: TStringField
+      FieldName = 'a2_tel'
+      Size = 15
+    end
+    object ADOQuery2a2_est: TStringField
+      FieldName = 'a2_est'
+      Size = 2
+    end
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOQuery3
+    Left = 240
+    Top = 16
+  end
+  object ADOQuery3: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select c7_total from sc7010')
+    Left = 872
+    Top = 16
+    object ADOQuery3c7_total: TFloatField
+      FieldName = 'c7_total'
+    end
+  end
+  object DataSource4: TDataSource
+    DataSet = ADOQuery4
+    Left = 312
+    Top = 16
+  end
+  object ADOQuery4: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select c7_total as total_pedido from sc7010')
+    Left = 1000
+    Top = 16
+    object ADOQuery4total_pedido: TFloatField
+      FieldName = 'total_pedido'
+    end
+  end
+  object DataSource5: TDataSource
+    DataSet = ADOQuery5
+    Left = 376
+    Top = 16
+  end
+  object ADOQuery5: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1064
+    Top = 16
+    object ADOQuery5total_frete: TFloatField
+      FieldName = 'total_frete'
+    end
+  end
+  object DataSource6: TDataSource
+    DataSet = ADOQuery6
+    Left = 440
+    Top = 16
+  end
+  object DataSource7: TDataSource
+    DataSet = ADOQuery7
+    Left = 504
+    Top = 16
+  end
+  object ADOQuery6: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1120
+    Top = 16
+    object ADOQuery6valor_icms: TFloatField
+      FieldName = 'valor_icms'
+    end
+  end
+  object ADOQuery7: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1176
+    Top = 16
+    object ADOQuery7valor_ipi: TFloatField
+      FieldName = 'valor_ipi'
+    end
   end
 end

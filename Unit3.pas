@@ -189,15 +189,78 @@ type
     ADOQuery1C7_PLOPELT: TStringField;
     ADOQuery1C7_OBRIGA: TBlobField;
     ADOQuery1C7_DIREITO: TBlobField;
+    DataSource2: TDataSource;
+    ADOQuery2: TADOQuery;
+    ADOQuery2a2_nome: TStringField;
+    ADOQuery2a2_end: TStringField;
+    ADOQuery2a2_pricom: TStringField;
+    ADOQuery2a2_ultcom: TStringField;
+    ADOQuery2a2_tel: TStringField;
+    ADOQuery2a2_est: TStringField;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBText1: TDBText;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    DataSource3: TDataSource;
+    ADOQuery3: TADOQuery;
+    ADOQuery3c7_total: TFloatField;
     TabSheet3: TTabSheet;
+    DataSource4: TDataSource;
+    ADOQuery4: TADOQuery;
+    DBEdit11: TDBEdit;
+    Label12: TLabel;
+    DBEdit12: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    DBEdit16: TDBEdit;
+    DataSource5: TDataSource;
+    ADOQuery5: TADOQuery;
+    ADOQuery5total_frete: TFloatField;
+    ADOQuery4total_pedido: TFloatField;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
     TabSheet4: TTabSheet;
-    Impostos: TTabSheet;
-    DataSource2: TDataSource;
-    ADOQuery2: TADOQuery;
-    DBGrid2: TDBGrid;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    DataSource6: TDataSource;
+    DataSource7: TDataSource;
+    ADOQuery6: TADOQuery;
+    ADOQuery7: TADOQuery;
+    ADOQuery6valor_icms: TFloatField;
+    ADOQuery7valor_ipi: TFloatField;
+    DBEdit17: TDBEdit;
+    DBEdit18: TDBEdit;
+    procedure TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
+      var Handled: Boolean);
   private
     { Private declarations }
   public
@@ -210,5 +273,20 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm3.TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
+  var Handled: Boolean);
+begin
+  if PageControl1.TabIndex = 1 then
+      begin
+          DBEdit1.Enabled := True;
+      end
+  else
+    if PageControl1.TabIndex = 0 then
+      begin
+          DBEdit1.Enabled := false;
+      end
+
+end;
 
 end.
