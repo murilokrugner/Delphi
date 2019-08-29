@@ -1,4 +1,5 @@
 object Form1: TForm1
+  AlignWithMargins = True
   Left = 0
   Top = 0
   Caption = 'PEDIDOS DE COMPRA'
@@ -16,15 +17,15 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Edit1: TEdit
-    Left = 488
-    Top = 59
+    Left = 856
+    Top = 19
     Width = 169
     Height = 21
     TabOrder = 0
   end
   object ComboBox1: TComboBox
-    Left = 337
-    Top = 59
+    Left = 689
+    Top = 19
     Width = 145
     Height = 21
     Style = csDropDownList
@@ -35,8 +36,8 @@ object Form1: TForm1
       'CNPJ do Fornecedor')
   end
   object Button1: TButton
-    Left = 663
-    Top = 57
+    Left = 1039
+    Top = 17
     Width = 75
     Height = 25
     Caption = 'Pesquisar'
@@ -44,11 +45,19 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object DBGrid1: TDBGrid
-    Left = 32
-    Top = 128
-    Width = 793
-    Height = 385
+    Left = 8
+    Top = 59
+    Width = 1229
+    Height = 481
+    Color = clWhite
     DataSource = DataSource1
+    GradientEndColor = clSilver
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
@@ -58,6 +67,15 @@ object Form1: TForm1
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
   end
+  object Button2: TButton
+    Left = 1128
+    Top = 17
+    Width = 75
+    Height = 25
+    Caption = 'Limpar'
+    TabOrder = 4
+    OnClick = Button2Click
+  end
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
@@ -66,11 +84,11 @@ object Form1: TForm1
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
     Left = 176
-    Top = 16
+    Top = 8
   end
   object MainMenu1: TMainMenu
     Left = 264
-    Top = 16
+    Top = 8
     object Inicio1: TMenuItem
       Caption = 'Inicio'
       object Sair1: TMenuItem
@@ -106,7 +124,7 @@ object Form1: TForm1
     SQL.Strings = (
       'select * from sc7010 where C7_FILIAL = 01 order by c7_num desc')
     Left = 24
-    Top = 16
+    Top = 8
     object ADOQuery1C7_NUM: TStringField
       FieldName = 'C7_NUM'
       Size = 6
@@ -751,6 +769,6 @@ object Form1: TForm1
   object DataSource1: TDataSource
     DataSet = ADOQuery1
     Left = 96
-    Top = 16
+    Top = 8
   end
 end

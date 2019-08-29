@@ -243,6 +243,27 @@ type
     Label15: TLabel;
     Label16: TLabel;
     Label17: TLabel;
+    TabSheet4: TTabSheet;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    DataSource6: TDataSource;
+    DataSource7: TDataSource;
+    ADOQuery6: TADOQuery;
+    ADOQuery7: TADOQuery;
+    ADOQuery6valor_icms: TFloatField;
+    ADOQuery7valor_ipi: TFloatField;
+    DBEdit17: TDBEdit;
+    DBEdit18: TDBEdit;
+    DataSource8: TDataSource;
+    ADOQuery8: TADOQuery;
+    ADOQuery8aliquota: TFloatField;
+    DBEdit19: TDBEdit;
+    DBEdit20: TDBEdit;
     procedure TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
       var Handled: Boolean);
   private

@@ -200,10 +200,12 @@ type
     ADOQuery1C7_PLOPELT: TStringField;
     ADOQuery1C7_OBRIGA: TBlobField;
     ADOQuery1C7_DIREITO: TBlobField;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -249,6 +251,16 @@ begin
       end
   end;
 
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Clear;
+
+  ADOQuery1.SQL.Add('select * from sc7010 where C7_FILIAL = 01 order by c7_num desc');
+
+  ADOQuery1.Open;
+end;
+
 procedure TForm1.Compras1Click(Sender: TObject);
 begin
   Unit1.Form1.ShowModal;
@@ -272,6 +284,14 @@ begin
   Unit3.Form3.ADOQuery5.SQL.Clear;
   Unit3.Form3.ADOQuery7.Close;
   Unit3.Form3.ADOQuery7.SQL.Clear;
+  Unit3.Form3.ADOQuery8.Close;
+  Unit3.Form3.ADOQuery8.SQL.Clear;
+  Unit3.Form3.ADOQuery9.Close;
+  Unit3.Form3.ADOQuery9.SQL.Clear;
+  Unit3.Form3.ADOQuery10.Close;
+  Unit3.Form3.ADOQuery10.SQL.Clear;
+  Unit3.Form3.ADOQuery11.Close;
+  Unit3.Form3.ADOQuery11.SQL.Clear;
 
   select := DBGrid1.Fields[0].value;
 
@@ -280,8 +300,12 @@ begin
   Unit3.Form3.ADOQuery3.SQL.Add('select sum(c7_total) as c7_total from sc7010 where c7_num ='+chr(39)+select+chr(39));
   Unit3.Form3.ADOQuery4.SQL.Add('select sum(c7_total) as c7_total, sum(c7_frete) as c7_frete, sum(c7_despesa) as c7_despesa, sum(c7_seguro) as c7_seguro, sum(c7_desc) as c7_desc, sum((c7_total + c7_despesa + c7_frete + c7_seguro) - c7_desc) as total_pedido from sc7010 where c7_num = '+chr(39)+select+chr(39));
   Unit3.Form3.ADOQuery5.SQL.Add('select sum(c7_frete) as c7_frete, sum(c7_despesa) as c7_despesa, sum(c7_frete + c7_despesa) as total_frete from sc7010 where c7_num = '+chr(39)+select+chr(39));
-  Unit3.Form3.ADOQuery6.SQL.Add('select c7_picm / 100 * sum(c7_baseicm) + sum(c7_baseicm) as valor_icms from sc7010 where c7_num = '+chr(39)+select+chr(39)+ 'group by c7_picm');
-  Unit3.Form3.ADOQuery7.SQL.Add('select c7_ipi / 100 * sum(c7_baseipi) + sum(c7_baseipi) as valor_ipi from sc7010 where c7_num = '+chr(39)+select+chr(39)+ 'group by c7_ipi');
+  Unit3.Form3.ADOQuery6.SQL.Add('select top 1 (c7_picm / 100 * sum(c7_baseicm)) as valor_icms from sc7010 where c7_num = '+chr(39)+select+chr(39)+ 'group by c7_picm');
+  Unit3.Form3.ADOQuery7.SQL.Add('select (c7_ipi / 100 * sum(c7_baseipi)) as valor_ipi from sc7010 where c7_num = '+chr(39)+select+chr(39)+ 'group by c7_ipi');
+  Unit3.Form3.ADOQuery8.SQL.Add('select top 1 (c7_picm / 100) * 100 as aliquota from sc7010 where c7_num = '+chr(39)+select+chr(39)+'group by c7_picm');
+  Unit3.Form3.ADOQuery9.SQL.Add('select top 1 (c7_picm / 100) * 100 as aliquota2 from sc7010  where c7_num = '+chr(39)+select+chr(39)+'group by c7_picm order by aliquota2 desc');
+  Unit3.Form3.ADOQuery10.SQL.Add('select top 1 (c7_picm / 100 * sum(c7_baseicm)) as valor_icms2 from sc7010 where c7_num ='+chr(39)+select+chr(39)+ 'group by c7_picm order by valor_icms2 asc');
+  Unit3.Form3.ADOQuery11.SQL.Add('select top 1 (c7_ipi / 100) * 100 as aliquota from sc7010  where c7_num ='+chr(39)+select+chr(39)+ 'group by c7_ipi order by aliquota desc');
 
   Unit3.Form3.ADOQuery1.Open;
   Unit3.Form3.ADOQuery2.Open;
@@ -290,6 +314,10 @@ begin
   Unit3.Form3.ADOQuery5.Open;
   Unit3.Form3.ADOQuery6.Open;
   Unit3.Form3.ADOQuery7.Open;
+  Unit3.Form3.ADOQuery8.Open;
+  Unit3.Form3.ADOQuery9.Open;
+  Unit3.Form3.ADOQuery10.Open;
+  Unit3.Form3.ADOQuery11.Open;
 
   Unit3.Form3.ShowModal;
 end;

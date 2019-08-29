@@ -1,341 +1,135 @@
-object Form3: TForm3
+object Form1: TForm1
+  AlignWithMargins = True
   Left = 0
   Top = 0
-  ActiveControl = DBGrid1
-  Caption = 'Pedido'
-  ClientHeight = 577
-  ClientWidth = 1258
+  Caption = 'PEDIDOS DE COMPRA'
+  ClientHeight = 548
+  ClientWidth = 1245
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesigned
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 560
-    Top = 8
-    Width = 105
-    Height = 33
-    Caption = 'PEDIDO:'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -27
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
+  object Edit1: TEdit
+    Left = 968
+    Top = 19
+    Width = 169
+    Height = 21
+    TabOrder = 0
   end
-  object DBText1: TDBText
-    Left = 671
-    Top = 8
-    Width = 113
-    Height = 33
-    DataField = 'C7_NUM'
-    DataSource = DataSource1
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -27
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object PageControl1: TPageControl
-    Left = 8
-    Top = 331
-    Width = 1226
-    Height = 193
-    ActivePage = TabSheet3
+  object ComboBox1: TComboBox
+    Left = 809
+    Top = 19
+    Width = 145
+    Height = 21
+    Style = csDropDownList
     TabOrder = 1
-    object TabSheet1: TTabSheet
-      Caption = 'Totais'
-      ExplicitLeft = 0
-      object Label8: TLabel
-        Left = 40
-        Top = 37
-        Width = 26
-        Height = 13
-        Caption = 'Frete'
-      end
-      object Label9: TLabel
-        Left = 40
-        Top = 104
-        Width = 50
-        Height = 13
-        Caption = 'Descontos'
-      end
-      object Label10: TLabel
-        Left = 432
-        Top = 40
-        Width = 34
-        Height = 13
-        Caption = 'Seguro'
-      end
-      object Label11: TLabel
-        Left = 880
-        Top = 104
-        Width = 101
-        Height = 13
-        Caption = 'Valor Total do Pedido'
-      end
-      object Label12: TLabel
-        Left = 432
-        Top = 104
-        Width = 90
-        Height = 13
-        Caption = 'Total dos Produtos'
-      end
-      object DBEdit7: TDBEdit
-        Left = 104
-        Top = 32
-        Width = 121
-        Height = 21
-        DataField = 'C7_FRETE'
-        DataSource = DataSource1
-        TabOrder = 0
-      end
-      object DBEdit8: TDBEdit
-        Left = 104
-        Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'C7_DESC'
-        DataSource = DataSource1
-        TabOrder = 1
-      end
-      object DBEdit9: TDBEdit
-        Left = 548
-        Top = 32
-        Width = 121
-        Height = 21
-        DataField = 'C7_SEGURO'
-        DataSource = DataSource1
-        TabOrder = 2
-      end
-      object DBEdit10: TDBEdit
-        Left = 548
-        Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'C7_TOTAL'
-        DataSource = DataSource3
-        TabOrder = 3
-      end
-      object DBEdit11: TDBEdit
-        Left = 1008
-        Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'total_pedido'
-        DataSource = DataSource4
-        ReadOnly = True
-        TabOrder = 4
-      end
-    end
-    object TabSheet2: TTabSheet
-      Caption = 'Inf. Fornecedor'
-      ImageIndex = 1
-      OnContextPopup = TabSheet2ContextPopup
-      ExplicitLeft = 0
-      object Label2: TLabel
-        Left = 24
-        Top = 24
-        Width = 33
-        Height = 16
-        Caption = 'Nome'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
-      object Label3: TLabel
-        Left = 24
-        Top = 72
-        Width = 45
-        Height = 13
-        Caption = 'Endere'#231'o'
-      end
-      object Label4: TLabel
-        Left = 24
-        Top = 128
-        Width = 78
-        Height = 13
-        Caption = 'Primeira Compra'
-      end
-      object Label5: TLabel
-        Left = 264
-        Top = 128
-        Width = 69
-        Height = 13
-        Caption = 'Ultima Compra'
-      end
-      object Label6: TLabel
-        Left = 887
-        Top = 32
-        Width = 42
-        Height = 13
-        Caption = 'Telefone'
-      end
-      object Label7: TLabel
-        Left = 887
-        Top = 72
-        Width = 33
-        Height = 13
-        Caption = 'Estado'
-      end
-      object DBEdit1: TDBEdit
-        Left = 80
-        Top = 24
-        Width = 457
-        Height = 21
-        DataField = 'a2_nome'
-        DataSource = DataSource2
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit2: TDBEdit
-        Left = 80
-        Top = 72
-        Width = 457
-        Height = 21
-        DataField = 'a2_end'
-        DataSource = DataSource2
-        ReadOnly = True
-        TabOrder = 1
-      end
-      object DBEdit3: TDBEdit
-        Left = 352
-        Top = 120
-        Width = 121
-        Height = 21
-        DataField = 'a2_ultcom'
-        DataSource = DataSource2
-        ReadOnly = True
-        TabOrder = 2
-      end
-      object DBEdit4: TDBEdit
-        Left = 116
-        Top = 120
-        Width = 121
-        Height = 21
-        DataField = 'a2_pricom'
-        DataSource = DataSource2
-        ReadOnly = True
-        TabOrder = 3
-      end
-      object DBEdit5: TDBEdit
-        Left = 952
-        Top = 24
-        Width = 121
-        Height = 21
-        DataField = 'a2_tel'
-        DataSource = DataSource2
-        ReadOnly = True
-        TabOrder = 4
-      end
-      object DBEdit6: TDBEdit
-        Left = 952
-        Top = 72
-        Width = 121
-        Height = 21
-        DataField = 'a2_est'
-        DataSource = DataSource2
-        ReadOnly = True
-        TabOrder = 5
-      end
-    end
-    object TabSheet3: TTabSheet
-      Caption = 'Frete/Despesas'
-      ImageIndex = 2
-      ExplicitLeft = 0
-      object DBEdit12: TDBEdit
-        Left = 176
-        Top = 88
-        Width = 121
-        Height = 21
-        DataField = 'C7_FRETE'
-        DataSource = DataSource1
-        TabOrder = 0
-      end
-      object DBEdit13: TDBEdit
-        Left = 651
-        Top = 32
-        Width = 121
-        Height = 21
-        DataField = 'C7_TPFRETE'
-        DataSource = DataSource1
-        TabOrder = 1
-      end
-      object DBEdit14: TDBEdit
-        Left = 651
-        Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'C7_DESPESA'
-        DataSource = DataSource1
-        TabOrder = 2
-      end
-      object DBEdit15: TDBEdit
-        Left = 1024
-        Top = 24
-        Width = 121
-        Height = 21
-        DataField = 'C7_SEGURO'
-        DataSource = DataSource1
-        TabOrder = 3
-      end
-      object DBEdit16: TDBEdit
-        Left = 1024
-        Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'total_frete'
-        DataSource = DataSource5
-        TabOrder = 4
-      end
-    end
+    Items.Strings = (
+      'N'#250'mero do Pedido'
+      'Nome do Fornecedor'
+      'CNPJ do Fornecedor')
+  end
+  object Button1: TButton
+    Left = 1151
+    Top = 17
+    Width = 75
+    Height = 25
+    Caption = 'Pesquisar'
+    TabOrder = 2
+    OnClick = Button1Click
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 88
-    Width = 1226
-    Height = 237
+    Top = 59
+    Width = 1229
+    Height = 481
+    Color = clWhite
     DataSource = DataSource1
+    GradientEndColor = clSilver
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     ReadOnly = True
-    TabOrder = 0
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=totvs123;Persist Security Info=True' +
-      ';User ID=totvs;Data Source=COMPRAS03'
-    DefaultDatabase = 'DBMOVITEC'
+      ';User ID=totvs;Initial Catalog=DBMOVITEC;Data Source=COMPRAS03'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
-    Left = 32
-    Top = 16
+    Left = 176
+    Top = 8
+  end
+  object MainMenu1: TMainMenu
+    Left = 264
+    Top = 8
+    object Inicio1: TMenuItem
+      Caption = 'Inicio'
+      object Sair1: TMenuItem
+        Caption = 'Sair'
+        OnClick = Sair1Click
+      end
+    end
+    object Pedidos1: TMenuItem
+      Caption = 'Pedidos'
+      object Compras1: TMenuItem
+        Caption = 'Compras'
+        OnClick = Compras1Click
+      end
+      object Vendas1: TMenuItem
+        Caption = 'Vendas'
+      end
+    end
+    object Relatrios1: TMenuItem
+      Caption = 'Relat'#243'rios'
+      object PedidosdeCompras1: TMenuItem
+        Caption = 'Pedidos de Compras'
+      end
+      object PedidosdeVenda1: TMenuItem
+        Caption = 'Pedidos de Venda'
+      end
+    end
   end
   object ADOQuery1: TADOQuery
+    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 920
-    Top = 16
+    SQL.Strings = (
+      'select * from sc7010 where C7_FILIAL = 01 order by c7_num desc')
+    Left = 24
+    Top = 8
+    object ADOQuery1C7_NUM: TStringField
+      FieldName = 'C7_NUM'
+      Size = 6
+    end
+    object ADOQuery1C7_FILIAL: TStringField
+      FieldName = 'C7_FILIAL'
+      Size = 2
+    end
+    object ADOQuery1C7_TIPO: TFloatField
+      FieldName = 'C7_TIPO'
+    end
     object ADOQuery1C7_ITEM: TStringField
       FieldName = 'C7_ITEM'
       Size = 4
-    end
-    object ADOQuery1C7_FORNECE: TStringField
-      FieldName = 'C7_FORNECE'
-      Size = 6
     end
     object ADOQuery1C7_PRODUTO: TStringField
       FieldName = 'C7_PRODUTO'
@@ -349,6 +143,14 @@ object Form3: TForm3
       FieldName = 'C7_UM'
       Size = 2
     end
+    object ADOQuery1C7_SEGUM: TStringField
+      FieldName = 'C7_SEGUM'
+      Size = 2
+    end
+    object ADOQuery1C7_CODTAB: TStringField
+      FieldName = 'C7_CODTAB'
+      Size = 3
+    end
     object ADOQuery1C7_QUANT: TFloatField
       FieldName = 'C7_QUANT'
     end
@@ -358,29 +160,14 @@ object Form3: TForm3
     object ADOQuery1C7_TOTAL: TFloatField
       FieldName = 'C7_TOTAL'
     end
-    object ADOQuery1C7_SEGUM: TStringField
-      FieldName = 'C7_SEGUM'
-      Size = 2
-    end
-    object ADOQuery1C7_IPI: TFloatField
-      FieldName = 'C7_IPI'
-    end
-    object ADOQuery1C7_FILIAL: TStringField
-      FieldName = 'C7_FILIAL'
-      Size = 2
-    end
-    object ADOQuery1C7_TIPO: TFloatField
-      FieldName = 'C7_TIPO'
-    end
-    object ADOQuery1C7_CODTAB: TStringField
-      FieldName = 'C7_CODTAB'
-      Size = 3
-    end
     object ADOQuery1C7_X_NEGOC: TBlobField
       FieldName = 'C7_X_NEGOC'
     end
     object ADOQuery1C7_QTSEGUM: TFloatField
       FieldName = 'C7_QTSEGUM'
+    end
+    object ADOQuery1C7_IPI: TFloatField
+      FieldName = 'C7_IPI'
     end
     object ADOQuery1C7_DATPRF: TStringField
       FieldName = 'C7_DATPRF'
@@ -402,6 +189,10 @@ object Form3: TForm3
       FieldName = 'C7_OBS'
       Size = 30
     end
+    object ADOQuery1C7_FORNECE: TStringField
+      FieldName = 'C7_FORNECE'
+      Size = 6
+    end
     object ADOQuery1C7_CC: TStringField
       FieldName = 'C7_CC'
       Size = 9
@@ -412,10 +203,6 @@ object Form3: TForm3
     object ADOQuery1C7_COND: TStringField
       FieldName = 'C7_COND'
       Size = 3
-    end
-    object ADOQuery1C7_NUM: TStringField
-      FieldName = 'C7_NUM'
-      Size = 6
     end
     object ADOQuery1C7_CONTATO: TStringField
       FieldName = 'C7_CONTATO'
@@ -972,96 +759,7 @@ object Form3: TForm3
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 208
-    Top = 16
-  end
-  object DataSource2: TDataSource
-    DataSet = ADOQuery2
-    Left = 280
-    Top = 16
-  end
-  object ADOQuery2: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      
-        'select a2_nome, a2_end, a2_pricom, a2_ultcom, a2_tel, a2_est fro' +
-        'm sa2010')
-    Left = 1048
-    Top = 16
-    object ADOQuery2a2_nome: TStringField
-      FieldName = 'a2_nome'
-      Size = 40
-    end
-    object ADOQuery2a2_end: TStringField
-      FieldName = 'a2_end'
-      Size = 40
-    end
-    object ADOQuery2a2_pricom: TStringField
-      FieldName = 'a2_pricom'
-      Size = 8
-    end
-    object ADOQuery2a2_ultcom: TStringField
-      FieldName = 'a2_ultcom'
-      Size = 8
-    end
-    object ADOQuery2a2_tel: TStringField
-      FieldName = 'a2_tel'
-      Size = 15
-    end
-    object ADOQuery2a2_est: TStringField
-      FieldName = 'a2_est'
-      Size = 2
-    end
-  end
-  object DataSource3: TDataSource
-    DataSet = ADOQuery3
-    Left = 360
-    Top = 16
-  end
-  object ADOQuery3: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      'select c7_total from sc7010')
-    Left = 984
-    Top = 16
-    object ADOQuery3c7_total: TFloatField
-      FieldName = 'c7_total'
-    end
-  end
-  object DataSource4: TDataSource
-    DataSet = ADOQuery4
-    Left = 432
-    Top = 16
-  end
-  object ADOQuery4: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      'select c7_total as total_pedido from sc7010')
-    Left = 1112
-    Top = 16
-    object ADOQuery4total_pedido: TFloatField
-      FieldName = 'total_pedido'
-    end
-  end
-  object DataSource5: TDataSource
-    DataSet = ADOQuery5
-    Left = 504
-    Top = 16
-  end
-  object ADOQuery5: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    Left = 1184
-    Top = 16
-    object ADOQuery5total_frete: TFloatField
-      FieldName = 'total_frete'
-    end
+    Left = 96
+    Top = 8
   end
 end

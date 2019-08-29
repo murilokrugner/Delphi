@@ -259,8 +259,22 @@ type
     ADOQuery7valor_ipi: TFloatField;
     DBEdit17: TDBEdit;
     DBEdit18: TDBEdit;
-    procedure TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
-      var Handled: Boolean);
+    DataSource8: TDataSource;
+    ADOQuery8: TADOQuery;
+    DBEdit19: TDBEdit;
+    DBEdit20: TDBEdit;
+    DataSource9: TDataSource;
+    ADOQuery9: TADOQuery;
+    ADOQuery8aliquota: TFloatField;
+    ADOQuery9aliquota2: TFloatField;
+    DBEdit21: TDBEdit;
+    DataSource10: TDataSource;
+    ADOQuery10: TADOQuery;
+    ADOQuery10valor_icms2: TFloatField;
+    DataSource11: TDataSource;
+    ADOQuery11: TADOQuery;
+    DBEdit22: TDBEdit;
+    ADOQuery11aliquota: TFloatField;
   private
     { Private declarations }
   public
@@ -273,20 +287,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm3.TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
-  var Handled: Boolean);
-begin
-  if PageControl1.TabIndex = 1 then
-      begin
-          DBEdit1.Enabled := True;
-      end
-  else
-    if PageControl1.TabIndex = 0 then
-      begin
-          DBEdit1.Enabled := false;
-      end
-
-end;
 
 end.

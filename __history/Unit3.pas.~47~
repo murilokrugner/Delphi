@@ -221,8 +221,56 @@ type
     Label9: TLabel;
     Label10: TLabel;
     Label11: TLabel;
-    procedure TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
-      var Handled: Boolean);
+    DataSource3: TDataSource;
+    ADOQuery3: TADOQuery;
+    ADOQuery3c7_total: TFloatField;
+    TabSheet3: TTabSheet;
+    DataSource4: TDataSource;
+    ADOQuery4: TADOQuery;
+    DBEdit11: TDBEdit;
+    Label12: TLabel;
+    DBEdit12: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    DBEdit16: TDBEdit;
+    DataSource5: TDataSource;
+    ADOQuery5: TADOQuery;
+    ADOQuery5total_frete: TFloatField;
+    ADOQuery4total_pedido: TFloatField;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    TabSheet4: TTabSheet;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    DataSource6: TDataSource;
+    DataSource7: TDataSource;
+    ADOQuery6: TADOQuery;
+    ADOQuery7: TADOQuery;
+    ADOQuery6valor_icms: TFloatField;
+    ADOQuery7valor_ipi: TFloatField;
+    DBEdit17: TDBEdit;
+    DBEdit18: TDBEdit;
+    DataSource8: TDataSource;
+    ADOQuery8: TADOQuery;
+    DBEdit19: TDBEdit;
+    DBEdit20: TDBEdit;
+    DataSource9: TDataSource;
+    ADOQuery9: TADOQuery;
+    ADOQuery8aliquota: TFloatField;
+    ADOQuery9aliquota2: TFloatField;
+    DBEdit21: TDBEdit;
+    DataSource10: TDataSource;
+    ADOQuery10: TADOQuery;
+    ADOQuery10valor_icms2: TFloatField;
   private
     { Private declarations }
   public
@@ -235,20 +283,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm3.TabSheet2ContextPopup(Sender: TObject; MousePos: TPoint;
-  var Handled: Boolean);
-begin
-  if PageControl1.TabIndex = 1 then
-      begin
-          DBEdit1.Enabled := True;
-      end
-  else
-    if PageControl1.TabIndex = 0 then
-      begin
-          DBEdit1.Enabled := false;
-      end
-
-end;
 
 end.
