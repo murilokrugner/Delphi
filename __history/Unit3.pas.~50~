@@ -244,7 +244,6 @@ type
     Label16: TLabel;
     Label17: TLabel;
     TabSheet4: TTabSheet;
-    Label18: TLabel;
     Label19: TLabel;
     Label20: TLabel;
     Label21: TLabel;
@@ -271,6 +270,22 @@ type
     DataSource10: TDataSource;
     ADOQuery10: TADOQuery;
     ADOQuery10valor_icms2: TFloatField;
+    DataSource11: TDataSource;
+    ADOQuery11: TADOQuery;
+    DBEdit22: TDBEdit;
+    ADOQuery11aliquota: TFloatField;
+    DBEdit23: TDBEdit;
+    DBEdit24: TDBEdit;
+    DataSource12: TDataSource;
+    ADOQuery12: TADOQuery;
+    DataSource13: TDataSource;
+    ADOQuery13: TADOQuery;
+    ADOQuery12aliquota2: TFloatField;
+    ADOQuery13valor_ipi2: TFloatField;
+    DBEdit25: TDBEdit;
+    DBEdit26: TDBEdit;
+    DBEdit27: TDBEdit;
+    DBEdit28: TDBEdit;
   private
     { Private declarations }
   public

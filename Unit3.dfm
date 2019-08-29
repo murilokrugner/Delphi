@@ -46,11 +46,10 @@ object Form3: TForm3
     Top = 331
     Width = 1226
     Height = 193
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
-      ExplicitLeft = 0
       object Label8: TLabel
         Left = 40
         Top = 37
@@ -348,21 +347,8 @@ object Form3: TForm3
       ImageIndex = 3
       ParentFont = False
       ExplicitLeft = 0
-      object Label18: TLabel
-        Left = 16
-        Top = 16
-        Width = 22
-        Height = 16
-        Caption = 'Cod'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
       object Label19: TLabel
-        Left = 120
+        Left = 16
         Top = 16
         Width = 55
         Height = 16
@@ -375,8 +361,8 @@ object Form3: TForm3
         ParentFont = False
       end
       object Label20: TLabel
-        Left = 264
-        Top = 16
+        Left = 168
+        Top = 3
         Width = 77
         Height = 16
         Caption = 'Base Imposto'
@@ -388,8 +374,8 @@ object Form3: TForm3
         ParentFont = False
       end
       object Label21: TLabel
-        Left = 440
-        Top = 16
+        Left = 368
+        Top = 3
         Width = 46
         Height = 16
         Caption = 'Aliquota'
@@ -401,15 +387,15 @@ object Form3: TForm3
         ParentFont = False
       end
       object Label22: TLabel
-        Left = 702
-        Top = 16
+        Left = 590
+        Top = 3
         Width = 70
         Height = 16
         Caption = 'Vlr. Imposto'
       end
       object Label23: TLabel
-        Left = 129
-        Top = 64
+        Left = 25
+        Top = 48
         Width = 30
         Height = 16
         Caption = 'ICMS'
@@ -421,7 +407,7 @@ object Form3: TForm3
         ParentFont = False
       end
       object Label24: TLabel
-        Left = 129
+        Left = 25
         Top = 128
         Width = 15
         Height = 16
@@ -433,71 +419,116 @@ object Form3: TForm3
         Font.Style = []
         ParentFont = False
       end
-      object DBEdit17: TDBEdit
-        Left = 704
-        Top = 43
-        Width = 121
-        Height = 24
-        DataField = 'valor_icms'
-        DataSource = DataSource6
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit18: TDBEdit
-        Left = 704
-        Top = 120
-        Width = 121
-        Height = 24
-        DataField = 'valor_ipi'
-        DataSource = DataSource7
-        ReadOnly = True
-        TabOrder = 1
-      end
       object DBEdit19: TDBEdit
-        Left = 440
-        Top = 43
+        Left = 337
+        Top = 33
         Width = 121
         Height = 24
         DataField = 'aliquota'
         DataSource = DataSource8
         ReadOnly = True
-        TabOrder = 2
+        TabOrder = 0
       end
       object DBEdit20: TDBEdit
-        Left = 440
-        Top = 70
+        Left = 337
+        Top = 63
         Width = 121
         Height = 24
         DataField = 'aliquota2'
         DataSource = DataSource9
         ReadOnly = True
-        TabOrder = 3
-      end
-      object DBEdit21: TDBEdit
-        Left = 704
-        Top = 70
-        Width = 121
-        Height = 24
-        DataField = 'valor_icms2'
-        DataSource = DataSource10
-        ReadOnly = True
-        TabOrder = 4
+        TabOrder = 1
       end
       object DBEdit22: TDBEdit
-        Left = 440
-        Top = 120
+        Left = 337
+        Top = 104
         Width = 121
         Height = 24
         DataField = 'aliquota'
         DataSource = DataSource11
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object DBEdit23: TDBEdit
+        Left = 337
+        Top = 138
+        Width = 121
+        Height = 24
+        DataField = 'aliquota2'
+        DataSource = DataSource12
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object DBEdit25: TDBEdit
+        Left = 152
+        Top = 33
+        Width = 121
+        Height = 24
+        DataField = 'base_icms'
+        DataSource = DataSource14
+        TabOrder = 4
+      end
+      object DBEdit26: TDBEdit
+        Left = 152
+        Top = 63
+        Width = 121
+        Height = 24
+        DataField = 'base_icms'
+        DataSource = DataSource14
         TabOrder = 5
+      end
+      object DBEdit27: TDBEdit
+        Left = 152
+        Top = 104
+        Width = 121
+        Height = 24
+        DataField = 'base_ipi'
+        DataSource = DataSource16
+        TabOrder = 6
+      end
+      object DBEdit28: TDBEdit
+        Left = 152
+        Top = 134
+        Width = 121
+        Height = 24
+        DataField = 'base_ipi'
+        DataSource = DataSource16
+        TabOrder = 7
+      end
+      object Edit1: TEdit
+        Left = 568
+        Top = 33
+        Width = 121
+        Height = 24
+        TabOrder = 8
+      end
+      object Edit2: TEdit
+        Left = 568
+        Top = 63
+        Width = 121
+        Height = 24
+        TabOrder = 9
+      end
+      object Edit3: TEdit
+        Left = 568
+        Top = 104
+        Width = 121
+        Height = 24
+        TabOrder = 10
+      end
+      object Edit4: TEdit
+        Left = 568
+        Top = 134
+        Width = 121
+        Height = 24
+        TabOrder = 11
       end
     end
   end
   object DBGrid1: TDBGrid
-    Left = -8
+    Left = -4
     Top = 88
-    Width = 1226
+    Width = 1238
     Height = 237
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -1266,39 +1297,9 @@ object Form3: TForm3
       FieldName = 'total_frete'
     end
   end
-  object DataSource6: TDataSource
-    DataSet = ADOQuery6
-    Left = 440
-    Top = 16
-  end
-  object DataSource7: TDataSource
-    DataSet = ADOQuery7
-    Left = 504
-    Top = 16
-  end
-  object ADOQuery6: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    Left = 1080
-    Top = 8
-    object ADOQuery6valor_icms: TFloatField
-      FieldName = 'valor_icms'
-    end
-  end
-  object ADOQuery7: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    Left = 1136
-    Top = 8
-    object ADOQuery7valor_ipi: TFloatField
-      FieldName = 'valor_ipi'
-    end
-  end
   object DataSource8: TDataSource
     DataSet = ADOQuery8
-    Left = 96
+    Left = 24
     Top = 64
   end
   object ADOQuery8: TADOQuery
@@ -1316,7 +1317,7 @@ object Form3: TForm3
   end
   object DataSource9: TDataSource
     DataSet = ADOQuery9
-    Left = 160
+    Left = 96
     Top = 64
   end
   object ADOQuery9: TADOQuery
@@ -1331,25 +1332,10 @@ object Form3: TForm3
       FieldName = 'aliquota2'
     end
   end
-  object DataSource10: TDataSource
-    DataSet = ADOQuery10
-    Left = 232
-    Top = 64
-  end
-  object ADOQuery10: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    Left = 864
-    Top = 56
-    object ADOQuery10valor_icms2: TFloatField
-      FieldName = 'valor_icms2'
-    end
-  end
   object DataSource11: TDataSource
     DataSet = ADOQuery11
-    Left = 304
-    Top = 64
+    Left = 440
+    Top = 16
   end
   object ADOQuery11: TADOQuery
     Connection = ADOConnection1
@@ -1359,6 +1345,81 @@ object Form3: TForm3
     Top = 56
     object ADOQuery11aliquota: TFloatField
       FieldName = 'aliquota'
+    end
+  end
+  object DataSource12: TDataSource
+    DataSet = ADOQuery12
+    Left = 496
+    Top = 16
+  end
+  object ADOQuery12: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1008
+    Top = 56
+    object ADOQuery12aliquota2: TFloatField
+      FieldName = 'aliquota2'
+    end
+  end
+  object DataSource14: TDataSource
+    DataSet = ADOQuery14
+    Left = 456
+    Top = 64
+  end
+  object DataSource15: TDataSource
+    DataSet = ADOQuery15
+    Left = 520
+    Top = 64
+  end
+  object DataSource16: TDataSource
+    DataSet = ADOQuery16
+    Left = 576
+    Top = 64
+  end
+  object DataSource17: TDataSource
+    DataSet = ADOQuery17
+    Left = 632
+    Top = 64
+  end
+  object ADOQuery14: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1144
+    Top = 56
+    object ADOQuery14base_icms: TFloatField
+      FieldName = 'base_icms'
+    end
+  end
+  object ADOQuery15: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1200
+    Top = 56
+    object ADOQuery15base_icms2: TFloatField
+      FieldName = 'base_icms2'
+    end
+  end
+  object ADOQuery16: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1088
+    Top = 16
+    object ADOQuery16base_ipi: TFloatField
+      FieldName = 'base_ipi'
+    end
+  end
+  object ADOQuery17: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 1136
+    Top = 8
+    object ADOQuery17base_ipi2: TFloatField
+      FieldName = 'base_ipi2'
     end
   end
 end

@@ -2,6 +2,7 @@ object Form1: TForm1
   AlignWithMargins = True
   Left = 0
   Top = 0
+  ActiveControl = Edit1
   Caption = 'PEDIDOS DE COMPRA'
   ClientHeight = 548
   ClientWidth = 1245
