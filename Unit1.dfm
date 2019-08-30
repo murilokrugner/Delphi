@@ -1,4 +1,4 @@
-object Form1: TForm1
+﻿object Form1: TForm1
   AlignWithMargins = True
   Left = 0
   Top = 0
@@ -6,7 +6,7 @@ object Form1: TForm1
   Caption = 'PEDIDOS DE COMPRA'
   ClientHeight = 548
   ClientWidth = 1245
-  Color = clBtnFace
+  Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -18,30 +18,51 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Edit1: TEdit
-    Left = 856
-    Top = 19
+    Left = 808
+    Top = 8
     Width = 169
-    Height = 21
+    Height = 31
+    Color = clInactiveCaption
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object ComboBox1: TComboBox
-    Left = 689
-    Top = 19
-    Width = 145
-    Height = 21
+    Left = 576
+    Top = 8
+    Width = 210
+    Height = 31
     Style = csDropDownList
+    Color = clInactiveCaption
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
     Items.Strings = (
       'N'#250'mero do Pedido'
       'Nome do Fornecedor'
-      'CNPJ do Fornecedor')
+      'CNPJ do Fornecedor'
+      'Data de Entrega')
   end
   object Button1: TButton
-    Left = 1039
-    Top = 17
-    Width = 75
-    Height = 25
+    Left = 1000
+    Top = 8
+    Width = 98
+    Height = 34
     Caption = 'Pesquisar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     OnClick = Button1Click
   end
@@ -50,7 +71,8 @@ object Form1: TForm1
     Top = 59
     Width = 1229
     Height = 481
-    Color = clWhite
+    Margins.Top = 4
+    Color = clSilver
     DataSource = DataSource1
     GradientEndColor = clSilver
     Font.Charset = DEFAULT_CHARSET
@@ -58,6 +80,7 @@ object Form1: TForm1
     Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
+    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 3
@@ -69,11 +92,17 @@ object Form1: TForm1
     OnCellClick = DBGrid1CellClick
   end
   object Button2: TButton
-    Left = 1128
-    Top = 17
-    Width = 75
-    Height = 25
-    Caption = 'Limpar'
+    Left = 1120
+    Top = 8
+    Width = 105
+    Height = 35
+    Caption = 'Recarregar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
     OnClick = Button2Click
   end
@@ -81,7 +110,8 @@ object Form1: TForm1
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=totvs123;Persist Security Info=True' +
-      ';User ID=totvs;Initial Catalog=DBMOVITEC;Data Source=COMPRAS03'
+      ';User ID=totvs;Initial Catalog=TOTVSDB;Data Source=COMPRAS03'
+    DefaultDatabase = 'TOTVSDB'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
     Left = 176
@@ -123,648 +153,58 @@ object Form1: TForm1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'select * from sc7010 where C7_FILIAL = 01 order by c7_num desc')
+      
+        'select c7_num as NUMERO_DO_PEDIDO, C7_EMISSAO AS DATA_DE_EMISS'#195'O' +
+        ', C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM,'
+      
+        'C7_DESCRI AS DESCRI'#199#195'O_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS' +
+        ' QUANTIDADE, C7_QUJE AS QUANTIDADE_JA_ENTREGUE, C7_DATPRF AS DAT' +
+        'A_DE_ENTREGA'
+      'FROM SC7010 where C7_FILIAL = 01 order by c7_num desc')
     Left = 24
     Top = 8
-    object ADOQuery1C7_NUM: TStringField
-      FieldName = 'C7_NUM'
+    object ADOQuery1NUMERO_DO_PEDIDO: TStringField
+      DisplayWidth = 11
+      FieldName = 'NUMERO_DO_PEDIDO'
       Size = 6
     end
-    object ADOQuery1C7_FILIAL: TStringField
-      FieldName = 'C7_FILIAL'
-      Size = 2
+    object ADOQuery1DATA_DE_EMISSÃO: TStringField
+      DisplayWidth = 13
+      FieldName = 'DATA_DE_EMISS'#195'O'
+      Size = 8
     end
-    object ADOQuery1C7_TIPO: TFloatField
-      FieldName = 'C7_TIPO'
+    object ADOQuery1CODIGO_DO_FORNECEDOR: TStringField
+      DisplayWidth = 15
+      FieldName = 'CODIGO_DO_FORNECEDOR'
+      Size = 6
     end
-    object ADOQuery1C7_ITEM: TStringField
-      FieldName = 'C7_ITEM'
+    object ADOQuery1ITEM: TStringField
+      DisplayWidth = 4
+      FieldName = 'ITEM'
       Size = 4
     end
-    object ADOQuery1C7_PRODUTO: TStringField
-      FieldName = 'C7_PRODUTO'
-      Size = 15
-    end
-    object ADOQuery1C7_DESCRI: TStringField
-      FieldName = 'C7_DESCRI'
+    object ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField
+      DisplayWidth = 60
+      FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
       Size = 60
     end
-    object ADOQuery1C7_UM: TStringField
-      FieldName = 'C7_UM'
+    object ADOQuery1UNIDADE: TStringField
+      DisplayWidth = 4
+      FieldName = 'UNIDADE'
       Size = 2
     end
-    object ADOQuery1C7_SEGUM: TStringField
-      FieldName = 'C7_SEGUM'
-      Size = 2
+    object ADOQuery1QUANTIDADE: TFloatField
+      DisplayWidth = 10
+      FieldName = 'QUANTIDADE'
     end
-    object ADOQuery1C7_CODTAB: TStringField
-      FieldName = 'C7_CODTAB'
-      Size = 3
+    object ADOQuery1QUANTIDADE_JA_ENTREGUE: TFloatField
+      DisplayWidth = 14
+      FieldName = 'QUANTIDADE_JA_ENTREGUE'
     end
-    object ADOQuery1C7_QUANT: TFloatField
-      FieldName = 'C7_QUANT'
-    end
-    object ADOQuery1C7_PRECO: TFloatField
-      FieldName = 'C7_PRECO'
-    end
-    object ADOQuery1C7_TOTAL: TFloatField
-      FieldName = 'C7_TOTAL'
-    end
-    object ADOQuery1C7_X_NEGOC: TBlobField
-      FieldName = 'C7_X_NEGOC'
-    end
-    object ADOQuery1C7_QTSEGUM: TFloatField
-      FieldName = 'C7_QTSEGUM'
-    end
-    object ADOQuery1C7_IPI: TFloatField
-      FieldName = 'C7_IPI'
-    end
-    object ADOQuery1C7_DATPRF: TStringField
-      FieldName = 'C7_DATPRF'
+    object ADOQuery1DATA_DE_ENTREGA: TStringField
+      DisplayWidth = 9
+      FieldName = 'DATA_DE_ENTREGA'
       Size = 8
-    end
-    object ADOQuery1C7_NUMSC: TStringField
-      FieldName = 'C7_NUMSC'
-      Size = 6
-    end
-    object ADOQuery1C7_ITEMSC: TStringField
-      FieldName = 'C7_ITEMSC'
-      Size = 4
-    end
-    object ADOQuery1C7_LOCAL: TStringField
-      FieldName = 'C7_LOCAL'
-      Size = 2
-    end
-    object ADOQuery1C7_OBS: TStringField
-      FieldName = 'C7_OBS'
-      Size = 30
-    end
-    object ADOQuery1C7_FORNECE: TStringField
-      FieldName = 'C7_FORNECE'
-      Size = 6
-    end
-    object ADOQuery1C7_CC: TStringField
-      FieldName = 'C7_CC'
-      Size = 9
-    end
-    object ADOQuery1C7_CONTA: TStringField
-      FieldName = 'C7_CONTA'
-    end
-    object ADOQuery1C7_COND: TStringField
-      FieldName = 'C7_COND'
-      Size = 3
-    end
-    object ADOQuery1C7_CONTATO: TStringField
-      FieldName = 'C7_CONTATO'
-      Size = 15
-    end
-    object ADOQuery1C7_ITEMCTA: TStringField
-      FieldName = 'C7_ITEMCTA'
-      Size = 9
-    end
-    object ADOQuery1C7_LOJA: TStringField
-      FieldName = 'C7_LOJA'
-      Size = 2
-    end
-    object ADOQuery1C7_FILENT: TStringField
-      FieldName = 'C7_FILENT'
-      Size = 2
-    end
-    object ADOQuery1C7_DESC1: TFloatField
-      FieldName = 'C7_DESC1'
-    end
-    object ADOQuery1C7_EMISSAO: TStringField
-      FieldName = 'C7_EMISSAO'
-      Size = 8
-    end
-    object ADOQuery1C7_DESC2: TFloatField
-      FieldName = 'C7_DESC2'
-    end
-    object ADOQuery1C7_DESC3: TFloatField
-      FieldName = 'C7_DESC3'
-    end
-    object ADOQuery1C7_QUJE: TFloatField
-      FieldName = 'C7_QUJE'
-    end
-    object ADOQuery1C7_REAJUST: TStringField
-      FieldName = 'C7_REAJUST'
-      Size = 3
-    end
-    object ADOQuery1C7_FRETE: TFloatField
-      FieldName = 'C7_FRETE'
-    end
-    object ADOQuery1C7_EMITIDO: TStringField
-      FieldName = 'C7_EMITIDO'
-      Size = 1
-    end
-    object ADOQuery1C7_TPFRETE: TStringField
-      FieldName = 'C7_TPFRETE'
-      Size = 1
-    end
-    object ADOQuery1C7_QTDREEM: TFloatField
-      FieldName = 'C7_QTDREEM'
-    end
-    object ADOQuery1C7_CODLIB: TStringField
-      FieldName = 'C7_CODLIB'
-      Size = 10
-    end
-    object ADOQuery1C7_RESIDUO: TStringField
-      FieldName = 'C7_RESIDUO'
-      Size = 1
-    end
-    object ADOQuery1C7_NUMCOT: TStringField
-      FieldName = 'C7_NUMCOT'
-      Size = 6
-    end
-    object ADOQuery1C7_TX: TStringField
-      FieldName = 'C7_TX'
-      Size = 2
-    end
-    object ADOQuery1C7_MSG: TStringField
-      FieldName = 'C7_MSG'
-      Size = 3
-    end
-    object ADOQuery1C7_CONTROL: TStringField
-      FieldName = 'C7_CONTROL'
-      Size = 1
-    end
-    object ADOQuery1C7_ENCER: TStringField
-      FieldName = 'C7_ENCER'
-      Size = 1
-    end
-    object ADOQuery1C7_OP: TStringField
-      FieldName = 'C7_OP'
-      Size = 14
-    end
-    object ADOQuery1C7_IPIBRUT: TStringField
-      FieldName = 'C7_IPIBRUT'
-      Size = 1
-    end
-    object ADOQuery1C7_VLDESC: TFloatField
-      FieldName = 'C7_VLDESC'
-    end
-    object ADOQuery1C7_SEQUEN: TStringField
-      FieldName = 'C7_SEQUEN'
-      Size = 4
-    end
-    object ADOQuery1C7_NUMIMP: TStringField
-      FieldName = 'C7_NUMIMP'
-      Size = 6
-    end
-    object ADOQuery1C7_ORIGEM: TStringField
-      FieldName = 'C7_ORIGEM'
-      Size = 8
-    end
-    object ADOQuery1C7_QTDACLA: TFloatField
-      FieldName = 'C7_QTDACLA'
-    end
-    object ADOQuery1C7_VALEMB: TFloatField
-      FieldName = 'C7_VALEMB'
-    end
-    object ADOQuery1C7_FLUXO: TStringField
-      FieldName = 'C7_FLUXO'
-      Size = 1
-    end
-    object ADOQuery1C7_TPOP: TStringField
-      FieldName = 'C7_TPOP'
-      Size = 1
-    end
-    object ADOQuery1C7_APROV: TStringField
-      FieldName = 'C7_APROV'
-      Size = 6
-    end
-    object ADOQuery1C7_CONAPRO: TStringField
-      FieldName = 'C7_CONAPRO'
-      Size = 1
-    end
-    object ADOQuery1C7_GRUPCOM: TStringField
-      FieldName = 'C7_GRUPCOM'
-      Size = 6
-    end
-    object ADOQuery1C7_USER: TStringField
-      FieldName = 'C7_USER'
-      Size = 6
-    end
-    object ADOQuery1C7_STATME: TStringField
-      FieldName = 'C7_STATME'
-      Size = 1
-    end
-    object ADOQuery1C7_OK: TStringField
-      FieldName = 'C7_OK'
-      Size = 2
-    end
-    object ADOQuery1C7_QTDSOL: TFloatField
-      FieldName = 'C7_QTDSOL'
-    end
-    object ADOQuery1C7_VALIPI: TFloatField
-      FieldName = 'C7_VALIPI'
-    end
-    object ADOQuery1C7_VALICM: TFloatField
-      FieldName = 'C7_VALICM'
-    end
-    object ADOQuery1C7_TES: TStringField
-      FieldName = 'C7_TES'
-      Size = 3
-    end
-    object ADOQuery1C7_DESC: TFloatField
-      FieldName = 'C7_DESC'
-    end
-    object ADOQuery1C7_PICM: TFloatField
-      FieldName = 'C7_PICM'
-    end
-    object ADOQuery1C7_BASEICM: TFloatField
-      FieldName = 'C7_BASEICM'
-    end
-    object ADOQuery1C7_BASEIPI: TFloatField
-      FieldName = 'C7_BASEIPI'
-    end
-    object ADOQuery1C7_SEGURO: TFloatField
-      FieldName = 'C7_SEGURO'
-    end
-    object ADOQuery1C7_DESPESA: TFloatField
-      FieldName = 'C7_DESPESA'
-    end
-    object ADOQuery1C7_VALFRE: TFloatField
-      FieldName = 'C7_VALFRE'
-    end
-    object ADOQuery1C7_TXMOEDA: TFloatField
-      FieldName = 'C7_TXMOEDA'
-    end
-    object ADOQuery1C7_MOEDA: TFloatField
-      FieldName = 'C7_MOEDA'
-    end
-    object ADOQuery1C7_PENDEN: TStringField
-      FieldName = 'C7_PENDEN'
-      Size = 1
-    end
-    object ADOQuery1C7_CLVL: TStringField
-      FieldName = 'C7_CLVL'
-      Size = 9
-    end
-    object ADOQuery1C7_BASEIR: TFloatField
-      FieldName = 'C7_BASEIR'
-    end
-    object ADOQuery1C7_ALIQIR: TFloatField
-      FieldName = 'C7_ALIQIR'
-    end
-    object ADOQuery1C7_VALIR: TFloatField
-      FieldName = 'C7_VALIR'
-    end
-    object ADOQuery1C7_ICMCOMP: TFloatField
-      FieldName = 'C7_ICMCOMP'
-    end
-    object ADOQuery1C7_ICMSRET: TFloatField
-      FieldName = 'C7_ICMSRET'
-    end
-    object ADOQuery1C7_ESTOQUE: TStringField
-      FieldName = 'C7_ESTOQUE'
-      Size = 1
-    end
-    object ADOQuery1C7_VALSOL: TFloatField
-      FieldName = 'C7_VALSOL'
-    end
-    object ADOQuery1C7_SEQMRP: TStringField
-      FieldName = 'C7_SEQMRP'
-      Size = 6
-    end
-    object ADOQuery1C7_CODORCA: TStringField
-      FieldName = 'C7_CODORCA'
-      Size = 8
-    end
-    object ADOQuery1C7_DTLANC: TStringField
-      FieldName = 'C7_DTLANC'
-      Size = 8
-    end
-    object ADOQuery1C7_CODCRED: TStringField
-      FieldName = 'C7_CODCRED'
-      Size = 6
-    end
-    object ADOQuery1C7_TIPOEMP: TStringField
-      FieldName = 'C7_TIPOEMP'
-      Size = 1
-    end
-    object ADOQuery1C7_CONTRA: TStringField
-      FieldName = 'C7_CONTRA'
-      Size = 15
-    end
-    object ADOQuery1C7_CONTREV: TStringField
-      FieldName = 'C7_CONTREV'
-      Size = 3
-    end
-    object ADOQuery1C7_PLANILH: TStringField
-      FieldName = 'C7_PLANILH'
-      Size = 6
-    end
-    object ADOQuery1C7_MEDICAO: TStringField
-      FieldName = 'C7_MEDICAO'
-      Size = 6
-    end
-    object ADOQuery1C7_ITEMED: TStringField
-      FieldName = 'C7_ITEMED'
-      Size = 10
-    end
-    object ADOQuery1C7_ESPEMP: TStringField
-      FieldName = 'C7_ESPEMP'
-      Size = 1
-    end
-    object ADOQuery1C7_POLREPR: TStringField
-      FieldName = 'C7_POLREPR'
-      Size = 1
-    end
-    object ADOQuery1C7_FREPPCC: TStringField
-      FieldName = 'C7_FREPPCC'
-      Size = 2
-    end
-    object ADOQuery1C7_PERREPR: TFloatField
-      FieldName = 'C7_PERREPR'
-    end
-    object ADOQuery1C7_DT_IMP: TStringField
-      FieldName = 'C7_DT_IMP'
-      Size = 8
-    end
-    object ADOQuery1C7_GRADE: TStringField
-      FieldName = 'C7_GRADE'
-      Size = 1
-    end
-    object ADOQuery1C7_ITEMGRD: TStringField
-      FieldName = 'C7_ITEMGRD'
-      Size = 3
-    end
-    object ADOQuery1C7_AGENTE: TStringField
-      FieldName = 'C7_AGENTE'
-      Size = 3
-    end
-    object ADOQuery1C7_FORWARD: TStringField
-      FieldName = 'C7_FORWARD'
-      Size = 3
-    end
-    object ADOQuery1C7_TIPO_EM: TStringField
-      FieldName = 'C7_TIPO_EM'
-      Size = 3
-    end
-    object ADOQuery1C7_ORIGIMP: TStringField
-      FieldName = 'C7_ORIGIMP'
-      Size = 3
-    end
-    object ADOQuery1C7_DEST: TStringField
-      FieldName = 'C7_DEST'
-      Size = 3
-    end
-    object ADOQuery1C7_COMPRA: TStringField
-      FieldName = 'C7_COMPRA'
-      Size = 3
-    end
-    object ADOQuery1C7_PESO_B: TFloatField
-      FieldName = 'C7_PESO_B'
-    end
-    object ADOQuery1C7_INCOTER: TStringField
-      FieldName = 'C7_INCOTER'
-      Size = 3
-    end
-    object ADOQuery1C7_IMPORT: TStringField
-      FieldName = 'C7_IMPORT'
-      Size = 3
-    end
-    object ADOQuery1C7_CONSIG: TStringField
-      FieldName = 'C7_CONSIG'
-      Size = 3
-    end
-    object ADOQuery1C7_CONF_PE: TStringField
-      FieldName = 'C7_CONF_PE'
-      Size = 8
-    end
-    object ADOQuery1C7_DESP: TStringField
-      FieldName = 'C7_DESP'
-      Size = 3
-    end
-    object ADOQuery1C7_EXPORTA: TStringField
-      FieldName = 'C7_EXPORTA'
-      Size = 6
-    end
-    object ADOQuery1C7_LOJAEXP: TStringField
-      FieldName = 'C7_LOJAEXP'
-      Size = 2
-    end
-    object ADOQuery1C7_CONTAIN: TStringField
-      FieldName = 'C7_CONTAIN'
-      Size = 1
-    end
-    object ADOQuery1C7_MT3: TFloatField
-      FieldName = 'C7_MT3'
-    end
-    object ADOQuery1C7_CONTA20: TFloatField
-      FieldName = 'C7_CONTA20'
-    end
-    object ADOQuery1C7_CONTA40: TFloatField
-      FieldName = 'C7_CONTA40'
-    end
-    object ADOQuery1C7_CON40HC: TFloatField
-      FieldName = 'C7_CON40HC'
-    end
-    object ADOQuery1C7_ARMAZEM: TStringField
-      FieldName = 'C7_ARMAZEM'
-      Size = 7
-    end
-    object ADOQuery1C7_FABRICA: TStringField
-      FieldName = 'C7_FABRICA'
-      Size = 6
-    end
-    object ADOQuery1C7_LOJFABR: TStringField
-      FieldName = 'C7_LOJFABR'
-      Size = 2
-    end
-    object ADOQuery1C7_DT_EMB: TStringField
-      FieldName = 'C7_DT_EMB'
-      Size = 8
-    end
-    object ADOQuery1C7_TEC: TStringField
-      FieldName = 'C7_TEC'
-      Size = 10
-    end
-    object ADOQuery1C7_EX_NCM: TStringField
-      FieldName = 'C7_EX_NCM'
-      Size = 3
-    end
-    object ADOQuery1C7_BASESOL: TFloatField
-      FieldName = 'C7_BASESOL'
-    end
-    object ADOQuery1C7_DIACTB: TStringField
-      FieldName = 'C7_DIACTB'
-      Size = 2
-    end
-    object ADOQuery1C7_NODIA: TStringField
-      FieldName = 'C7_NODIA'
-      Size = 10
-    end
-    object ADOQuery1C7_CODED: TStringField
-      FieldName = 'C7_CODED'
-      Size = 15
-    end
-    object ADOQuery1C7_EX_NBM: TStringField
-      FieldName = 'C7_EX_NBM'
-      Size = 3
-    end
-    object ADOQuery1C7_NUMPR: TStringField
-      FieldName = 'C7_NUMPR'
-      Size = 15
-    end
-    object ADOQuery1C7_RATEIO: TStringField
-      FieldName = 'C7_RATEIO'
-      Size = 1
-    end
-    object ADOQuery1C7_FILCEN: TStringField
-      FieldName = 'C7_FILCEN'
-      Size = 2
-    end
-    object ADOQuery1C7_PO_EIC: TStringField
-      FieldName = 'C7_PO_EIC'
-      Size = 15
-    end
-    object ADOQuery1C7_ACCPROC: TStringField
-      FieldName = 'C7_ACCPROC'
-      Size = 1
-    end
-    object ADOQuery1C7_ACCNUM: TStringField
-      FieldName = 'C7_ACCNUM'
-      Size = 50
-    end
-    object ADOQuery1C7_ACCITEM: TStringField
-      FieldName = 'C7_ACCITEM'
-      Size = 50
-    end
-    object ADOQuery1C7_IDTSS: TStringField
-      FieldName = 'C7_IDTSS'
-      Size = 15
-    end
-    object ADOQuery1C7_TPCOLAB: TStringField
-      FieldName = 'C7_TPCOLAB'
-      Size = 3
-    end
-    object ADOQuery1D_E_L_E_T_: TStringField
-      FieldName = 'D_E_L_E_T_'
-      Size = 1
-    end
-    object ADOQuery1R_E_C_N_O_: TIntegerField
-      FieldName = 'R_E_C_N_O_'
-    end
-    object ADOQuery1R_E_C_D_E_L_: TIntegerField
-      FieldName = 'R_E_C_D_E_L_'
-    end
-    object ADOQuery1C7_DINICOM: TStringField
-      FieldName = 'C7_DINICOM'
-      Size = 8
-    end
-    object ADOQuery1C7_DINITRA: TStringField
-      FieldName = 'C7_DINITRA'
-      Size = 8
-    end
-    object ADOQuery1C7_DINICQ: TStringField
-      FieldName = 'C7_DINICQ'
-      Size = 8
-    end
-    object ADOQuery1C7_RESREM: TStringField
-      FieldName = 'C7_RESREM'
-      Size = 1
-    end
-    object ADOQuery1C7_BASIMP5: TFloatField
-      FieldName = 'C7_BASIMP5'
-    end
-    object ADOQuery1C7_BASIMP6: TFloatField
-      FieldName = 'C7_BASIMP6'
-    end
-    object ADOQuery1C7_SOLICIT: TStringField
-      FieldName = 'C7_SOLICIT'
-      Size = 30
-    end
-    object ADOQuery1C7_VALIMP5: TFloatField
-      FieldName = 'C7_VALIMP5'
-    end
-    object ADOQuery1C7_VALIMP6: TFloatField
-      FieldName = 'C7_VALIMP6'
-    end
-    object ADOQuery1C7_OBSM: TBlobField
-      FieldName = 'C7_OBSM'
-    end
-    object ADOQuery1C7_TIPCOM: TStringField
-      FieldName = 'C7_TIPCOM'
-      Size = 3
-    end
-    object ADOQuery1C7_FILEDT: TStringField
-      FieldName = 'C7_FILEDT'
-      Size = 2
-    end
-    object ADOQuery1C7_NUMSA: TStringField
-      FieldName = 'C7_NUMSA'
-      Size = 6
-    end
-    object ADOQuery1C7_REVISAO: TStringField
-      FieldName = 'C7_REVISAO'
-      Size = 3
-    end
-    object ADOQuery1C7_BASECSL: TFloatField
-      FieldName = 'C7_BASECSL'
-    end
-    object ADOQuery1C7_ALIQINS: TFloatField
-      FieldName = 'C7_ALIQINS'
-    end
-    object ADOQuery1C7_VALINS: TFloatField
-      FieldName = 'C7_VALINS'
-    end
-    object ADOQuery1C7_ALQCSL: TFloatField
-      FieldName = 'C7_ALQCSL'
-    end
-    object ADOQuery1C7_ALIQISS: TFloatField
-      FieldName = 'C7_ALIQISS'
-    end
-    object ADOQuery1C7_VALISS: TFloatField
-      FieldName = 'C7_VALISS'
-    end
-    object ADOQuery1C7_CODNE: TStringField
-      FieldName = 'C7_CODNE'
-      Size = 12
-    end
-    object ADOQuery1C7_ITEMNE: TStringField
-      FieldName = 'C7_ITEMNE'
-      Size = 3
-    end
-    object ADOQuery1C7_GCPIT: TStringField
-      FieldName = 'C7_GCPIT'
-      Size = 6
-    end
-    object ADOQuery1C7_GCPLT: TStringField
-      FieldName = 'C7_GCPLT'
-      Size = 8
-    end
-    object ADOQuery1C7_BASEINS: TFloatField
-      FieldName = 'C7_BASEINS'
-    end
-    object ADOQuery1C7_VALCSL: TFloatField
-      FieldName = 'C7_VALCSL'
-    end
-    object ADOQuery1C7_LOTPLS: TStringField
-      FieldName = 'C7_LOTPLS'
-      Size = 10
-    end
-    object ADOQuery1C7_CODRDA: TStringField
-      FieldName = 'C7_CODRDA'
-      Size = 6
-    end
-    object ADOQuery1C7_BASEISS: TFloatField
-      FieldName = 'C7_BASEISS'
-    end
-    object ADOQuery1C7_FISCORI: TStringField
-      FieldName = 'C7_FISCORI'
-      Size = 2
-    end
-    object ADOQuery1C7_PLOPELT: TStringField
-      FieldName = 'C7_PLOPELT'
-      Size = 4
-    end
-    object ADOQuery1C7_OBRIGA: TBlobField
-      FieldName = 'C7_OBRIGA'
-    end
-    object ADOQuery1C7_DIREITO: TBlobField
-      FieldName = 'C7_DIREITO'
     end
   end
   object DataSource1: TDataSource

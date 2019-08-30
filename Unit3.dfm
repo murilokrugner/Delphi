@@ -1,11 +1,11 @@
-object Form3: TForm3
+﻿object Form3: TForm3
   Left = 0
   Top = 0
   ActiveControl = DBGrid1
-  Caption = 'Pedido'
-  ClientHeight = 577
-  ClientWidth = 1258
-  Color = clBtnFace
+  Caption = 'PEDIDO'
+  ClientHeight = 601
+  ClientWidth = 1349
+  Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -15,7 +15,7 @@ object Form3: TForm3
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 560
+    Left = 592
     Top = 8
     Width = 105
     Height = 33
@@ -28,11 +28,11 @@ object Form3: TForm3
     ParentFont = False
   end
   object DBText1: TDBText
-    Left = 671
+    Left = 703
     Top = 8
     Width = 113
     Height = 33
-    DataField = 'C7_NUM'
+    DataField = 'NUMERO_DO_PEDIDO'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -42,210 +42,342 @@ object Form3: TForm3
     ParentFont = False
   end
   object PageControl1: TPageControl
-    Left = 8
-    Top = 331
-    Width = 1226
+    Left = 4
+    Top = 388
+    Width = 1361
     Height = 193
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
       object Label8: TLabel
-        Left = 40
+        Left = 23
         Top = 37
-        Width = 26
-        Height = 13
+        Width = 43
+        Height = 19
         Caption = 'Frete'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label9: TLabel
-        Left = 40
+        Left = 23
         Top = 104
-        Width = 50
-        Height = 13
+        Width = 83
+        Height = 19
         Caption = 'Descontos'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label10: TLabel
-        Left = 432
+        Left = 465
         Top = 40
-        Width = 34
-        Height = 13
+        Width = 57
+        Height = 19
         Caption = 'Seguro'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label11: TLabel
-        Left = 880
+        Left = 784
         Top = 104
-        Width = 101
-        Height = 13
+        Width = 177
+        Height = 19
         Caption = 'Valor Total do Pedido'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label12: TLabel
-        Left = 432
+        Left = 368
         Top = 104
-        Width = 90
-        Height = 13
+        Width = 154
+        Height = 19
         Caption = 'Total dos Produtos'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object DBEdit7: TDBEdit
-        Left = 104
+        Left = 120
         Top = 32
-        Width = 121
-        Height = 21
-        DataField = 'C7_FRETE'
+        Width = 185
+        Height = 27
+        DataField = 'VALOR_DO_FRETE'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 0
       end
       object DBEdit8: TDBEdit
-        Left = 104
+        Left = 112
         Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'C7_DESC'
+        Width = 169
+        Height = 27
+        DataField = 'DESCONTO'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 1
       end
       object DBEdit9: TDBEdit
         Left = 548
         Top = 32
-        Width = 121
-        Height = 21
-        DataField = 'C7_SEGURO'
+        Width = 173
+        Height = 27
+        DataField = 'SEGURO'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 2
       end
       object DBEdit10: TDBEdit
         Left = 548
         Top = 96
-        Width = 121
-        Height = 21
+        Width = 173
+        Height = 27
         DataField = 'C7_TOTAL'
         DataSource = DataSource3
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 3
       end
-      object DBEdit11: TDBEdit
-        Left = 1008
+      object Edit5: TEdit
+        Left = 976
         Top = 96
-        Width = 121
-        Height = 21
-        DataField = 'total_pedido'
-        DataSource = DataSource4
-        ReadOnly = True
+        Width = 225
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         TabOrder = 4
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 40
       object Label2: TLabel
         Left = 24
         Top = 24
-        Width = 33
-        Height = 16
+        Width = 47
+        Height = 19
         Caption = 'Nome'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object Label3: TLabel
         Left = 24
         Top = 72
-        Width = 45
-        Height = 13
+        Width = 75
+        Height = 19
         Caption = 'Endere'#231'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label4: TLabel
         Left = 24
         Top = 128
-        Width = 78
-        Height = 13
+        Width = 138
+        Height = 19
         Caption = 'Primeira Compra'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label5: TLabel
-        Left = 264
+        Left = 392
         Top = 128
-        Width = 69
-        Height = 13
+        Width = 122
+        Height = 19
         Caption = 'Ultima Compra'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label6: TLabel
         Left = 887
         Top = 32
-        Width = 42
-        Height = 13
+        Width = 72
+        Height = 19
         Caption = 'Telefone'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label7: TLabel
         Left = 887
         Top = 72
-        Width = 33
-        Height = 13
+        Width = 55
+        Height = 19
         Caption = 'Estado'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object DBEdit1: TDBEdit
-        Left = 80
+        Left = 112
         Top = 24
         Width = 457
-        Height = 21
+        Height = 27
         DataField = 'a2_nome'
         DataSource = DataSource2
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 0
       end
       object DBEdit2: TDBEdit
-        Left = 80
+        Left = 112
         Top = 72
         Width = 457
-        Height = 21
+        Height = 27
         DataField = 'a2_end'
         DataSource = DataSource2
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 1
       end
       object DBEdit3: TDBEdit
-        Left = 352
-        Top = 120
-        Width = 121
-        Height = 21
+        Left = 520
+        Top = 128
+        Width = 173
+        Height = 27
         DataField = 'a2_ultcom'
         DataSource = DataSource2
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 2
       end
       object DBEdit4: TDBEdit
-        Left = 116
+        Left = 976
         Top = 120
-        Width = 121
-        Height = 21
+        Width = 157
+        Height = 27
         DataField = 'a2_pricom'
         DataSource = DataSource2
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 3
       end
       object DBEdit5: TDBEdit
-        Left = 952
-        Top = 24
-        Width = 121
-        Height = 21
+        Left = 976
+        Top = 39
+        Width = 145
+        Height = 27
         DataField = 'a2_tel'
         DataSource = DataSource2
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 4
       end
       object DBEdit6: TDBEdit
-        Left = 952
+        Left = 976
         Top = 72
-        Width = 121
-        Height = 21
+        Width = 145
+        Height = 27
         DataField = 'a2_est'
         DataSource = DataSource2
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 5
+      end
+      object Edit8: TEdit
+        Left = 184
+        Top = 128
+        Width = 121
+        Height = 21
+        TabOrder = 6
       end
     end
     object TabSheet3: TTabSheet
@@ -254,85 +386,145 @@ object Form3: TForm3
       object Label13: TLabel
         Left = 80
         Top = 96
-        Width = 68
-        Height = 13
+        Width = 116
+        Height = 19
         Caption = 'Valor do Frete'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label14: TLabel
-        Left = 565
+        Left = 469
         Top = 40
-        Width = 64
-        Height = 13
+        Width = 109
+        Height = 19
         Caption = 'Tipo de Frete'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label15: TLabel
-        Left = 565
+        Left = 469
         Top = 104
-        Width = 41
-        Height = 13
+        Width = 68
+        Height = 19
         Caption = 'Despesa'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label16: TLabel
-        Left = 984
+        Left = 979
         Top = 32
-        Width = 34
-        Height = 13
+        Width = 57
+        Height = 19
         Caption = 'Seguro'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label17: TLabel
-        Left = 911
+        Left = 855
         Top = 104
-        Width = 107
-        Height = 13
+        Width = 181
+        Height = 19
         Caption = 'Total (frete+despesa)'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object DBEdit12: TDBEdit
-        Left = 176
+        Left = 216
         Top = 88
         Width = 121
-        Height = 21
-        DataField = 'C7_FRETE'
+        Height = 27
+        DataField = 'VALOR_DO_FRETE'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 0
       end
       object DBEdit13: TDBEdit
-        Left = 651
+        Left = 619
         Top = 32
         Width = 121
-        Height = 21
-        DataField = 'C7_TPFRETE'
+        Height = 27
+        DataField = 'TIPO_FRETE'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 1
       end
       object DBEdit14: TDBEdit
-        Left = 651
+        Left = 619
         Top = 96
         Width = 121
-        Height = 21
-        DataField = 'C7_DESPESA'
+        Height = 27
+        DataField = 'VALOR_DA_DESPESA'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 2
       end
       object DBEdit15: TDBEdit
-        Left = 1040
+        Left = 1064
         Top = 24
         Width = 121
-        Height = 21
-        DataField = 'C7_SEGURO'
+        Height = 27
+        DataField = 'SEGURO'
         DataSource = DataSource1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 3
       end
       object DBEdit16: TDBEdit
-        Left = 1040
+        Left = 1064
         Top = 96
         Width = 121
-        Height = 21
+        Height = 27
         DataField = 'total_frete'
         DataSource = DataSource5
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 4
       end
@@ -346,190 +538,481 @@ object Form3: TForm3
       Font.Style = []
       ImageIndex = 3
       ParentFont = False
-      ExplicitLeft = 0
       object Label19: TLabel
         Left = 16
-        Top = 16
-        Width = 55
-        Height = 16
+        Top = 3
+        Width = 78
+        Height = 19
         Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object Label20: TLabel
         Left = 168
         Top = 3
-        Width = 77
-        Height = 16
+        Width = 111
+        Height = 19
         Caption = 'Base Imposto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object Label21: TLabel
-        Left = 368
+        Left = 472
         Top = 3
-        Width = 46
-        Height = 16
+        Width = 69
+        Height = 19
         Caption = 'Aliquota'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object Label22: TLabel
-        Left = 590
+        Left = 742
         Top = 3
-        Width = 70
-        Height = 16
+        Width = 100
+        Height = 19
         Caption = 'Vlr. Imposto'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object Label23: TLabel
         Left = 25
         Top = 48
-        Width = 30
-        Height = 16
+        Width = 42
+        Height = 19
         Caption = 'ICMS'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object Label24: TLabel
         Left = 25
         Top = 128
-        Width = 15
-        Height = 16
+        Width = 25
+        Height = 19
         Caption = 'IPI'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -16
         Font.Name = 'Tahoma'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object DBEdit19: TDBEdit
-        Left = 337
+        Left = 433
         Top = 33
-        Width = 121
-        Height = 24
+        Width = 160
+        Height = 27
         DataField = 'aliquota'
         DataSource = DataSource8
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 0
       end
       object DBEdit20: TDBEdit
-        Left = 337
-        Top = 63
-        Width = 121
-        Height = 24
+        Left = 433
+        Top = 66
+        Width = 160
+        Height = 27
         DataField = 'aliquota2'
         DataSource = DataSource9
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 1
       end
       object DBEdit22: TDBEdit
-        Left = 337
-        Top = 104
-        Width = 121
-        Height = 24
+        Left = 433
+        Top = 105
+        Width = 160
+        Height = 27
         DataField = 'aliquota'
         DataSource = DataSource11
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 2
       end
       object DBEdit23: TDBEdit
-        Left = 337
+        Left = 433
         Top = 138
-        Width = 121
-        Height = 24
+        Width = 160
+        Height = 27
         DataField = 'aliquota2'
         DataSource = DataSource12
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         ReadOnly = True
         TabOrder = 3
       end
       object DBEdit25: TDBEdit
         Left = 152
         Top = 33
-        Width = 121
-        Height = 24
+        Width = 145
+        Height = 27
         DataField = 'base_icms'
         DataSource = DataSource14
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 4
       end
       object DBEdit26: TDBEdit
         Left = 152
         Top = 63
-        Width = 121
-        Height = 24
+        Width = 145
+        Height = 27
         DataField = 'base_icms'
         DataSource = DataSource14
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 5
       end
       object DBEdit27: TDBEdit
         Left = 152
         Top = 104
-        Width = 121
-        Height = 24
+        Width = 145
+        Height = 27
         DataField = 'base_ipi'
         DataSource = DataSource16
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 6
       end
       object DBEdit28: TDBEdit
         Left = 152
-        Top = 134
-        Width = 121
-        Height = 24
+        Top = 135
+        Width = 145
+        Height = 27
         DataField = 'base_ipi'
         DataSource = DataSource16
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 7
       end
       object Edit1: TEdit
-        Left = 568
+        Left = 720
         Top = 33
-        Width = 121
-        Height = 24
+        Width = 145
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 8
       end
       object Edit2: TEdit
-        Left = 568
+        Left = 720
         Top = 63
-        Width = 121
-        Height = 24
+        Width = 145
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 9
       end
       object Edit3: TEdit
-        Left = 568
-        Top = 104
-        Width = 121
-        Height = 24
+        Left = 720
+        Top = 101
+        Width = 145
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 10
       end
       object Edit4: TEdit
-        Left = 568
+        Left = 720
         Top = 134
-        Width = 121
-        Height = 24
+        Width = 145
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
         TabOrder = 11
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Descontos'
+      ImageIndex = 4
+      object Label18: TLabel
+        Left = 96
+        Top = 21
+        Width = 90
+        Height = 19
+        Caption = 'Desconto 1'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label25: TLabel
+        Left = 304
+        Top = 21
+        Width = 90
+        Height = 19
+        Caption = 'Desconto 2'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label26: TLabel
+        Left = 496
+        Top = 21
+        Width = 90
+        Height = 19
+        Caption = 'Desconto 3'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label27: TLabel
+        Left = 800
+        Top = 15
+        Width = 148
+        Height = 19
+        Caption = 'Total do Desconto'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label28: TLabel
+        Left = 808
+        Top = 85
+        Width = 129
+        Height = 19
+        Caption = 'Total do Pedido'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DBEdit11: TDBEdit
+        Left = 80
+        Top = 46
+        Width = 137
+        Height = 27
+        DataField = 'desconto1'
+        DataSource = DataSource4
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object DBEdit17: TDBEdit
+        Left = 280
+        Top = 46
+        Width = 145
+        Height = 27
+        DataField = 'desconto2'
+        DataSource = DataSource4
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object DBEdit18: TDBEdit
+        Left = 472
+        Top = 46
+        Width = 145
+        Height = 27
+        DataField = 'desconto3'
+        DataSource = DataSource4
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Edit6: TEdit
+        Left = 800
+        Top = 40
+        Width = 148
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object Edit7: TEdit
+        Left = 800
+        Top = 110
+        Width = 148
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 4
+      end
+    end
+    object Mensagem: TTabSheet
+      Caption = 'Mensagem/Reajuste'
+      ImageIndex = 5
+      object Label29: TLabel
+        Left = 168
+        Top = 29
+        Width = 137
+        Height = 19
+        Caption = 'Cod / Mensagem'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label30: TLabel
+        Left = 856
+        Top = 29
+        Width = 123
+        Height = 19
+        Caption = 'Cod / Reajuste'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DBEdit21: TDBEdit
+        Left = 88
+        Top = 54
+        Width = 289
+        Height = 27
+        DataField = 'c7_msg'
+        DataSource = DataSource6
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit24: TDBEdit
+        Left = 768
+        Top = 54
+        Width = 289
+        Height = 27
+        DataField = 'c7_reajust'
+        DataSource = DataSource6
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
       end
     end
   end
   object DBGrid1: TDBGrid
-    Left = -4
-    Top = 88
-    Width = 1238
-    Height = 237
+    Left = 8
+    Top = 47
+    Width = 1349
+    Height = 342
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -545,12 +1028,22 @@ object Form3: TForm3
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
+  object MaskEdit1: TMaskEdit
+    Left = 655
+    Top = 456
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = ''
+  end
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Password=totvs123;Persist Security Info=True' +
-      ';User ID=totvs;Data Source=COMPRAS03'
-    DefaultDatabase = 'DBMOVITEC'
+      ';User ID=totvs;Initial Catalog=TOTVSDB;Data Source=COMPRAS03;Use' +
+      ' Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Wo' +
+      'rkstation ID=COMPRAS03;Use Encryption for Data=False;Tag with co' +
+      'lumn collation when possible=False'
+    DefaultDatabase = 'TOTVSDB'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
     Left = 24
@@ -560,647 +1053,92 @@ object Form3: TForm3
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 800
+    Left = 824
     Top = 8
-    object ADOQuery1C7_ITEM: TStringField
-      FieldName = 'C7_ITEM'
-      Size = 4
-    end
-    object ADOQuery1C7_FORNECE: TStringField
-      FieldName = 'C7_FORNECE'
+    object ADOQuery1NUMERO_DO_PEDIDO: TStringField
+      FieldName = 'NUMERO_DO_PEDIDO'
       Size = 6
     end
-    object ADOQuery1C7_PRODUTO: TStringField
-      FieldName = 'C7_PRODUTO'
+    object ADOQuery1ITEM: TStringField
+      FieldName = 'ITEM'
+      Size = 4
+    end
+    object ADOQuery1PRODUTO: TStringField
+      FieldName = 'PRODUTO'
       Size = 15
     end
-    object ADOQuery1C7_DESCRI: TStringField
-      FieldName = 'C7_DESCRI'
+    object ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField
+      FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
       Size = 60
     end
-    object ADOQuery1C7_UM: TStringField
-      FieldName = 'C7_UM'
+    object ADOQuery1UNIDADE: TStringField
+      FieldName = 'UNIDADE'
       Size = 2
     end
-    object ADOQuery1C7_QUANT: TFloatField
-      FieldName = 'C7_QUANT'
-    end
-    object ADOQuery1C7_PRECO: TFloatField
-      FieldName = 'C7_PRECO'
-    end
-    object ADOQuery1C7_TOTAL: TFloatField
-      FieldName = 'C7_TOTAL'
-    end
-    object ADOQuery1C7_SEGUM: TStringField
-      FieldName = 'C7_SEGUM'
+    object ADOQuery1SEGUNDA_UNIDADE: TStringField
+      FieldName = 'SEGUNDA_UNIDADE'
       Size = 2
     end
-    object ADOQuery1C7_IPI: TFloatField
-      FieldName = 'C7_IPI'
+    object ADOQuery1QUANTIDADE: TFloatField
+      FieldName = 'QUANTIDADE'
     end
-    object ADOQuery1C7_FILIAL: TStringField
-      FieldName = 'C7_FILIAL'
-      Size = 2
+    object ADOQuery1PREÇO: TFloatField
+      FieldName = 'PRE'#199'O'
     end
-    object ADOQuery1C7_TIPO: TFloatField
-      FieldName = 'C7_TIPO'
+    object ADOQuery1TOTAL: TFloatField
+      FieldName = 'TOTAL'
     end
-    object ADOQuery1C7_CODTAB: TStringField
-      FieldName = 'C7_CODTAB'
+    object ADOQuery1ALIQUOTA_IPI: TFloatField
+      FieldName = 'ALIQUOTA_IPI'
+    end
+    object ADOQuery1BASE_ICMS: TFloatField
+      FieldName = 'BASE_ICMS'
+    end
+    object ADOQuery1BASE_IPI: TFloatField
+      FieldName = 'BASE_IPI'
+    end
+    object ADOQuery1ALIQUOTA_ICMS: TFloatField
+      FieldName = 'ALIQUOTA_ICMS'
+    end
+    object ADOQuery1DESCONTO: TFloatField
+      FieldName = 'DESCONTO'
+    end
+    object ADOQuery1CONDIÇÃO_DE_PAGAMENTO: TStringField
+      FieldName = 'CONDI'#199#195'O_DE_PAGAMENTO'
       Size = 3
     end
-    object ADOQuery1C7_X_NEGOC: TBlobField
-      FieldName = 'C7_X_NEGOC'
-    end
-    object ADOQuery1C7_QTSEGUM: TFloatField
-      FieldName = 'C7_QTSEGUM'
-    end
-    object ADOQuery1C7_DATPRF: TStringField
-      FieldName = 'C7_DATPRF'
+    object ADOQuery1DATA_DE_ENTREGA: TStringField
+      FieldName = 'DATA_DE_ENTREGA'
       Size = 8
     end
-    object ADOQuery1C7_NUMSC: TStringField
-      FieldName = 'C7_NUMSC'
+    object ADOQuery1NUMERO_DA_SOLICITAÇÃO: TStringField
+      FieldName = 'NUMERO_DA_SOLICITA'#199#195'O'
       Size = 6
     end
-    object ADOQuery1C7_ITEMSC: TStringField
-      FieldName = 'C7_ITEMSC'
-      Size = 4
+    object ADOQuery1VALOR_DO_FRETE: TFloatField
+      FieldName = 'VALOR_DO_FRETE'
     end
-    object ADOQuery1C7_LOCAL: TStringField
-      FieldName = 'C7_LOCAL'
-      Size = 2
+    object ADOQuery1TIPO_FRETE: TStringField
+      FieldName = 'TIPO_FRETE'
+      Size = 1
     end
-    object ADOQuery1C7_OBS: TStringField
-      FieldName = 'C7_OBS'
-      Size = 30
+    object ADOQuery1VALOR_DA_DESPESA: TFloatField
+      FieldName = 'VALOR_DA_DESPESA'
     end
-    object ADOQuery1C7_CC: TStringField
-      FieldName = 'C7_CC'
-      Size = 9
+    object ADOQuery1SEGURO: TFloatField
+      FieldName = 'SEGURO'
     end
-    object ADOQuery1C7_CONTA: TStringField
-      FieldName = 'C7_CONTA'
-    end
-    object ADOQuery1C7_COND: TStringField
-      FieldName = 'C7_COND'
-      Size = 3
-    end
-    object ADOQuery1C7_NUM: TStringField
-      FieldName = 'C7_NUM'
+    object ADOQuery1FORNECEDOR: TStringField
+      FieldName = 'FORNECEDOR'
       Size = 6
     end
-    object ADOQuery1C7_CONTATO: TStringField
-      FieldName = 'C7_CONTATO'
+    object ADOQuery1CONTATO: TStringField
+      FieldName = 'CONTATO'
       Size = 15
     end
-    object ADOQuery1C7_ITEMCTA: TStringField
-      FieldName = 'C7_ITEMCTA'
-      Size = 9
-    end
-    object ADOQuery1C7_LOJA: TStringField
-      FieldName = 'C7_LOJA'
-      Size = 2
-    end
-    object ADOQuery1C7_FILENT: TStringField
-      FieldName = 'C7_FILENT'
-      Size = 2
-    end
-    object ADOQuery1C7_DESC1: TFloatField
-      FieldName = 'C7_DESC1'
-    end
-    object ADOQuery1C7_EMISSAO: TStringField
-      FieldName = 'C7_EMISSAO'
+    object ADOQuery1EMISSÃO: TStringField
+      FieldName = 'EMISS'#195'O'
       Size = 8
-    end
-    object ADOQuery1C7_DESC2: TFloatField
-      FieldName = 'C7_DESC2'
-    end
-    object ADOQuery1C7_DESC3: TFloatField
-      FieldName = 'C7_DESC3'
-    end
-    object ADOQuery1C7_QUJE: TFloatField
-      FieldName = 'C7_QUJE'
-    end
-    object ADOQuery1C7_REAJUST: TStringField
-      FieldName = 'C7_REAJUST'
-      Size = 3
-    end
-    object ADOQuery1C7_FRETE: TFloatField
-      FieldName = 'C7_FRETE'
-    end
-    object ADOQuery1C7_EMITIDO: TStringField
-      FieldName = 'C7_EMITIDO'
-      Size = 1
-    end
-    object ADOQuery1C7_TPFRETE: TStringField
-      FieldName = 'C7_TPFRETE'
-      Size = 1
-    end
-    object ADOQuery1C7_QTDREEM: TFloatField
-      FieldName = 'C7_QTDREEM'
-    end
-    object ADOQuery1C7_CODLIB: TStringField
-      FieldName = 'C7_CODLIB'
-      Size = 10
-    end
-    object ADOQuery1C7_RESIDUO: TStringField
-      FieldName = 'C7_RESIDUO'
-      Size = 1
-    end
-    object ADOQuery1C7_NUMCOT: TStringField
-      FieldName = 'C7_NUMCOT'
-      Size = 6
-    end
-    object ADOQuery1C7_TX: TStringField
-      FieldName = 'C7_TX'
-      Size = 2
-    end
-    object ADOQuery1C7_MSG: TStringField
-      FieldName = 'C7_MSG'
-      Size = 3
-    end
-    object ADOQuery1C7_CONTROL: TStringField
-      FieldName = 'C7_CONTROL'
-      Size = 1
-    end
-    object ADOQuery1C7_ENCER: TStringField
-      FieldName = 'C7_ENCER'
-      Size = 1
-    end
-    object ADOQuery1C7_OP: TStringField
-      FieldName = 'C7_OP'
-      Size = 14
-    end
-    object ADOQuery1C7_IPIBRUT: TStringField
-      FieldName = 'C7_IPIBRUT'
-      Size = 1
-    end
-    object ADOQuery1C7_VLDESC: TFloatField
-      FieldName = 'C7_VLDESC'
-    end
-    object ADOQuery1C7_SEQUEN: TStringField
-      FieldName = 'C7_SEQUEN'
-      Size = 4
-    end
-    object ADOQuery1C7_NUMIMP: TStringField
-      FieldName = 'C7_NUMIMP'
-      Size = 6
-    end
-    object ADOQuery1C7_ORIGEM: TStringField
-      FieldName = 'C7_ORIGEM'
-      Size = 8
-    end
-    object ADOQuery1C7_QTDACLA: TFloatField
-      FieldName = 'C7_QTDACLA'
-    end
-    object ADOQuery1C7_VALEMB: TFloatField
-      FieldName = 'C7_VALEMB'
-    end
-    object ADOQuery1C7_FLUXO: TStringField
-      FieldName = 'C7_FLUXO'
-      Size = 1
-    end
-    object ADOQuery1C7_TPOP: TStringField
-      FieldName = 'C7_TPOP'
-      Size = 1
-    end
-    object ADOQuery1C7_APROV: TStringField
-      FieldName = 'C7_APROV'
-      Size = 6
-    end
-    object ADOQuery1C7_CONAPRO: TStringField
-      FieldName = 'C7_CONAPRO'
-      Size = 1
-    end
-    object ADOQuery1C7_GRUPCOM: TStringField
-      FieldName = 'C7_GRUPCOM'
-      Size = 6
-    end
-    object ADOQuery1C7_USER: TStringField
-      FieldName = 'C7_USER'
-      Size = 6
-    end
-    object ADOQuery1C7_STATME: TStringField
-      FieldName = 'C7_STATME'
-      Size = 1
-    end
-    object ADOQuery1C7_OK: TStringField
-      FieldName = 'C7_OK'
-      Size = 2
-    end
-    object ADOQuery1C7_QTDSOL: TFloatField
-      FieldName = 'C7_QTDSOL'
-    end
-    object ADOQuery1C7_VALIPI: TFloatField
-      FieldName = 'C7_VALIPI'
-    end
-    object ADOQuery1C7_VALICM: TFloatField
-      FieldName = 'C7_VALICM'
-    end
-    object ADOQuery1C7_TES: TStringField
-      FieldName = 'C7_TES'
-      Size = 3
-    end
-    object ADOQuery1C7_DESC: TFloatField
-      FieldName = 'C7_DESC'
-    end
-    object ADOQuery1C7_PICM: TFloatField
-      FieldName = 'C7_PICM'
-    end
-    object ADOQuery1C7_BASEICM: TFloatField
-      FieldName = 'C7_BASEICM'
-    end
-    object ADOQuery1C7_BASEIPI: TFloatField
-      FieldName = 'C7_BASEIPI'
-    end
-    object ADOQuery1C7_SEGURO: TFloatField
-      FieldName = 'C7_SEGURO'
-    end
-    object ADOQuery1C7_DESPESA: TFloatField
-      FieldName = 'C7_DESPESA'
-    end
-    object ADOQuery1C7_VALFRE: TFloatField
-      FieldName = 'C7_VALFRE'
-    end
-    object ADOQuery1C7_TXMOEDA: TFloatField
-      FieldName = 'C7_TXMOEDA'
-    end
-    object ADOQuery1C7_MOEDA: TFloatField
-      FieldName = 'C7_MOEDA'
-    end
-    object ADOQuery1C7_PENDEN: TStringField
-      FieldName = 'C7_PENDEN'
-      Size = 1
-    end
-    object ADOQuery1C7_CLVL: TStringField
-      FieldName = 'C7_CLVL'
-      Size = 9
-    end
-    object ADOQuery1C7_BASEIR: TFloatField
-      FieldName = 'C7_BASEIR'
-    end
-    object ADOQuery1C7_ALIQIR: TFloatField
-      FieldName = 'C7_ALIQIR'
-    end
-    object ADOQuery1C7_VALIR: TFloatField
-      FieldName = 'C7_VALIR'
-    end
-    object ADOQuery1C7_ICMCOMP: TFloatField
-      FieldName = 'C7_ICMCOMP'
-    end
-    object ADOQuery1C7_ICMSRET: TFloatField
-      FieldName = 'C7_ICMSRET'
-    end
-    object ADOQuery1C7_ESTOQUE: TStringField
-      FieldName = 'C7_ESTOQUE'
-      Size = 1
-    end
-    object ADOQuery1C7_VALSOL: TFloatField
-      FieldName = 'C7_VALSOL'
-    end
-    object ADOQuery1C7_SEQMRP: TStringField
-      FieldName = 'C7_SEQMRP'
-      Size = 6
-    end
-    object ADOQuery1C7_CODORCA: TStringField
-      FieldName = 'C7_CODORCA'
-      Size = 8
-    end
-    object ADOQuery1C7_DTLANC: TStringField
-      FieldName = 'C7_DTLANC'
-      Size = 8
-    end
-    object ADOQuery1C7_CODCRED: TStringField
-      FieldName = 'C7_CODCRED'
-      Size = 6
-    end
-    object ADOQuery1C7_TIPOEMP: TStringField
-      FieldName = 'C7_TIPOEMP'
-      Size = 1
-    end
-    object ADOQuery1C7_CONTRA: TStringField
-      FieldName = 'C7_CONTRA'
-      Size = 15
-    end
-    object ADOQuery1C7_CONTREV: TStringField
-      FieldName = 'C7_CONTREV'
-      Size = 3
-    end
-    object ADOQuery1C7_PLANILH: TStringField
-      FieldName = 'C7_PLANILH'
-      Size = 6
-    end
-    object ADOQuery1C7_MEDICAO: TStringField
-      FieldName = 'C7_MEDICAO'
-      Size = 6
-    end
-    object ADOQuery1C7_ITEMED: TStringField
-      FieldName = 'C7_ITEMED'
-      Size = 10
-    end
-    object ADOQuery1C7_ESPEMP: TStringField
-      FieldName = 'C7_ESPEMP'
-      Size = 1
-    end
-    object ADOQuery1C7_POLREPR: TStringField
-      FieldName = 'C7_POLREPR'
-      Size = 1
-    end
-    object ADOQuery1C7_FREPPCC: TStringField
-      FieldName = 'C7_FREPPCC'
-      Size = 2
-    end
-    object ADOQuery1C7_PERREPR: TFloatField
-      FieldName = 'C7_PERREPR'
-    end
-    object ADOQuery1C7_DT_IMP: TStringField
-      FieldName = 'C7_DT_IMP'
-      Size = 8
-    end
-    object ADOQuery1C7_GRADE: TStringField
-      FieldName = 'C7_GRADE'
-      Size = 1
-    end
-    object ADOQuery1C7_ITEMGRD: TStringField
-      FieldName = 'C7_ITEMGRD'
-      Size = 3
-    end
-    object ADOQuery1C7_AGENTE: TStringField
-      FieldName = 'C7_AGENTE'
-      Size = 3
-    end
-    object ADOQuery1C7_FORWARD: TStringField
-      FieldName = 'C7_FORWARD'
-      Size = 3
-    end
-    object ADOQuery1C7_TIPO_EM: TStringField
-      FieldName = 'C7_TIPO_EM'
-      Size = 3
-    end
-    object ADOQuery1C7_ORIGIMP: TStringField
-      FieldName = 'C7_ORIGIMP'
-      Size = 3
-    end
-    object ADOQuery1C7_DEST: TStringField
-      FieldName = 'C7_DEST'
-      Size = 3
-    end
-    object ADOQuery1C7_COMPRA: TStringField
-      FieldName = 'C7_COMPRA'
-      Size = 3
-    end
-    object ADOQuery1C7_PESO_B: TFloatField
-      FieldName = 'C7_PESO_B'
-    end
-    object ADOQuery1C7_INCOTER: TStringField
-      FieldName = 'C7_INCOTER'
-      Size = 3
-    end
-    object ADOQuery1C7_IMPORT: TStringField
-      FieldName = 'C7_IMPORT'
-      Size = 3
-    end
-    object ADOQuery1C7_CONSIG: TStringField
-      FieldName = 'C7_CONSIG'
-      Size = 3
-    end
-    object ADOQuery1C7_CONF_PE: TStringField
-      FieldName = 'C7_CONF_PE'
-      Size = 8
-    end
-    object ADOQuery1C7_DESP: TStringField
-      FieldName = 'C7_DESP'
-      Size = 3
-    end
-    object ADOQuery1C7_EXPORTA: TStringField
-      FieldName = 'C7_EXPORTA'
-      Size = 6
-    end
-    object ADOQuery1C7_LOJAEXP: TStringField
-      FieldName = 'C7_LOJAEXP'
-      Size = 2
-    end
-    object ADOQuery1C7_CONTAIN: TStringField
-      FieldName = 'C7_CONTAIN'
-      Size = 1
-    end
-    object ADOQuery1C7_MT3: TFloatField
-      FieldName = 'C7_MT3'
-    end
-    object ADOQuery1C7_CONTA20: TFloatField
-      FieldName = 'C7_CONTA20'
-    end
-    object ADOQuery1C7_CONTA40: TFloatField
-      FieldName = 'C7_CONTA40'
-    end
-    object ADOQuery1C7_CON40HC: TFloatField
-      FieldName = 'C7_CON40HC'
-    end
-    object ADOQuery1C7_ARMAZEM: TStringField
-      FieldName = 'C7_ARMAZEM'
-      Size = 7
-    end
-    object ADOQuery1C7_FABRICA: TStringField
-      FieldName = 'C7_FABRICA'
-      Size = 6
-    end
-    object ADOQuery1C7_LOJFABR: TStringField
-      FieldName = 'C7_LOJFABR'
-      Size = 2
-    end
-    object ADOQuery1C7_DT_EMB: TStringField
-      FieldName = 'C7_DT_EMB'
-      Size = 8
-    end
-    object ADOQuery1C7_TEC: TStringField
-      FieldName = 'C7_TEC'
-      Size = 10
-    end
-    object ADOQuery1C7_EX_NCM: TStringField
-      FieldName = 'C7_EX_NCM'
-      Size = 3
-    end
-    object ADOQuery1C7_BASESOL: TFloatField
-      FieldName = 'C7_BASESOL'
-    end
-    object ADOQuery1C7_DIACTB: TStringField
-      FieldName = 'C7_DIACTB'
-      Size = 2
-    end
-    object ADOQuery1C7_NODIA: TStringField
-      FieldName = 'C7_NODIA'
-      Size = 10
-    end
-    object ADOQuery1C7_CODED: TStringField
-      FieldName = 'C7_CODED'
-      Size = 15
-    end
-    object ADOQuery1C7_EX_NBM: TStringField
-      FieldName = 'C7_EX_NBM'
-      Size = 3
-    end
-    object ADOQuery1C7_NUMPR: TStringField
-      FieldName = 'C7_NUMPR'
-      Size = 15
-    end
-    object ADOQuery1C7_RATEIO: TStringField
-      FieldName = 'C7_RATEIO'
-      Size = 1
-    end
-    object ADOQuery1C7_FILCEN: TStringField
-      FieldName = 'C7_FILCEN'
-      Size = 2
-    end
-    object ADOQuery1C7_PO_EIC: TStringField
-      FieldName = 'C7_PO_EIC'
-      Size = 15
-    end
-    object ADOQuery1C7_ACCPROC: TStringField
-      FieldName = 'C7_ACCPROC'
-      Size = 1
-    end
-    object ADOQuery1C7_ACCNUM: TStringField
-      FieldName = 'C7_ACCNUM'
-      Size = 50
-    end
-    object ADOQuery1C7_ACCITEM: TStringField
-      FieldName = 'C7_ACCITEM'
-      Size = 50
-    end
-    object ADOQuery1C7_IDTSS: TStringField
-      FieldName = 'C7_IDTSS'
-      Size = 15
-    end
-    object ADOQuery1C7_TPCOLAB: TStringField
-      FieldName = 'C7_TPCOLAB'
-      Size = 3
-    end
-    object ADOQuery1D_E_L_E_T_: TStringField
-      FieldName = 'D_E_L_E_T_'
-      Size = 1
-    end
-    object ADOQuery1R_E_C_N_O_: TIntegerField
-      FieldName = 'R_E_C_N_O_'
-    end
-    object ADOQuery1R_E_C_D_E_L_: TIntegerField
-      FieldName = 'R_E_C_D_E_L_'
-    end
-    object ADOQuery1C7_DINICOM: TStringField
-      FieldName = 'C7_DINICOM'
-      Size = 8
-    end
-    object ADOQuery1C7_DINITRA: TStringField
-      FieldName = 'C7_DINITRA'
-      Size = 8
-    end
-    object ADOQuery1C7_DINICQ: TStringField
-      FieldName = 'C7_DINICQ'
-      Size = 8
-    end
-    object ADOQuery1C7_RESREM: TStringField
-      FieldName = 'C7_RESREM'
-      Size = 1
-    end
-    object ADOQuery1C7_BASIMP5: TFloatField
-      FieldName = 'C7_BASIMP5'
-    end
-    object ADOQuery1C7_BASIMP6: TFloatField
-      FieldName = 'C7_BASIMP6'
-    end
-    object ADOQuery1C7_SOLICIT: TStringField
-      FieldName = 'C7_SOLICIT'
-      Size = 30
-    end
-    object ADOQuery1C7_VALIMP5: TFloatField
-      FieldName = 'C7_VALIMP5'
-    end
-    object ADOQuery1C7_VALIMP6: TFloatField
-      FieldName = 'C7_VALIMP6'
-    end
-    object ADOQuery1C7_OBSM: TBlobField
-      FieldName = 'C7_OBSM'
-    end
-    object ADOQuery1C7_TIPCOM: TStringField
-      FieldName = 'C7_TIPCOM'
-      Size = 3
-    end
-    object ADOQuery1C7_FILEDT: TStringField
-      FieldName = 'C7_FILEDT'
-      Size = 2
-    end
-    object ADOQuery1C7_NUMSA: TStringField
-      FieldName = 'C7_NUMSA'
-      Size = 6
-    end
-    object ADOQuery1C7_REVISAO: TStringField
-      FieldName = 'C7_REVISAO'
-      Size = 3
-    end
-    object ADOQuery1C7_BASECSL: TFloatField
-      FieldName = 'C7_BASECSL'
-    end
-    object ADOQuery1C7_ALIQINS: TFloatField
-      FieldName = 'C7_ALIQINS'
-    end
-    object ADOQuery1C7_VALINS: TFloatField
-      FieldName = 'C7_VALINS'
-    end
-    object ADOQuery1C7_ALQCSL: TFloatField
-      FieldName = 'C7_ALQCSL'
-    end
-    object ADOQuery1C7_ALIQISS: TFloatField
-      FieldName = 'C7_ALIQISS'
-    end
-    object ADOQuery1C7_VALISS: TFloatField
-      FieldName = 'C7_VALISS'
-    end
-    object ADOQuery1C7_CODNE: TStringField
-      FieldName = 'C7_CODNE'
-      Size = 12
-    end
-    object ADOQuery1C7_ITEMNE: TStringField
-      FieldName = 'C7_ITEMNE'
-      Size = 3
-    end
-    object ADOQuery1C7_GCPIT: TStringField
-      FieldName = 'C7_GCPIT'
-      Size = 6
-    end
-    object ADOQuery1C7_GCPLT: TStringField
-      FieldName = 'C7_GCPLT'
-      Size = 8
-    end
-    object ADOQuery1C7_BASEINS: TFloatField
-      FieldName = 'C7_BASEINS'
-    end
-    object ADOQuery1C7_VALCSL: TFloatField
-      FieldName = 'C7_VALCSL'
-    end
-    object ADOQuery1C7_LOTPLS: TStringField
-      FieldName = 'C7_LOTPLS'
-      Size = 10
-    end
-    object ADOQuery1C7_CODRDA: TStringField
-      FieldName = 'C7_CODRDA'
-      Size = 6
-    end
-    object ADOQuery1C7_BASEISS: TFloatField
-      FieldName = 'C7_BASEISS'
-    end
-    object ADOQuery1C7_FISCORI: TStringField
-      FieldName = 'C7_FISCORI'
-      Size = 2
-    end
-    object ADOQuery1C7_PLOPELT: TStringField
-      FieldName = 'C7_PLOPELT'
-      Size = 4
-    end
-    object ADOQuery1C7_OBRIGA: TBlobField
-      FieldName = 'C7_OBRIGA'
-    end
-    object ADOQuery1C7_DIREITO: TBlobField
-      FieldName = 'C7_DIREITO'
     end
   end
   object DataSource1: TDataSource
@@ -1221,7 +1159,7 @@ object Form3: TForm3
       
         'select a2_nome, a2_end, a2_pricom, a2_ultcom, a2_tel, a2_est fro' +
         'm sa2010')
-    Left = 912
+    Left = 896
     Top = 8
     object ADOQuery2a2_nome: TStringField
       FieldName = 'a2_nome'
@@ -1259,27 +1197,10 @@ object Form3: TForm3
     Parameters = <>
     SQL.Strings = (
       'select c7_total from sc7010')
-    Left = 856
-    Top = 8
+    Left = 1080
+    Top = 72
     object ADOQuery3c7_total: TFloatField
       FieldName = 'c7_total'
-    end
-  end
-  object DataSource4: TDataSource
-    DataSet = ADOQuery4
-    Left = 312
-    Top = 16
-  end
-  object ADOQuery4: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      'select c7_total as total_pedido from sc7010')
-    Left = 968
-    Top = 8
-    object ADOQuery4total_pedido: TFloatField
-      FieldName = 'total_pedido'
     end
   end
   object DataSource5: TDataSource
@@ -1420,6 +1341,50 @@ object Form3: TForm3
     Top = 8
     object ADOQuery17base_ipi2: TFloatField
       FieldName = 'base_ipi2'
+    end
+  end
+  object DataSource4: TDataSource
+    DataSet = ADOQuery4
+    Left = 304
+    Top = 16
+  end
+  object ADOQuery4: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 960
+    Top = 8
+    object ADOQuery4desconto1: TFloatField
+      FieldName = 'desconto1'
+      ReadOnly = True
+    end
+    object ADOQuery4desconto2: TFloatField
+      FieldName = 'desconto2'
+      ReadOnly = True
+    end
+    object ADOQuery4desconto3: TFloatField
+      FieldName = 'desconto3'
+      ReadOnly = True
+    end
+  end
+  object DataSource6: TDataSource
+    DataSet = ADOQuery6
+    Left = 176
+    Top = 64
+  end
+  object ADOQuery6: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 864
+    Top = 64
+    object ADOQuery6c7_msg: TStringField
+      FieldName = 'c7_msg'
+      Size = 3
+    end
+    object ADOQuery6c7_reajust: TStringField
+      FieldName = 'c7_reajust'
+      Size = 3
     end
   end
 end

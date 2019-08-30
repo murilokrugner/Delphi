@@ -19,6 +19,14 @@ type
     Relatrios1: TMenuItem;
     PedidosdeCompras1: TMenuItem;
     PedidosdeVenda1: TMenuItem;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);

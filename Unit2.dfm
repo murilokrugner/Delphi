@@ -3,8 +3,8 @@ object Form2: TForm2
   Top = 0
   Caption = 'INICIO'
   ClientHeight = 546
-  ClientWidth = 775
-  Color = clBtnFace
+  ClientWidth = 1269
+  Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -15,8 +15,8 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 232
-    Top = 56
+    Left = 488
+    Top = 48
     Width = 298
     Height = 33
     Caption = 'SEJA MUITO BEM VINDO'
@@ -28,17 +28,126 @@ object Form2: TForm2
     ParentFont = False
   end
   object Button1: TButton
-    Left = 80
-    Top = 168
-    Width = 153
+    Left = 559
+    Top = 231
+    Width = 161
     Height = 113
     Caption = 'PEDIDOS DE COMPRA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
+  object Button2: TButton
+    Left = 392
+    Top = 231
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 559
+    Top = 350
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Button4: TButton
+    Left = 392
+    Top = 350
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Button5: TButton
+    Left = 726
+    Top = 112
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Button6: TButton
+    Left = 559
+    Top = 112
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+  end
+  object Button7: TButton
+    Left = 392
+    Top = 112
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Button8: TButton
+    Left = 726
+    Top = 350
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Button9: TButton
+    Left = 726
+    Top = 231
+    Width = 161
+    Height = 113
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
+  end
   object MainMenu1: TMainMenu
-    Left = 704
-    Top = 8
+    Left = 1224
     object Inicio1: TMenuItem
       Caption = 'Inicio'
       object Sair1: TMenuItem
