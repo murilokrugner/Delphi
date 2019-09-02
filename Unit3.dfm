@@ -196,8 +196,6 @@
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 40
       object Label2: TLabel
         Left = 24
         Top = 24
@@ -325,7 +323,7 @@
         TabOrder = 2
       end
       object DBEdit4: TDBEdit
-        Left = 976
+        Left = 176
         Top = 120
         Width = 157
         Height = 27
@@ -373,8 +371,8 @@
         TabOrder = 5
       end
       object Edit8: TEdit
-        Left = 184
-        Top = 128
+        Left = 624
+        Top = 40
         Width = 121
         Height = 21
         TabOrder = 6
@@ -1027,14 +1025,6 @@
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-  end
-  object MaskEdit1: TMaskEdit
-    Left = 655
-    Top = 456
-    Width = 121
-    Height = 21
-    TabOrder = 2
-    Text = ''
   end
   object ADOConnection1: TADOConnection
     ConnectionString = 

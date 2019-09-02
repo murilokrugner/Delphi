@@ -90,52 +90,6 @@
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'NUMERO_DO_PEDIDO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DATA_DE_EMISS'#195'O'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'CODIGO_DO_FORNECEDOR'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ITEM'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'UNIDADE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QUANTIDADE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QUANTIDADE_JA_ENTREGUE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DATA_DE_ENTREGA'
-        Visible = True
-      end>
   end
   object Button2: TButton
     Left = 1120

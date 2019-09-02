@@ -27,14 +27,14 @@ type
     DataSource1: TDataSource;
     Button2: TButton;
     ADOQuery1NUMERO_DO_PEDIDO: TStringField;
-    ADOQuery1DATA_DE_EMISSÃO: TStringField;
+    ADOQuery1DATA_DE_EMISSÃO: TWideStringField;
     ADOQuery1CODIGO_DO_FORNECEDOR: TStringField;
     ADOQuery1ITEM: TStringField;
     ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField;
     ADOQuery1UNIDADE: TStringField;
     ADOQuery1QUANTIDADE: TFloatField;
     ADOQuery1QUANTIDADE_JA_ENTREGUE: TFloatField;
-    ADOQuery1DATA_DE_ENTREGA: TStringField;
+    ADOQuery1DATA_DE_ENTREGA: TWideStringField;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
@@ -58,47 +58,61 @@ uses Unit3;
 procedure TForm1.Button1Click(Sender: TObject);
 var
   search:string;
+  date: string;
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
 
   search := Edit1.Text;
+  date := 'dd/MM/yyyy';
 
   if ComboBox1.ItemIndex = 0 then
     begin
-      ADOQuery1.SQL.Add('select * from sc7010 where c7_num like'+chr(39)+search+chr(39));
+      ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'+chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
+      'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
+      'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'+chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA FROM SC7010 where c7_num ='+chr(39)+search+chr(39));
       ADOQuery1.Open
     end
     else
     if ComboBox1.ItemIndex = 1 then
       begin
-        ADOQuery1.SQL.Add
-          ('select * from sc7010 JOIN sa2010 on a2_cod = c7_fornece where a2_nreduz = ' + chr(39)+search+chr(39) +'and c7_filial = 01 order by c7_num desc');
+        ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'+chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
+      'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
+      'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'+chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where a2_nreduz = ' + chr(39)+search+chr(39) +'and c7_filial = 01 order by c7_num desc');
         ADOQuery1.Open
       end
     else
     if ComboBox1.ItemIndex = 2 then
       begin
         ADOQuery1.SQL.Add
-          ('select * from sc7010 JOIN sa2010 on a2_cod = c7_fornece where a2_cgc = ' + chr(39)+search+chr(39) +'and c7_filial = 01 order by c7_num desc');
+          ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'+chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
+          'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
+          'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'+chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where a2_cgc = ' + chr(39)+search+chr(39) +'and c7_filial = 01 order by c7_num desc');
         ADOQuery1.Open
       end
     else
     if ComboBox1.ItemIndex = 3 then
       begin
         ADOQuery1.SQL.Add
-          ('select * from sc7010 where c7_datprf =' + chr(39)+search+chr(39));
+          ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'+chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
+          'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
+          'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA from sc7010 where c7_datprf ='+ chr(39)+search+chr(39));
         ADOQuery1.Open
       end
   end;
 
 procedure TForm1.Button2Click(Sender: TObject);
+var
+  date:string;
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
 
-  ADOQuery1.SQL.Add('select * from sc7010 where C7_FILIAL = 01 order by c7_num desc');
+  date := 'dd/MM/yyyy';
 
+  ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),' +chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
+  'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
+  'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA FROM SC7010 where C7_FILIAL = 01 order by c7_num desc');
   ADOQuery1.Open;
 end;
 
@@ -134,6 +148,9 @@ var
   desconto2:real;
   desconto3:real;
   descontoTotal:real;
+
+  dataBanco:string;
+  dataConvert:string;
 begin
   Unit3.Form3.ADOQuery1.Close;
   Unit3.Form3.ADOQuery1.SQL.Clear;
@@ -235,6 +252,13 @@ begin
   descontoTotal := (desconto1 + desconto2 + desconto3);
 
   Unit3.Form3.Edit6.Text := FloatToStr(descontoTotal);
+
+  dataBanco := Unit3.Form3.DBEdit4.Text;
+
+  //converter a data
+  dataConvert := copy(dataBanco,7,2)+'/'+copy(dataBanco,5,2)+'/'+copy(dataBanco,1,4);
+
+  Unit3.Form3.Edit8.Text := dataConvert;
 
   Unit3.Form3.ShowModal;
 end;

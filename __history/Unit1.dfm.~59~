@@ -90,52 +90,6 @@
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'NUMERO_DO_PEDIDO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DATA_DE_EMISS'#195'O'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'CODIGO_DO_FORNECEDOR'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ITEM'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'UNIDADE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QUANTIDADE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QUANTIDADE_JA_ENTREGUE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DATA_DE_ENTREGA'
-        Visible = True
-      end>
   end
   object Button2: TButton
     Left = 1120
@@ -200,53 +154,57 @@
     Parameters = <>
     SQL.Strings = (
       
-        'select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISS' +
-        'AO, 103), '#39'dd/MM/yyyy'#39') as DATA_DE_EMISS'#195'O,  '
+        'select c7_num as NUMERO_DO_PEDIDO, C7_EMISSAO AS DATA_DE_EMISS'#195'O' +
+        ', C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM,'
       
-        'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI A' +
-        'S DESCRI'#199#195'O_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE' +
-        ', '
-      
-        'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datpr' +
-        'f, 103), '#39'dd/MM/yyyy'#39') as DATA_DE_ENTREGA FROM '
-      'SC7010 where C7_FILIAL = 01 order by c7_num desc')
+        'C7_DESCRI AS DESCRI'#199#195'O_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS' +
+        ' QUANTIDADE, C7_QUJE AS QUANTIDADE_JA_ENTREGUE, C7_DATPRF AS DAT' +
+        'A_DE_ENTREGA'
+      'FROM SC7010 where C7_FILIAL = 01 order by c7_num desc')
     Left = 24
     Top = 8
     object ADOQuery1NUMERO_DO_PEDIDO: TStringField
+      DisplayWidth = 11
       FieldName = 'NUMERO_DO_PEDIDO'
       Size = 6
     end
-    object ADOQuery1DATA_DE_EMISSÃO: TWideStringField
+    object ADOQuery1DATA_DE_EMISSÃO: TStringField
+      DisplayWidth = 13
       FieldName = 'DATA_DE_EMISS'#195'O'
-      ReadOnly = True
-      Size = 4000
+      Size = 8
     end
     object ADOQuery1CODIGO_DO_FORNECEDOR: TStringField
+      DisplayWidth = 15
       FieldName = 'CODIGO_DO_FORNECEDOR'
       Size = 6
     end
     object ADOQuery1ITEM: TStringField
+      DisplayWidth = 4
       FieldName = 'ITEM'
       Size = 4
     end
     object ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField
+      DisplayWidth = 60
       FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
       Size = 60
     end
     object ADOQuery1UNIDADE: TStringField
+      DisplayWidth = 4
       FieldName = 'UNIDADE'
       Size = 2
     end
     object ADOQuery1QUANTIDADE: TFloatField
+      DisplayWidth = 10
       FieldName = 'QUANTIDADE'
     end
     object ADOQuery1QUANTIDADE_JA_ENTREGUE: TFloatField
+      DisplayWidth = 14
       FieldName = 'QUANTIDADE_JA_ENTREGUE'
     end
-    object ADOQuery1DATA_DE_ENTREGA: TWideStringField
+    object ADOQuery1DATA_DE_ENTREGA: TStringField
+      DisplayWidth = 9
       FieldName = 'DATA_DE_ENTREGA'
-      ReadOnly = True
-      Size = 4000
+      Size = 8
     end
   end
   object DataSource1: TDataSource

@@ -102,17 +102,13 @@ begin
   end;
 
 procedure TForm1.Button2Click(Sender: TObject);
-var
-  date:string;
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
 
-  date := 'dd/MM/yyyy';
-
-  ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),' +chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
+  ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),' +chr(39)+'dd/MM/yyyy'+chr(39)+' as DATA_DE_EMISSÃO,'+
   'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
-  'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA FROM SC7010 where C7_FILIAL = 01 order by c7_num desc');
+  'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103), "dd/MM/yyyy") as DATA_DE_ENTREGA FROM SC7010 where C7_FILIAL = 01 order by c7_num desc');
   ADOQuery1.Open;
 end;
 
@@ -256,7 +252,7 @@ begin
   dataBanco := Unit3.Form3.DBEdit4.Text;
 
   //converter a data
-  dataConvert := copy(dataBanco,1,4)+'/'+copy(dataBanco,5,2)+'/'+copy(dataBanco,7,2);
+  dataConvert := copy(dataBanco,7,2)+'/'+copy(dataBanco,5,2)+'/'+copy(dataBanco,1,4);
 
   Unit3.Form3.Edit8.Text := dataConvert;
 
