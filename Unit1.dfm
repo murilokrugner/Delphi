@@ -5,7 +5,7 @@
   ActiveControl = Edit1
   Caption = 'PEDIDOS DE COMPRA'
   ClientHeight = 548
-  ClientWidth = 1245
+  ClientWidth = 1276
   Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@
   PixelsPerInch = 96
   TextHeight = 13
   object Edit1: TEdit
-    Left = 808
+    Left = 648
     Top = 8
     Width = 169
     Height = 31
@@ -32,7 +32,7 @@
     TabOrder = 0
   end
   object ComboBox1: TComboBox
-    Left = 576
+    Left = 424
     Top = 8
     Width = 210
     Height = 31
@@ -52,7 +52,7 @@
       'Data de Entrega')
   end
   object Button1: TButton
-    Left = 1000
+    Left = 832
     Top = 8
     Width = 98
     Height = 34
@@ -68,9 +68,9 @@
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 59
-    Width = 1229
-    Height = 481
+    Top = 62
+    Width = 1277
+    Height = 470
     Margins.Top = 4
     Color = clSilver
     DataSource = DataSource1
@@ -94,16 +94,19 @@
       item
         Expanded = False
         FieldName = 'NUMERO_DO_PEDIDO'
+        Width = 130
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'DATA_DE_EMISS'#195'O'
+        Width = 132
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'CODIGO_DO_FORNECEDOR'
+        Width = 159
         Visible = True
       end
       item
@@ -124,21 +127,24 @@
       item
         Expanded = False
         FieldName = 'QUANTIDADE'
+        Width = 117
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'QUANTIDADE_JA_ENTREGUE'
+        Width = 163
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'DATA_DE_ENTREGA'
+        Width = 110
         Visible = True
       end>
   end
   object Button2: TButton
-    Left = 1120
+    Left = 1152
     Top = 8
     Width = 105
     Height = 35
@@ -151,6 +157,21 @@
     ParentFont = False
     TabOrder = 4
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 936
+    Top = 8
+    Width = 210
+    Height = 34
+    Caption = 'Pedidos n'#227'o entregues'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    OnClick = Button3Click
   end
   object ADOConnection1: TADOConnection
     Connected = True

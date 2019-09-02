@@ -35,11 +35,13 @@ type
     ADOQuery1QUANTIDADE: TFloatField;
     ADOQuery1QUANTIDADE_JA_ENTREGUE: TFloatField;
     ADOQuery1DATA_DE_ENTREGA: TWideStringField;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,11 +61,13 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
   search:string;
   date: string;
+  dateConvert: string;
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
 
   search := Edit1.Text;
+  dateConvert := copy(search,5,2)+copy(search,7,4)+copy(search,3,2)+copy(search,1,2);
   date := 'dd/MM/yyyy';
 
   if ComboBox1.ItemIndex = 0 then
@@ -96,7 +100,7 @@ begin
         ADOQuery1.SQL.Add
           ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'+chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
           'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
-          'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA from sc7010 where c7_datprf ='+ chr(39)+search+chr(39));
+          'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA from sc7010 where c7_datprf ='+ chr(39)+dateConvert+chr(39));
         ADOQuery1.Open
       end
   end;
@@ -113,6 +117,22 @@ begin
   ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),' +chr(39)+date+chr(39)+') as DATA_DE_EMISSÃO,'+
   'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
   'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_ENTREGA FROM SC7010 where C7_FILIAL = 01 order by c7_num desc');
+  ADOQuery1.Open;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  date: string;
+begin
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Clear;
+
+  date := 'dd/MM/yyyy';
+
+  ADOQuery1.SQL.Add('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),' +chr(39)+date+chr(39)+ ') as DATA_DE_EMISSÃO,'+
+  'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'+
+  'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'+chr(39)+date+chr(39)+') as DATA_DE_ENTREGA FROM SC7010 where c7_datprf >= getdate() and C7_QUJE != c7_quant and C7_FILIAL = 01 order by c7_num desc');
+
   ADOQuery1.Open;
 end;
 
@@ -149,8 +169,12 @@ var
   desconto3:real;
   descontoTotal:real;
 
-  dataBanco:string;
-  dataConvert:string;
+  dataBancoPri:string;
+  dataConvertPri:string;
+  dataBancoUlt:string;
+  dataConvertUlt:string;
+
+  date: string;
 begin
   Unit3.Form3.ADOQuery1.Close;
   Unit3.Form3.ADOQuery1.SQL.Clear;
@@ -180,11 +204,12 @@ begin
   Unit3.Form3.ADOQuery17.SQL.Clear;
 
   select := DBGrid1.Fields[0].value;
+  date := 'dd/MM/yyyy';
 
   Unit3.Form3.ADOQuery1.SQL.Add('SELECT C7_NUM AS NUMERO_DO_PEDIDO,  c7_item as ITEM, c7_produto as PRODUTO, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, c7_um as UNIDADE, c7_segum as SEGUNDA_UNIDADE,'+
   'c7_quant AS QUANTIDADE, C7_PRECO AS PREÇO, C7_TOTAL AS TOTAL, C7_IPI AS ALIQUOTA_IPI, C7_BASEICM AS BASE_ICMS, C7_BASEIPI AS BASE_IPI, C7_PICM AS ALIQUOTA_ICMS,'+
-  'C7_DESC AS DESCONTO, C7_COND AS CONDIÇÃO_DE_PAGAMENTO, C7_DATPRF AS DATA_DE_ENTREGA, C7_NUMSC AS NUMERO_DA_SOLICITAÇÃO,  C7_FRETE AS VALOR_DO_FRETE, C7_TPFRETE AS TIPO_FRETE, C7_DESPESA AS VALOR_DA_DESPESA,'+
-  'C7_SEGURO AS SEGURO ,c7_fornece AS FORNECEDOR,  C7_CONTATO AS CONTATO, C7_EMISSAO AS EMISSÃO FROM SC7010 WHERE C7_NUM = '+chr(39)+select+chr(39));
+  'C7_DESC AS DESCONTO, C7_COND AS CONDIÇÃO_DE_PAGAMENTO, format(convert(date, C7_DATPRF, 103),'+chr(39)+date+chr(39)+ ') AS DATA_DE_ENTREGA, C7_NUMSC AS NUMERO_DA_SOLICITAÇÃO,  C7_FRETE AS VALOR_DO_FRETE, C7_TPFRETE AS TIPO_FRETE, C7_DESPESA AS VALOR_DA_DESPESA,'+
+  'C7_SEGURO AS SEGURO ,c7_fornece AS FORNECEDOR,  C7_CONTATO AS CONTATO, format(convert(date, C7_EMISSAO, 103),'+chr(39)+date+chr(39)+ ') AS EMISSÃO FROM SC7010 WHERE C7_NUM = '+chr(39)+select+chr(39));
 
   Unit3.Form3.ADOQuery2.SQL.Add('select top 1 a2_nome, a2_end, a2_pricom, a2_ultcom, a2_tel, a2_est from sa2010 JOIN sc7010 on c7_fornece = a2_cod where c7_num = '+chr(39)+select+chr(39));
   Unit3.Form3.ADOQuery3.SQL.Add('select sum(c7_total) as c7_total from sc7010 where c7_num ='+chr(39)+select+chr(39));
@@ -253,12 +278,17 @@ begin
 
   Unit3.Form3.Edit6.Text := FloatToStr(descontoTotal);
 
-  dataBanco := Unit3.Form3.DBEdit4.Text;
+  dataBancoPri := Unit3.Form3.DBEdit4.Text;
+  dataBancoUlt := Unit3.Form3.DBEdit3.Text;
 
   //converter a data
-  dataConvert := copy(dataBanco,1,4)+'/'+copy(dataBanco,5,2)+'/'+copy(dataBanco,7,2);
+  // - para pesquisa: dataConvert := copy(dataBanco,1,4)+'/'+copy(dataBanco,5,2)+'/'+copy(dataBanco,7,2);
 
-  Unit3.Form3.Edit8.Text := dataConvert;
+  dataConvertPri := copy(dataBancoPri,7,2)+'/'+copy(dataBancoPri,5,2)+'/'+copy(dataBancoPri,1,4);
+  dataConvertUlt := copy(dataBancoUlt,7,2)+'/'+copy(dataBancoUlt,5,2)+'/'+copy(dataBancoUlt,1,4);
+
+  Unit3.Form3.Edit8.Text := dataConvertPri;
+  Unit3.Form3.Edit9.Text := dataConvertUlt;
 
   Unit3.Form3.ShowModal;
 end;

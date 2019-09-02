@@ -42,11 +42,11 @@
     ParentFont = False
   end
   object PageControl1: TPageControl
-    Left = 4
-    Top = 388
+    Left = 8
+    Top = 395
     Width = 1361
     Height = 193
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
@@ -196,6 +196,10 @@
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label2: TLabel
         Left = 24
         Top = 24
@@ -307,9 +311,9 @@
         TabOrder = 1
       end
       object DBEdit3: TDBEdit
-        Left = 520
-        Top = 128
-        Width = 173
+        Left = 1016
+        Top = 121
+        Width = 73
         Height = 27
         DataField = 'a2_ultcom'
         DataSource = DataSource2
@@ -321,11 +325,12 @@
         ParentFont = False
         ReadOnly = True
         TabOrder = 2
+        Visible = False
       end
       object DBEdit4: TDBEdit
-        Left = 176
+        Left = 936
         Top = 120
-        Width = 157
+        Width = 57
         Height = 27
         DataField = 'a2_pricom'
         DataSource = DataSource2
@@ -337,6 +342,7 @@
         ParentFont = False
         ReadOnly = True
         TabOrder = 3
+        Visible = False
       end
       object DBEdit5: TDBEdit
         Left = 976
@@ -371,16 +377,39 @@
         TabOrder = 5
       end
       object Edit8: TEdit
-        Left = 624
-        Top = 40
-        Width = 121
-        Height = 21
+        Left = 168
+        Top = 127
+        Width = 153
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
         TabOrder = 6
+      end
+      object Edit9: TEdit
+        Left = 528
+        Top = 127
+        Width = 161
+        Height = 27
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 7
       end
     end
     object TabSheet3: TTabSheet
       Caption = 'Frete/Despesas'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label13: TLabel
         Left = 80
         Top = 96
@@ -536,6 +565,10 @@
       Font.Style = []
       ImageIndex = 3
       ParentFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label19: TLabel
         Left = 16
         Top = 3
@@ -802,6 +835,10 @@
     object TabSheet5: TTabSheet
       Caption = 'Descontos'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label18: TLabel
         Left = 96
         Top = 21
@@ -946,6 +983,10 @@
     object Mensagem: TTabSheet
       Caption = 'Mensagem/Reajuste'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label29: TLabel
         Left = 168
         Top = 29

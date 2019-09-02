@@ -159,6 +159,7 @@ type
     ADOQuery1CONTATO: TStringField;
     ADOQuery1EMISSÃO: TStringField;
     Edit8: TEdit;
+    Edit9: TEdit;
   private
     { Private declarations }
   public
