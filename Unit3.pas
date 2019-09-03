@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Data.Win.ADODB,
   Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, Vcl.Menus, Vcl.ComCtrls,
-  Vcl.Buttons;
+  Vcl.Buttons, frxClass, frxDBSet, frxPreview, frxExportBaseDialog, frxExportPDF;
 
 type
   TForm3 = class(TForm)
@@ -160,6 +160,25 @@ type
     ADOQuery1EMISSÃO: TStringField;
     Edit8: TEdit;
     Edit9: TEdit;
+    DataSource7: TDataSource;
+    ADOQuery7: TADOQuery;
+    ADOQuery7c7_num: TStringField;
+    ADOQuery7c7_item: TStringField;
+    ADOQuery7c7_produto: TStringField;
+    ADOQuery7c7_descri: TStringField;
+    ADOQuery7c7_um: TStringField;
+    ADOQuery7c7_segum: TStringField;
+    ADOQuery7c7_quant: TFloatField;
+    ADOQuery7c7_total: TFloatField;
+    ADOQuery7c7_datprf: TStringField;
+    ADOQuery7c7_emissao: TStringField;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
+    IMPRIMIR: TBitBtn;
+    frxDBDataset2: TfrxDBDataset;
+    frxDBDataset3: TfrxDBDataset;
+    procedure frxPreview1Click(Sender: TObject);
+    procedure IMPRIMIRClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -172,5 +191,17 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm3.IMPRIMIRClick(Sender: TObject);
+begin;
+  frxReport1.Variables['TfrxSysMemoView.SysMemo1'] := 'teste';
+  frxReport1.ShowReport;
+
+end;
+
+procedure TForm3.frxPreview1Click(Sender: TObject);
+begin
+  TfrxReportPage.GetDescription;
+end;
 
 end.

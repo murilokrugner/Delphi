@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Menus;
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Menus, Vcl.WinXCtrls, frxClass, frxDBSet;
 
 type
   TForm1 = class(TForm)
@@ -135,6 +135,8 @@ begin
 
   ADOQuery1.Open;
 end;
+
+
 
 procedure TForm1.Compras1Click(Sender: TObject);
 begin
@@ -269,6 +271,8 @@ begin
 
   Unit3.Form3.Edit5.Text := FloatToStr(totalPedido);
   Unit3.Form3.Edit7.Text := FloatToStr(totalPedido);
+
+  //Unit3.Form3.frxReport1.Variables['Memo15'] := quotedstr(Unit3.Form3.Edit5.Text);
 
   desconto1 := StrToFloat(Unit3.Form3.DBEdit11.Text);
   desconto2 := StrToFloat(Unit3.Form3.DBEdit17.Text);
