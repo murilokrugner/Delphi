@@ -2,12 +2,14 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/08/23 09:08:55.000.576,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019/08/23 09:09:14.000.829,C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit1.pas=C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019/08/23 09:09:14.000.829,C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit1.dfm=C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2019/08/23 09:09:17.000.299,C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Project2.dproj=C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2019/08/23 09:09:14.000.829,C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit1.pas</Transaction>
+    <Transaction>2019/08/23 09:09:14.000.829,C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit1.dfm</Transaction>
+    <Transaction>2019/08/23 09:09:17.000.299,C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Project2.dproj</Transaction>
     <Transaction>2019/08/26 16:20:21.000.238,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit2.pas</Transaction>
     <Transaction>2019/08/26 16:26:17.000.000,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit2.pas</Transaction>
     <Transaction>2019/08/26 16:51:12.000.351,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit3.pas</Transaction>
     <Transaction>2019/09/03 13:01:12.000.746,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit4.pas</Transaction>
+    <Transaction>2019/09/04 15:18:47.606,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit4.pas</Transaction>
+    <Transaction>2019/09/04 15:18:57.541,=C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Unit4.pas</Transaction>
   </Transactions>
 </BorlandProject>

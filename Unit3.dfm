@@ -46,7 +46,13 @@
     Top = 395
     Width = 1361
     Height = 193
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
@@ -115,6 +121,13 @@
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label31: TLabel
+        Left = 784
+        Top = 23
+        Width = 168
+        Height = 19
+        Caption = 'Cond. de pagamento'
+      end
       object DBEdit7: TDBEdit
         Left = 120
         Top = 32
@@ -132,7 +145,7 @@
         TabOrder = 0
       end
       object DBEdit8: TDBEdit
-        Left = 112
+        Left = 120
         Top = 96
         Width = 169
         Height = 27
@@ -193,10 +206,21 @@
         ReadOnly = True
         TabOrder = 4
       end
+      object DBEdit29: TDBEdit
+        Left = 976
+        Top = 16
+        Width = 225
+        Height = 27
+        DataField = 'E4_DESCRI'
+        DataSource = DataSource7
+        ReadOnly = True
+        TabOrder = 5
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
+      ExplicitLeft = 0
       object Label2: TLabel
         Left = 24
         Top = 24
@@ -275,6 +299,13 @@
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label19: TLabel
+        Left = 887
+        Top = 120
+        Width = 42
+        Height = 19
+        Caption = 'CNPJ'
+      end
       object DBEdit1: TDBEdit
         Left = 112
         Top = 24
@@ -308,8 +339,8 @@
         TabOrder = 1
       end
       object DBEdit3: TDBEdit
-        Left = 1016
-        Top = 121
+        Left = 1144
+        Top = 33
         Width = 73
         Height = 27
         DataField = 'a2_ultcom'
@@ -325,8 +356,8 @@
         Visible = False
       end
       object DBEdit4: TDBEdit
-        Left = 936
-        Top = 120
+        Left = 1144
+        Top = 66
         Width = 57
         Height = 27
         DataField = 'a2_pricom'
@@ -398,6 +429,26 @@
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 7
+      end
+      object DBEdit19: TDBEdit
+        Left = 1144
+        Top = 3
+        Width = 72
+        Height = 27
+        DataField = 'CNPJ'
+        DataSource = DataSource2
+        ReadOnly = True
+        TabOrder = 8
+        Visible = False
+      end
+      object Edit1: TEdit
+        Left = 976
+        Top = 120
+        Width = 281
+        Height = 27
+        ReadOnly = True
+        TabOrder = 9
+        Text = 'Edit1'
       end
     end
     object TabSheet3: TTabSheet
@@ -558,61 +609,9 @@
       Font.Style = []
       ImageIndex = 3
       ParentFont = False
-      object Label19: TLabel
-        Left = 16
-        Top = 3
-        Width = 78
-        Height = 19
-        Caption = 'Descri'#231#227'o'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label20: TLabel
-        Left = 168
-        Top = 3
-        Width = 111
-        Height = 19
-        Caption = 'Base Imposto'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label21: TLabel
-        Left = 472
-        Top = 3
-        Width = 69
-        Height = 19
-        Caption = 'Aliquota'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label22: TLabel
-        Left = 742
-        Top = 3
-        Width = 100
-        Height = 19
-        Caption = 'Vlr. Imposto'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object Label23: TLabel
         Left = 25
-        Top = 48
+        Top = 24
         Width = 42
         Height = 19
         Caption = 'ICMS'
@@ -625,7 +624,7 @@
       end
       object Label24: TLabel
         Left = 25
-        Top = 128
+        Top = 104
         Width = 25
         Height = 19
         Caption = 'IPI'
@@ -636,189 +635,43 @@
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object DBEdit19: TDBEdit
-        Left = 433
-        Top = 33
-        Width = 160
-        Height = 27
-        DataField = 'aliquota'
-        DataSource = DataSource8
+      object DBGrid2: TDBGrid
+        Left = 83
+        Top = 3
+        Width = 990
+        Height = 78
+        DataSource = DataSource10
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -19
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ReadOnly = True
         TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
       end
-      object DBEdit20: TDBEdit
-        Left = 433
-        Top = 66
-        Width = 160
-        Height = 27
-        DataField = 'aliquota2'
-        DataSource = DataSource9
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 1
-      end
-      object DBEdit22: TDBEdit
-        Left = 433
-        Top = 105
-        Width = 160
-        Height = 27
-        DataField = 'aliquota'
+      object DBGrid3: TDBGrid
+        Left = 83
+        Top = 79
+        Width = 990
+        Height = 77
         DataSource = DataSource11
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -19
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ReadOnly = True
-        TabOrder = 2
-      end
-      object DBEdit23: TDBEdit
-        Left = 433
-        Top = 138
-        Width = 160
-        Height = 27
-        DataField = 'aliquota2'
-        DataSource = DataSource12
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 3
-      end
-      object DBEdit25: TDBEdit
-        Left = 152
-        Top = 33
-        Width = 145
-        Height = 27
-        DataField = 'base_icms'
-        DataSource = DataSource14
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 4
-      end
-      object DBEdit26: TDBEdit
-        Left = 152
-        Top = 63
-        Width = 145
-        Height = 27
-        DataField = 'base_icms'
-        DataSource = DataSource14
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 5
-      end
-      object DBEdit27: TDBEdit
-        Left = 152
-        Top = 104
-        Width = 145
-        Height = 27
-        DataField = 'base_ipi'
-        DataSource = DataSource16
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 6
-      end
-      object DBEdit28: TDBEdit
-        Left = 152
-        Top = 135
-        Width = 145
-        Height = 27
-        DataField = 'base_ipi'
-        DataSource = DataSource16
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 7
-      end
-      object Edit1: TEdit
-        Left = 720
-        Top = 33
-        Width = 145
-        Height = 27
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 8
-      end
-      object Edit2: TEdit
-        Left = 720
-        Top = 63
-        Width = 145
-        Height = 27
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 9
-      end
-      object Edit3: TEdit
-        Left = 720
-        Top = 101
-        Width = 145
-        Height = 27
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 10
-      end
-      object Edit4: TEdit
-        Left = 720
-        Top = 134
-        Width = 145
-        Height = 27
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 11
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
       end
     end
     object TabSheet5: TTabSheet
@@ -1107,6 +960,9 @@
       FieldName = 'SEGUNDA_UNIDADE'
       Size = 2
     end
+    object ADOQuery1QNT_SEGUM_UND: TFloatField
+      FieldName = 'QNT_SEGUM_UND'
+    end
     object ADOQuery1QUANTIDADE: TFloatField
       FieldName = 'QUANTIDADE'
     end
@@ -1135,9 +991,10 @@
       FieldName = 'CONDI'#199#195'O_DE_PAGAMENTO'
       Size = 3
     end
-    object ADOQuery1DATA_DE_ENTREGA: TStringField
+    object ADOQuery1DATA_DE_ENTREGA: TWideStringField
       FieldName = 'DATA_DE_ENTREGA'
-      Size = 8
+      ReadOnly = True
+      Size = 4000
     end
     object ADOQuery1NUMERO_DA_SOLICITAÇÃO: TStringField
       FieldName = 'NUMERO_DA_SOLICITA'#199#195'O'
@@ -1164,9 +1021,10 @@
       FieldName = 'CONTATO'
       Size = 15
     end
-    object ADOQuery1EMISSÃO: TStringField
+    object ADOQuery1EMISSÃO: TWideStringField
       FieldName = 'EMISS'#195'O'
-      Size = 8
+      ReadOnly = True
+      Size = 4000
     end
   end
   object DataSource1: TDataSource
@@ -1180,14 +1038,13 @@
     Top = 16
   end
   object ADOQuery2: TADOQuery
-    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       
-        'select a2_nome, a2_end, a2_pricom, a2_ultcom, a2_tel, a2_est fro' +
-        'm sa2010')
+        'select top 1 a2_nome, a2_end, a2_cgc as CNPJ, a2_pricom, a2_ultc' +
+        'om, a2_tel, a2_est from sa2010')
     Left = 896
     Top = 8
     object ADOQuery2a2_nome: TStringField
@@ -1197,6 +1054,10 @@
     object ADOQuery2a2_end: TStringField
       FieldName = 'a2_end'
       Size = 40
+    end
+    object ADOQuery2CNPJ: TStringField
+      FieldName = 'CNPJ'
+      Size = 14
     end
     object ADOQuery2a2_pricom: TStringField
       FieldName = 'a2_pricom'
@@ -1293,8 +1154,16 @@
     Parameters = <>
     Left = 936
     Top = 56
-    object ADOQuery11aliquota: TFloatField
-      FieldName = 'aliquota'
+    object ADOQuery11BASE_IPI: TFloatField
+      FieldName = 'BASE_IPI'
+      ReadOnly = True
+    end
+    object ADOQuery11ALIQUOTA_IPI: TFloatField
+      FieldName = 'ALIQUOTA_IPI'
+    end
+    object ADOQuery11TOTAL_IPI: TFloatField
+      FieldName = 'TOTAL_IPI'
+      ReadOnly = True
     end
   end
   object DataSource12: TDataSource
@@ -1422,53 +1291,14 @@
     Top = 120
   end
   object ADOQuery7: TADOQuery
-    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    SQL.Strings = (
-      
-        'select c7_num, c7_item, c7_produto, c7_descri, c7_um, c7_segum, ' +
-        'c7_quant, c7_total, c7_datprf, c7_emissao from sc7010')
     Left = 728
     Top = 128
-    object ADOQuery7c7_num: TStringField
-      FieldName = 'c7_num'
-      Size = 6
-    end
-    object ADOQuery7c7_item: TStringField
-      FieldName = 'c7_item'
-      Size = 4
-    end
-    object ADOQuery7c7_produto: TStringField
-      FieldName = 'c7_produto'
+    object ADOQuery7E4_DESCRI: TStringField
+      FieldName = 'E4_DESCRI'
       Size = 15
-    end
-    object ADOQuery7c7_descri: TStringField
-      FieldName = 'c7_descri'
-      Size = 60
-    end
-    object ADOQuery7c7_um: TStringField
-      FieldName = 'c7_um'
-      Size = 2
-    end
-    object ADOQuery7c7_segum: TStringField
-      FieldName = 'c7_segum'
-      Size = 2
-    end
-    object ADOQuery7c7_quant: TFloatField
-      FieldName = 'c7_quant'
-    end
-    object ADOQuery7c7_total: TFloatField
-      FieldName = 'c7_total'
-    end
-    object ADOQuery7c7_datprf: TStringField
-      FieldName = 'c7_datprf'
-      Size = 8
-    end
-    object ADOQuery7c7_emissao: TStringField
-      FieldName = 'c7_emissao'
-      Size = 8
     end
   end
   object frxDBDataset1: TfrxDBDataset
@@ -1497,7 +1327,7 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43711.537522141200000000
-    ReportOptions.LastChange = 43711.678776805560000000
+    ReportOptions.LastChange = 43712.629037881950000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -1513,6 +1343,18 @@
       item
         DataSet = frxDBDataset2
         DataSetName = 'frxDBDataset2'
+      end
+      item
+        DataSet = frxDBDataset3
+        DataSetName = 'frxDBDataset3'
+      end
+      item
+        DataSet = frxDBDataset4
+        DataSetName = 'frxDBDataset4'
+      end
+      item
+        DataSet = frxDBDataset5
+        DataSetName = 'frxDBDataset5'
       end>
     Variables = <>
     Style = <>
@@ -1534,7 +1376,7 @@
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
         Frame.Typ = []
-        Height = 302.362400000000000000
+        Height = 253.228510000000000000
         Top = 18.897650000000000000
         Width = 1046.929810000000000000
         object Picture1: TfrxPictureView
@@ -2104,7 +1946,7 @@
         object frxDBDataset2NUMERO_DO_PEDIDO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 506.457020000000000000
+          Left = 510.236550000000000000
           Top = 79.370130000000000000
           Width = 154.960730000000000000
           Height = 18.897650000000000000
@@ -2261,9 +2103,9 @@
         Font.Height = -15
         Font.Name = 'Arial'
         Font.Style = []
-        Height = 60.472480000000000000
+        Height = 83.149660000000000000
         ParentFont = False
-        Top = 427.086890000000000000
+        Top = 404.409710000000000000
         Width = 1046.929810000000000000
         DataSet = frxDBDataset2
         DataSetName = 'frxDBDataset2'
@@ -2357,7 +2199,7 @@
           AllowVectorExport = True
           Left = 831.496600000000000000
           Top = 26.456710000000000000
-          Width = 86.929190000000000000
+          Width = 68.031540000000000000
           Height = 18.897650000000000000
           DataField = 'TOTAL'
           DataSet = frxDBDataset2
@@ -2386,12 +2228,26 @@
           Memo.UTF8W = (
             'R$-')
         end
+        object frxDBDataset2QNT_SEGUM_UND: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 922.205320000000000000
+          Top = 26.456710000000000000
+          Width = 117.165430000000000000
+          Height = 18.897650000000000000
+          DataField = 'QNT_SEGUM_UND'
+          DataSet = frxDBDataset2
+          DataSetName = 'frxDBDataset2'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset2."QNT_SEGUM_UND"]')
+        end
       end
       object Header1: TfrxHeader
         FillType = ftBrush
         Frame.Typ = []
-        Height = 22.677180000000000000
-        Top = 381.732530000000000000
+        Height = 49.133890000000000000
+        Top = 332.598640000000000000
         Width = 1046.929810000000000000
         object Memo4: TfrxMemoView
           AllowVectorExport = True
@@ -2450,28 +2306,320 @@
         object Memo10: TfrxMemoView
           AllowVectorExport = True
           Left = 797.480830000000000000
-          Width = 98.267780000000000000
+          Width = 68.031540000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'TOTAL')
         end
+        object Memo28: TfrxMemoView
+          AllowVectorExport = True
+          Left = 922.205320000000000000
+          Width = 117.165430000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'SEGUN. UND.')
+        end
       end
-      object SysMemo1: TfrxSysMemoView
-        AllowVectorExport = True
-        Left = 691.653990000000000000
-        Top = 574.488560000000000000
-        Width = 234.330860000000000000
-        Height = 18.897650000000000000
+      object Footer1: TfrxFooter
+        FillType = ftBrush
         Frame.Typ = []
-        Memo.UTF8W = (
-          '[LINE#]')
+        Height = 94.488250000000000000
+        Top = 638.740570000000000000
+        Width = 1046.929810000000000000
+        object SysMemo1: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 808.819420000000000000
+          Top = 18.897650000000000000
+          Width = 313.700990000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset2."TOTAL">,MasterData1)]')
+          ParentFont = False
+        end
+        object Memo15: TfrxMemoView
+          AllowVectorExport = True
+          Left = 778.583180000000000000
+          Top = 18.897650000000000000
+          Width = 30.236240000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'R$-')
+          ParentFont = False
+        end
+        object Memo16: TfrxMemoView
+          AllowVectorExport = True
+          Left = 589.606680000000000000
+          Top = 18.897650000000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL DOS PRODUTOS:')
+          ParentFont = False
+        end
+        object frxDBDataset3E4_DESCRI: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 173.858380000000000000
+          Top = 18.897650000000000000
+          Width = 192.756030000000000000
+          Height = 18.897650000000000000
+          DataField = 'E4_DESCRI'
+          DataSet = frxDBDataset3
+          DataSetName = 'frxDBDataset3'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset3."E4_DESCRI"]')
+        end
+        object Memo17: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 18.897650000000000000
+          Width = 158.740260000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Cond. de pagamento:')
+          ParentFont = False
+        end
+        object frxDBDataset2DATA_DE_ENTREGA: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 147.401670000000000000
+          Top = 56.692950000000000000
+          Width = 192.756030000000000000
+          Height = 18.897650000000000000
+          DataField = 'DATA_DE_ENTREGA'
+          DataSet = frxDBDataset2
+          DataSetName = 'frxDBDataset2'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset2."DATA_DE_ENTREGA"]')
+        end
+        object Memo27: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 56.692950000000000000
+          Width = 124.724490000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Data de entrega:')
+          ParentFont = False
+        end
+      end
+      object MasterData2: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 105.826840000000000000
+        Top = 510.236550000000000000
+        Width = 1046.929810000000000000
+        RowCount = 0
+        object frxDBDataset4BASE_ICMS: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 26.456710000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'BASE_ICMS'
+          DataSet = frxDBDataset4
+          DataSetName = 'frxDBDataset4'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset4."BASE_ICMS"]')
+        end
+        object Memo18: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 7.559060000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'BASE_ICMS')
+        end
+        object frxDBDataset4ALIQUOTA_ICMS: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 124.724490000000000000
+          Top = 26.456710000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'ALIQUOTA_ICMS'
+          DataSet = frxDBDataset4
+          DataSetName = 'frxDBDataset4'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset4."ALIQUOTA_ICMS"]')
+        end
+        object Memo19: TfrxMemoView
+          AllowVectorExport = True
+          Left = 124.724490000000000000
+          Top = 7.559060000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'ALIQUOTA_ICMS')
+        end
+        object frxDBDataset4TOTAL_ICMS: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 230.551330000000000000
+          Top = 26.456710000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'TOTAL_ICMS'
+          DataSet = frxDBDataset4
+          DataSetName = 'frxDBDataset4'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset4."TOTAL_ICMS"]')
+        end
+        object Memo20: TfrxMemoView
+          AllowVectorExport = True
+          Left = 230.551330000000000000
+          Top = 7.559060000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL_ICMS')
+        end
+        object frxDBDataset5BASE_IPI: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 75.590600000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'BASE_IPI'
+          DataSet = frxDBDataset5
+          DataSetName = 'frxDBDataset5'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset5."BASE_IPI"]')
+        end
+        object Memo21: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 56.692950000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'BASE_IPI')
+        end
+        object frxDBDataset5ALIQUOTA_IPI: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 124.724490000000000000
+          Top = 75.590600000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'ALIQUOTA_IPI'
+          DataSet = frxDBDataset5
+          DataSetName = 'frxDBDataset5'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset5."ALIQUOTA_IPI"]')
+        end
+        object Memo22: TfrxMemoView
+          AllowVectorExport = True
+          Left = 124.724490000000000000
+          Top = 56.692950000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'ALIQUOTA_IPI')
+        end
+        object frxDBDataset5TOTAL_IPI: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 230.551330000000000000
+          Top = 75.590600000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'TOTAL_IPI'
+          DataSet = frxDBDataset5
+          DataSetName = 'frxDBDataset5'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset5."TOTAL_IPI"]')
+        end
+        object Memo23: TfrxMemoView
+          AllowVectorExport = True
+          Left = 230.551330000000000000
+          Top = 56.692950000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL_IPI')
+        end
       end
     end
   end
   object frxDBDataset2: TfrxDBDataset
     UserName = 'frxDBDataset2'
     CloseDataSource = False
+    FieldAliases.Strings = (
+      'NUMERO_DO_PEDIDO=NUMERO_DO_PEDIDO'
+      'ITEM=ITEM'
+      'PRODUTO=PRODUTO'
+      'DESCRI'#199#195'O_DO_PRODUTO=DESCRI'#199#195'O_DO_PRODUTO'
+      'UNIDADE=UNIDADE'
+      'SEGUNDA_UNIDADE=SEGUNDA_UNIDADE'
+      'QNT_SEGUM_UND=QNT_SEGUM_UND'
+      'QUANTIDADE=QUANTIDADE'
+      'PRE'#199'O=PRE'#199'O'
+      'TOTAL=TOTAL'
+      'ALIQUOTA_IPI=ALIQUOTA_IPI'
+      'BASE_ICMS=BASE_ICMS'
+      'BASE_IPI=BASE_IPI'
+      'ALIQUOTA_ICMS=ALIQUOTA_ICMS'
+      'DESCONTO=DESCONTO'
+      'CONDI'#199#195'O_DE_PAGAMENTO=CONDI'#199#195'O_DE_PAGAMENTO'
+      'DATA_DE_ENTREGA=DATA_DE_ENTREGA'
+      'NUMERO_DA_SOLICITA'#199#195'O=NUMERO_DA_SOLICITA'#199#195'O'
+      'VALOR_DO_FRETE=VALOR_DO_FRETE'
+      'TIPO_FRETE=TIPO_FRETE'
+      'VALOR_DA_DESPESA=VALOR_DA_DESPESA'
+      'SEGURO=SEGURO'
+      'FORNECEDOR=FORNECEDOR'
+      'CONTATO=CONTATO'
+      'EMISS'#195'O=EMISS'#195'O')
     DataSet = ADOQuery1
     BCDToCurrency = False
     Left = 200
@@ -2480,8 +2628,53 @@
   object frxDBDataset3: TfrxDBDataset
     UserName = 'frxDBDataset3'
     CloseDataSource = False
+    DataSet = ADOQuery7
     BCDToCurrency = False
     Left = 288
     Top = 192
+  end
+  object DataSource10: TDataSource
+    DataSet = ADOQuery10
+    Left = 400
+    Top = 128
+  end
+  object ADOQuery10: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'select sum(c7_baseicm) as BASE_ICMS, c7_picm as ALIQUOTA_ICMS, (' +
+        'c7_picm / 100 * sum(c7_baseicm)) as TOTAL_ICMS from sc7010 GROUP' +
+        ' BY C7_PICM')
+    Left = 816
+    Top = 120
+    object ADOQuery10BASE_ICMS: TFloatField
+      FieldName = 'BASE_ICMS'
+      ReadOnly = True
+    end
+    object ADOQuery10ALIQUOTA_ICMS: TFloatField
+      FieldName = 'ALIQUOTA_ICMS'
+    end
+    object ADOQuery10TOTAL_ICMS: TFloatField
+      FieldName = 'TOTAL_ICMS'
+      ReadOnly = True
+    end
+  end
+  object frxDBDataset4: TfrxDBDataset
+    UserName = 'frxDBDataset4'
+    CloseDataSource = False
+    DataSet = ADOQuery10
+    BCDToCurrency = False
+    Left = 400
+    Top = 248
+  end
+  object frxDBDataset5: TfrxDBDataset
+    UserName = 'frxDBDataset5'
+    CloseDataSource = False
+    DataSet = ADOQuery11
+    BCDToCurrency = False
+    Left = 480
+    Top = 240
   end
 end

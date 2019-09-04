@@ -18,9 +18,9 @@
   PixelsPerInch = 96
   TextHeight = 13
   object Edit1: TEdit
-    Left = 648
+    Left = 553
     Top = 8
-    Width = 169
+    Width = 273
     Height = 31
     Color = clInactiveCaption
     Font.Charset = DEFAULT_CHARSET
@@ -32,7 +32,7 @@
     TabOrder = 0
   end
   object ComboBox1: TComboBox
-    Left = 424
+    Left = 337
     Top = 8
     Width = 210
     Height = 31
@@ -45,6 +45,7 @@
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnChange = ComboBox1Change
     Items.Strings = (
       'N'#250'mero do Pedido'
       'Nome do Fornecedor'
@@ -67,8 +68,8 @@
     OnClick = Button1Click
   end
   object DBGrid1: TDBGrid
-    Left = 8
-    Top = 62
+    Left = 0
+    Top = 70
     Width = 1277
     Height = 470
     Margins.Top = 4

@@ -2,7 +2,7 @@
 Coordinates=84,10,53,58
 
 []
-Coordinates=368,210,91,36
+Coordinates=496,2861,137,36
 Visible=True
 
 [DataSource1]
@@ -11,23 +11,8 @@ Coordinates=117,1,89,36
 [ADOQuery1]
 Coordinates=0,0,183,586
 
-[ADOQuery2a2_pricom]
-Coordinates=234,3367,144,36
-
 [ADOConnection1]
 Coordinates=344,1,114,36
-
-[ADOQuery2a2_est]
-Coordinates=496,606,123,36
-
-[ADOQuery2a2_tel]
-Coordinates=496,2256,119,36
-
-[ADOQuery2a2_nome]
-Coordinates=496,2861,137,36
-
-[ADOQuery2a2_ultcom]
-Coordinates=496,3026,143,36
 
 [DataSource2]
 Coordinates=253,155,89,36
@@ -38,17 +23,11 @@ Coordinates=444,4078,64,36
 [ADOQuery2]
 Coordinates=253,364,84,190
 
-[ADOQuery2a2_end]
-Coordinates=712,1871,127,36
-
 [Label27]
 Coordinates=338,78,60,58
 
 [DBEdit17]
 Coordinates=759,639,69,36
-
-[ADOQuery1ITEM]
-Coordinates=893,1,115,36
 
 [DataSource4]
 Coordinates=319,723,89,36
@@ -65,14 +44,8 @@ Coordinates=759,694,69,36
 [DBEdit13]
 Coordinates=759,749,69,36
 
-[ADOQuery1UNIDADE]
-Coordinates=189,606,141,36
-
 [DBEdit11]
 Coordinates=759,804,69,36
-
-[DBEdit26]
-Coordinates=759,859,69,36
 
 [Mensagem]
 Coordinates=759,914,78,36
@@ -80,17 +53,8 @@ Coordinates=759,914,78,36
 [DBEdit5]
 Coordinates=759,969,62,36
 
-[ADOQuery1ALIQUOTA_IPI]
-Coordinates=1046,1,171,36
-
 [DBEdit2]
 Coordinates=759,1024,62,36
-
-[Label20]
-Coordinates=92,723,60,58
-
-[Label21]
-Coordinates=161,723,60,58
 
 [DataSource8]
 Coordinates=496,683,89,36
@@ -98,23 +62,11 @@ Coordinates=496,683,89,36
 [Label15]
 Coordinates=161,885,60,58
 
-[DBEdit27]
-Coordinates=759,1079,69,36
-
-[ADOQuery1TOTAL]
-Coordinates=893,56,125,36
-
-[ADOQuery1CONTATO]
-Coordinates=1056,56,146,36
-
 [Label17]
 Coordinates=630,903,60,58
 
 [ADOQuery16]
 Coordinates=496,782,91,80
-
-[DBEdit19]
-Coordinates=740,1117,69,36
 
 [ADOQuery11]
 Coordinates=338,639,91,80
@@ -125,9 +77,6 @@ Coordinates=893,111,129,36
 [ADOQuery15]
 Coordinates=630,529,91,80
 
-[ADOQuery1BASE_IPI]
-Coordinates=1060,111,141,36
-
 [DBEdit12]
 Coordinates=661,1117,69,36
 
@@ -136,12 +85,6 @@ Coordinates=1060,166,144,36
 
 [DBEdit3]
 Coordinates=592,1117,62,36
-
-[ADOQuery1NUMERO_DA_SOLICITAÇÃO]
-Coordinates=1060,221,258,36
-
-[DBEdit22]
-Coordinates=513,1117,69,36
 
 [DBEdit10]
 Coordinates=434,1117,69,36
@@ -158,20 +101,8 @@ Coordinates=1060,331,137,36
 [Label24]
 Coordinates=759,155,60,58
 
-[ADOQuery1PRODUTO]
-Coordinates=1060,386,148,36
-
 [Label10]
 Coordinates=92,885,60,58
-
-[Label22]
-Coordinates=496,606,60,58
-
-[ADOQuery1DESCRIÇÃO_DO_PRODUTO]
-Coordinates=1060,441,256,36
-
-[ADOQuery1DESCONTO]
-Coordinates=1060,496,156,36
 
 [DataSource9]
 Coordinates=98,605,89,36
@@ -182,12 +113,6 @@ Coordinates=759,78,53,58
 [Edit5]
 Coordinates=338,364,44,58
 
-[DBEdit28]
-Coordinates=276,1117,69,36
-
-[ADOQuery1CONDIÇÃO_DE_PAGAMENTO]
-Coordinates=1060,551,266,36
-
 [DataSource6]
 Coordinates=338,441,89,36
 
@@ -197,17 +122,8 @@ Coordinates=496,276,60,58
 [ADOQuery4]
 Coordinates=230,819,84,124
 
-[ADOQuery1VALOR_DO_FRETE]
-Coordinates=893,606,202,36
-
-[Label19]
-Coordinates=630,1,60,58
-
 [Label11]
 Coordinates=368,885,60,58
-
-[ADOQuery1DATA_DE_ENTREGA]
-Coordinates=893,661,211,36
 
 [ADOQuery17]
 Coordinates=146,999,91,80
@@ -217,9 +133,6 @@ Coordinates=197,1117,69,36
 
 [Label18]
 Coordinates=338,1,60,58
-
-[ADOQuery1BASE_ICMS]
-Coordinates=1142,606,157,36
 
 [ADOQuery14base_icms]
 Coordinates=1142,661,152,36
@@ -236,9 +149,6 @@ Coordinates=630,177,89,36
 [Label8]
 Coordinates=202,1,53,58
 
-[ADOQuery1FORNECEDOR]
-Coordinates=1142,716,174,36
-
 [Label7]
 Coordinates=630,826,53,58
 
@@ -251,29 +161,17 @@ Coordinates=118,1117,69,36
 [PageControl1]
 Coordinates=368,155,93,36
 
-[ADOQuery1QUANTIDADE]
-Coordinates=1142,771,168,36
-
 [DBEdit7]
 Coordinates=49,1117,62,36
 
-[ADOQuery1VALOR_DA_DESPESA]
-Coordinates=893,716,219,36
-
 [DBEdit21]
 Coordinates=893,166,69,36
-
-[DBEdit25]
-Coordinates=893,221,69,36
 
 [Edit6]
 Coordinates=338,562,44,58
 
 [Label25]
 Coordinates=496,529,60,58
-
-[Edit4]
-Coordinates=43,723,44,58
 
 [Label5]
 Coordinates=630,452,53,58
@@ -296,20 +194,11 @@ Coordinates=496,353,96,36
 [ADOQuery9]
 Coordinates=630,353,84,80
 
-[ADOQuery1SEGUNDA_UNIDADE]
-Coordinates=893,771,211,36
-
-[ADOQuery1NUMERO_DO_PEDIDO]
-Coordinates=893,826,223,36
-
 [DBEdit9]
 Coordinates=893,331,62,36
 
 [DataSource11]
 Coordinates=294,999,96,36
-
-[DBEdit20]
-Coordinates=893,386,69,36
 
 [ADOQuery5total_frete]
 Coordinates=1154,881,142,36
@@ -331,9 +220,6 @@ Coordinates=496,881,91,80
 
 [DBEdit1]
 Coordinates=893,881,62,36
-
-[ADOQuery1TIPO_FRETE]
-Coordinates=1154,991,163,36
 
 [TabSheet2]
 Coordinates=893,936,77,36
@@ -359,24 +245,6 @@ Coordinates=630,276,53,58
 [DBEdit8]
 Coordinates=893,1046,62,36
 
-[Edit2]
-Coordinates=319,885,44,58
-
-[ADOQuery1EMISSÃO]
-Coordinates=1005,999,142,36
-
-[ADOQuery11aliquota]
-Coordinates=1364,1,137,36
-
-[Edit1]
-Coordinates=496,452,44,58
-
-[ADOQuery1ALIQUOTA_ICMS]
-Coordinates=1364,56,187,36
-
-[DBEdit23]
-Coordinates=893,1101,69,36
-
 [Label13]
 Coordinates=630,980,60,58
 
@@ -385,12 +253,6 @@ Coordinates=393,999,60,58
 
 [TabSheet5]
 Coordinates=893,1156,77,36
-
-[Edit3]
-Coordinates=49,605,44,58
-
-[ADOQuery1PREÇO]
-Coordinates=1185,1046,129,36
 
 [ADOQuery4desconto2]
 Coordinates=1364,111,143,36
@@ -427,9 +289,6 @@ Coordinates=630,78,91,80
 
 [ADOQuery8]
 Coordinates=230,723,84,80
-
-[ADOQuery1SEGURO]
-Coordinates=1364,276,139,36
 
 [ADOQuery6c7_msg]
 Coordinates=1046,1117,129,36
