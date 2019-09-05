@@ -3,10 +3,12 @@ unit Unit3;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Data.Win.ADODB,
   Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, Vcl.Menus, Vcl.ComCtrls,
-  Vcl.Buttons, frxClass, frxDBSet, frxPreview, frxExportBaseDialog, frxExportPDF;
+  Vcl.Buttons, frxClass, frxDBSet, frxPreview, frxExportBaseDialog,
+  frxExportPDF, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
 
 type
   TForm3 = class(TForm)
@@ -170,6 +172,9 @@ type
     ADOQuery10ALIQUOTA_ICMS: TFloatField;
     ADOQuery10TOTAL_ICMS: TFloatField;
     frxReport1: TfrxReport;
+    Image1: TImage;
+    Image3: TImage;
+    Image2: TImage;
     procedure frxPreview1Click(Sender: TObject);
     procedure IMPRIMIRClick(Sender: TObject);
   private
