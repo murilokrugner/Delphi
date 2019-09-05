@@ -220,7 +220,6 @@
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
-      ExplicitLeft = 0
       object Label2: TLabel
         Left = 24
         Top = 24
@@ -1038,6 +1037,7 @@
     Top = 16
   end
   object ADOQuery2: TADOQuery
+    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
@@ -1307,34 +1307,119 @@
     FieldAliases.Strings = (
       'a2_nome=a2_nome'
       'a2_end=a2_end'
+      'CNPJ=CNPJ'
       'a2_pricom=a2_pricom'
       'a2_ultcom=a2_ultcom'
       'a2_tel=a2_tel'
       'a2_est=a2_est')
-    DataSource = DataSource2
+    DataSet = ADOQuery2
     BCDToCurrency = False
     Left = 112
     Top = 192
   end
+  object frxDBDataset2: TfrxDBDataset
+    UserName = 'frxDBDataset2'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'NUMERO_DO_PEDIDO=NUMERO_DO_PEDIDO'
+      'ITEM=ITEM'
+      'PRODUTO=PRODUTO'
+      'DESCRI'#199#195'O_DO_PRODUTO=DESCRI'#199#195'O_DO_PRODUTO'
+      'UNIDADE=UNIDADE'
+      'SEGUNDA_UNIDADE=SEGUNDA_UNIDADE'
+      'QNT_SEGUM_UND=QNT_SEGUM_UND'
+      'QUANTIDADE=QUANTIDADE'
+      'PRE'#199'O=PRE'#199'O'
+      'TOTAL=TOTAL'
+      'ALIQUOTA_IPI=ALIQUOTA_IPI'
+      'BASE_ICMS=BASE_ICMS'
+      'BASE_IPI=BASE_IPI'
+      'ALIQUOTA_ICMS=ALIQUOTA_ICMS'
+      'DESCONTO=DESCONTO'
+      'CONDI'#199#195'O_DE_PAGAMENTO=CONDI'#199#195'O_DE_PAGAMENTO'
+      'DATA_DE_ENTREGA=DATA_DE_ENTREGA'
+      'NUMERO_DA_SOLICITA'#199#195'O=NUMERO_DA_SOLICITA'#199#195'O'
+      'VALOR_DO_FRETE=VALOR_DO_FRETE'
+      'TIPO_FRETE=TIPO_FRETE'
+      'VALOR_DA_DESPESA=VALOR_DA_DESPESA'
+      'SEGURO=SEGURO'
+      'FORNECEDOR=FORNECEDOR'
+      'CONTATO=CONTATO'
+      'EMISS'#195'O=EMISS'#195'O')
+    DataSet = ADOQuery1
+    BCDToCurrency = False
+    Left = 200
+    Top = 200
+  end
+  object frxDBDataset3: TfrxDBDataset
+    UserName = 'frxDBDataset3'
+    CloseDataSource = False
+    DataSet = ADOQuery7
+    BCDToCurrency = False
+    Left = 288
+    Top = 192
+  end
+  object DataSource10: TDataSource
+    DataSet = ADOQuery10
+    Left = 400
+    Top = 128
+  end
+  object ADOQuery10: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'select sum(c7_baseicm) as BASE_ICMS, c7_picm as ALIQUOTA_ICMS, (' +
+        'c7_picm / 100 * sum(c7_baseicm)) as TOTAL_ICMS from sc7010 GROUP' +
+        ' BY C7_PICM')
+    Left = 816
+    Top = 120
+    object ADOQuery10BASE_ICMS: TFloatField
+      FieldName = 'BASE_ICMS'
+      ReadOnly = True
+    end
+    object ADOQuery10ALIQUOTA_ICMS: TFloatField
+      FieldName = 'ALIQUOTA_ICMS'
+    end
+    object ADOQuery10TOTAL_ICMS: TFloatField
+      FieldName = 'TOTAL_ICMS'
+      ReadOnly = True
+    end
+  end
+  object frxDBDataset4: TfrxDBDataset
+    UserName = 'frxDBDataset4'
+    CloseDataSource = False
+    DataSet = ADOQuery10
+    BCDToCurrency = False
+    Left = 400
+    Top = 248
+  end
+  object frxDBDataset5: TfrxDBDataset
+    UserName = 'frxDBDataset5'
+    CloseDataSource = False
+    DataSet = ADOQuery11
+    BCDToCurrency = False
+    Left = 480
+    Top = 240
+  end
   object frxReport1: TfrxReport
     Version = '6.4.10'
-    DataSet = frxDBDataset1
-    DataSetName = 'frxDBDataset1'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43711.537522141200000000
-    ReportOptions.LastChange = 43712.629037881950000000
+    ReportOptions.CreateDate = 43713.352183148100000000
+    ReportOptions.LastChange = 43713.452277696760000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 48
-    Top = 192
+    Left = 32
+    Top = 184
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -1363,9 +1448,8 @@
       Width = 1000.000000000000000000
     end
     object Page1: TfrxReportPage
-      Orientation = poLandscape
-      PaperWidth = 297.000000000000000000
-      PaperHeight = 210.000000000000000000
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
       PaperSize = 9
       LeftMargin = 10.000000000000000000
       RightMargin = 10.000000000000000000
@@ -1376,15 +1460,156 @@
       object PageHeader1: TfrxPageHeader
         FillType = ftBrush
         Frame.Typ = []
-        Height = 253.228510000000000000
+        Height = 192.756030000000000000
+        Top = 188.976500000000000000
+        Width = 718.110700000000000000
+        object frxDBDataset1a2_nome: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 3.779530000000000000
+          Width = 321.260050000000000000
+          Height = 18.897650000000000000
+          DataField = 'a2_nome'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."a2_nome"]')
+        end
+        object frxDBDataset1a2_end: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 37.795300000000000000
+          Width = 294.803340000000000000
+          Height = 18.897650000000000000
+          DataField = 'a2_end'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."a2_end"]')
+        end
+        object frxDBDataset1a2_est: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 408.189240000000000000
+          Top = 37.795300000000000000
+          Width = 26.456710000000000000
+          Height = 18.897650000000000000
+          DataField = 'a2_est'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."a2_est"]')
+        end
+        object frxDBDataset1a2_tel: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 102.047310000000000000
+          Width = 188.976500000000000000
+          Height = 18.897650000000000000
+          DataField = 'a2_tel'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."a2_tel"]')
+        end
+        object frxDBDataset1CNPJ: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 71.811070000000000000
+          Width = 120.944960000000000000
+          Height = 18.897650000000000000
+          DataField = 'CNPJ'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."CNPJ"]')
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 3.779530000000000000
+          Width = 102.047310000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'FORNECEDOR:')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 37.795300000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'ENDERE'#199'O:')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 71.811070000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'CNPJ:')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 102.047310000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TELEFONE:')
+          ParentFont = False
+        end
+      end
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 147.401670000000000000
         Top = 18.897650000000000000
-        Width = 1046.929810000000000000
+        Width = 718.110700000000000000
         object Picture1: TfrxPictureView
           AllowVectorExport = True
-          Left = 7.559060000000000000
-          Top = 7.559060000000000000
-          Width = 185.196970000000000000
-          Height = 86.929190000000000000
+          Left = 3.779530000000000000
+          Top = 15.118120000000000000
+          Width = 170.078850000000000000
+          Height = 68.031540000000000000
           Frame.Typ = []
           Picture.Data = {
             0A54504E474F626A65637489504E470D0A1A0A0000000D494844520000013B00
@@ -1943,14 +2168,30 @@
           Transparent = False
           TransparentColor = clWhite
         end
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 264.567100000000000000
+          Top = 15.118120000000000000
+          Width = 222.992270000000000000
+          Height = 34.015770000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'PEDIDO DE COMPRA')
+          ParentFont = False
+        end
         object frxDBDataset2NUMERO_DO_PEDIDO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 510.236550000000000000
-          Top = 79.370130000000000000
-          Width = 154.960730000000000000
-          Height = 18.897650000000000000
-          DataField = 'NUMERO_DO_PEDIDO'
+          Left = 362.834880000000000000
+          Top = 43.464595000000000000
+          Width = 151.181200000000000000
+          Height = 20.787415000000000000
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Font.Charset = DEFAULT_CHARSET
@@ -1963,27 +2204,11 @@
             '[frxDBDataset2."NUMERO_DO_PEDIDO"]')
           ParentFont = False
         end
-        object Memo1: TfrxMemoView
-          AllowVectorExport = True
-          Left = 445.984540000000000000
-          Top = 30.236240000000000000
-          Width = 211.653680000000000000
-          Height = 26.456710000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -19
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'PEDIDO DE COMPRA')
-          ParentFont = False
-        end
         object frxDBDataset2EMISSO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 854.173780000000000000
-          Width = 192.756030000000000000
+          Left = 631.181510000000000000
+          Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'EMISS'#195'O'
           DataSet = frxDBDataset2
@@ -1992,130 +2217,85 @@
           Memo.UTF8W = (
             '[frxDBDataset2."EMISS'#195'O"]')
         end
-        object Memo11: TfrxMemoView
+        object Memo27: TfrxMemoView
           AllowVectorExport = True
-          Left = 782.362710000000000000
-          Width = 71.811070000000000000
+          Left = 548.031850000000000000
+          Top = 3.779530000000000000
+          Width = 56.692950000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -11
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
             'EMISS'#195'O:')
           ParentFont = False
         end
-        object frxDBDataset1a2_nome: TfrxMemoView
+        object frxDBDataset2NUMERO_DA_SOLICITAO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 162.519790000000000000
-          Top = 158.740260000000000000
-          Width = 548.031850000000000000
+          Left = 646.299630000000000000
+          Top = 26.456710000000000000
+          Width = 64.252010000000000000
           Height = 18.897650000000000000
-          DataField = 'a2_nome'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
+          DataField = 'NUMERO_DA_SOLICITA'#199#195'O'
+          DataSet = frxDBDataset2
+          DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset1."a2_nome"]')
+            '[frxDBDataset2."NUMERO_DA_SOLICITA'#199#195'O"]')
         end
-        object frxDBDataset1a2_end: TfrxMemoView
-          IndexTag = 1
+        object Memo28: TfrxMemoView
           AllowVectorExport = True
-          Left = 162.519790000000000000
-          Top = 188.976500000000000000
-          Width = 260.787570000000000000
-          Height = 18.897650000000000000
-          DataField = 'a2_end'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset1."a2_end"]')
-        end
-        object frxDBDataset1a2_est: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 434.645950000000000000
-          Top = 188.976500000000000000
-          Width = 56.692950000000000000
-          Height = 18.897650000000000000
-          DataField = 'a2_est'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset1."a2_est"]')
-        end
-        object frxDBDataset1a2_tel: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 162.519790000000000000
-          Top = 219.212740000000000000
-          Width = 154.960730000000000000
-          Height = 18.897650000000000000
-          DataField = 'a2_tel'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset1."a2_tel"]')
-        end
-        object Memo12: TfrxMemoView
-          AllowVectorExport = True
-          Left = 3.779530000000000000
-          Top = 158.740260000000000000
-          Width = 132.283550000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'FORNECEDOR:')
-        end
-        object Memo13: TfrxMemoView
-          AllowVectorExport = True
-          Left = 3.779530000000000000
-          Top = 188.976500000000000000
+          Left = 548.031850000000000000
+          Top = 26.456710000000000000
           Width = 94.488250000000000000
-          Height = 18.897650000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
-            'ENDERE'#199'O:')
+            'N'#176' SOLICITA'#199#195'O:')
+          ParentFont = False
         end
-        object Memo14: TfrxMemoView
+        object Memo32: TfrxMemoView
           AllowVectorExport = True
-          Left = 3.779530000000000000
-          Top = 219.212740000000000000
-          Width = 94.488250000000000000
+          Left = 325.039580000000000000
+          Top = 41.574830000000000000
+          Width = 26.456710000000000000
           Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'TELEFONE:')
+            'N'#176)
+          ParentFont = False
         end
       end
       object MasterData1: TfrxMasterData
-        AllowMirrorMode = True
         FillType = ftBrush
         Frame.Typ = []
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -15
-        Font.Name = 'Arial'
-        Font.Style = []
-        Height = 83.149660000000000000
-        ParentFont = False
-        Top = 404.409710000000000000
-        Width = 1046.929810000000000000
+        Height = 34.015770000000000000
+        Top = 487.559370000000000000
+        Width = 718.110700000000000000
+        Child = frxReport1.Child1
         DataSet = frxDBDataset2
         DataSetName = 'frxDBDataset2'
         RowCount = 0
         object frxDBDataset2DESCRIO_DO_PRODUTO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 170.078850000000000000
-          Top = 26.456710000000000000
-          Width = 355.275820000000000000
+          Left = 109.606370000000000000
+          Top = 7.559060000000000000
+          Width = 298.582870000000000000
           Height = 18.897650000000000000
           DataField = 'DESCRI'#199#195'O_DO_PRODUTO'
           DataSet = frxDBDataset2
@@ -2128,8 +2308,8 @@
           IndexTag = 1
           AllowVectorExport = True
           Left = 3.779530000000000000
-          Top = 26.456710000000000000
-          Width = 49.133890000000000000
+          Top = 7.559060000000000000
+          Width = 30.236240000000000000
           Height = 18.897650000000000000
           DataField = 'ITEM'
           DataSet = frxDBDataset2
@@ -2141,9 +2321,9 @@
         object frxDBDataset2PRODUTO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 71.811070000000000000
-          Top = 26.456710000000000000
-          Width = 56.692950000000000000
+          Left = 56.692950000000000000
+          Top = 7.559060000000000000
+          Width = 37.795300000000000000
           Height = 18.897650000000000000
           DataField = 'PRODUTO'
           DataSet = frxDBDataset2
@@ -2155,8 +2335,8 @@
         object frxDBDataset2UNIDADE: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 529.134200000000000000
-          Top = 26.456710000000000000
+          Left = 411.968770000000000000
+          Top = 7.559060000000000000
           Width = 37.795300000000000000
           Height = 18.897650000000000000
           DataField = 'UNIDADE'
@@ -2169,8 +2349,8 @@
         object frxDBDataset2QUANTIDADE: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 589.606680000000000000
-          Top = 26.456710000000000000
+          Left = 453.543600000000000000
+          Top = 7.559060000000000000
           Width = 52.913420000000000000
           Height = 18.897650000000000000
           DataField = 'QUANTIDADE'
@@ -2183,8 +2363,8 @@
         object frxDBDataset2PREO: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 706.772110000000000000
-          Top = 26.456710000000000000
+          Left = 510.236550000000000000
+          Top = 7.559060000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'PRE'#199'O'
@@ -2197,9 +2377,9 @@
         object frxDBDataset2TOTAL: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 831.496600000000000000
-          Top = 26.456710000000000000
-          Width = 68.031540000000000000
+          Left = 593.386210000000000000
+          Top = 7.559060000000000000
+          Width = 49.133890000000000000
           Height = 18.897650000000000000
           DataField = 'TOTAL'
           DataSet = frxDBDataset2
@@ -2208,32 +2388,12 @@
           Memo.UTF8W = (
             '[frxDBDataset2."TOTAL"]')
         end
-        object Memo2: TfrxMemoView
-          AllowVectorExport = True
-          Left = 668.976810000000000000
-          Top = 26.456710000000000000
-          Width = 30.236240000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'R$-')
-        end
-        object Memo3: TfrxMemoView
-          AllowVectorExport = True
-          Left = 797.480830000000000000
-          Top = 26.456710000000000000
-          Width = 30.236240000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'R$-')
-        end
         object frxDBDataset2QNT_SEGUM_UND: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 922.205320000000000000
-          Top = 26.456710000000000000
-          Width = 117.165430000000000000
+          Left = 646.299630000000000000
+          Top = 7.559060000000000000
+          Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'QNT_SEGUM_UND'
           DataSet = frxDBDataset2
@@ -2246,210 +2406,97 @@
       object Header1: TfrxHeader
         FillType = ftBrush
         Frame.Typ = []
-        Height = 49.133890000000000000
-        Top = 332.598640000000000000
-        Width = 1046.929810000000000000
-        object Memo4: TfrxMemoView
+        Height = 22.677180000000000000
+        Top = 442.205010000000000000
+        Width = 718.110700000000000000
+        object Memo10: TfrxMemoView
           AllowVectorExport = True
           Left = 3.779530000000000000
-          Width = 45.354360000000000000
+          Width = 37.795300000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'ITEM')
         end
-        object Memo5: TfrxMemoView
+        object Memo11: TfrxMemoView
           AllowVectorExport = True
-          Left = 71.811070000000000000
-          Width = 86.929190000000000000
+          Left = 45.354360000000000000
+          Width = 75.590600000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'PRODUTO')
         end
-        object Memo6: TfrxMemoView
+        object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Left = 170.078850000000000000
-          Width = 90.708720000000000000
+          Left = 226.771800000000000000
+          Width = 83.149660000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'DESCRI'#199#195'O')
         end
-        object Memo7: TfrxMemoView
+        object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 529.134200000000000000
+          Left = 411.968770000000000000
           Width = 37.795300000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'UN')
         end
-        object Memo8: TfrxMemoView
+        object Memo14: TfrxMemoView
           AllowVectorExport = True
-          Left = 589.606680000000000000
-          Width = 49.133890000000000000
+          Left = 453.543600000000000000
+          Width = 37.795300000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'QNT')
         end
-        object Memo9: TfrxMemoView
+        object Memo15: TfrxMemoView
           AllowVectorExport = True
-          Left = 668.976810000000000000
-          Width = 60.472480000000000000
+          Left = 510.236550000000000000
+          Width = 52.913420000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'PRE'#199'O')
         end
-        object Memo10: TfrxMemoView
+        object Memo16: TfrxMemoView
           AllowVectorExport = True
-          Left = 797.480830000000000000
-          Width = 68.031540000000000000
+          Left = 593.386210000000000000
+          Width = 49.133890000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'TOTAL')
         end
-        object Memo28: TfrxMemoView
-          AllowVectorExport = True
-          Left = 922.205320000000000000
-          Width = 117.165430000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'SEGUN. UND.')
-        end
-      end
-      object Footer1: TfrxFooter
-        FillType = ftBrush
-        Frame.Typ = []
-        Height = 94.488250000000000000
-        Top = 638.740570000000000000
-        Width = 1046.929810000000000000
-        object SysMemo1: TfrxSysMemoView
-          AllowVectorExport = True
-          Left = 808.819420000000000000
-          Top = 18.897650000000000000
-          Width = 313.700990000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -15
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[SUM(<frxDBDataset2."TOTAL">,MasterData1)]')
-          ParentFont = False
-        end
-        object Memo15: TfrxMemoView
-          AllowVectorExport = True
-          Left = 778.583180000000000000
-          Top = 18.897650000000000000
-          Width = 30.236240000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -15
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'R$-')
-          ParentFont = False
-        end
-        object Memo16: TfrxMemoView
-          AllowVectorExport = True
-          Left = 589.606680000000000000
-          Top = 18.897650000000000000
-          Width = 185.196970000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -15
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'TOTAL DOS PRODUTOS:')
-          ParentFont = False
-        end
-        object frxDBDataset3E4_DESCRI: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 173.858380000000000000
-          Top = 18.897650000000000000
-          Width = 192.756030000000000000
-          Height = 18.897650000000000000
-          DataField = 'E4_DESCRI'
-          DataSet = frxDBDataset3
-          DataSetName = 'frxDBDataset3'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset3."E4_DESCRI"]')
-        end
         object Memo17: TfrxMemoView
           AllowVectorExport = True
-          Left = 3.779530000000000000
-          Top = 18.897650000000000000
-          Width = 158.740260000000000000
+          Left = 646.299630000000000000
+          Width = 64.252010000000000000
           Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -15
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'Cond. de pagamento:')
-          ParentFont = False
-        end
-        object frxDBDataset2DATA_DE_ENTREGA: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 147.401670000000000000
-          Top = 56.692950000000000000
-          Width = 192.756030000000000000
-          Height = 18.897650000000000000
-          DataField = 'DATA_DE_ENTREGA'
-          DataSet = frxDBDataset2
-          DataSetName = 'frxDBDataset2'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset2."DATA_DE_ENTREGA"]')
-        end
-        object Memo27: TfrxMemoView
-          AllowVectorExport = True
-          Left = 3.779530000000000000
-          Top = 56.692950000000000000
-          Width = 124.724490000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -15
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Data de entrega:')
-          ParentFont = False
+            'SEG UND')
         end
       end
       object MasterData2: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 105.826840000000000000
-        Top = 510.236550000000000000
-        Width = 1046.929810000000000000
+        Height = 117.165430000000000000
+        Top = 733.228820000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset4
+        DataSetName = 'frxDBDataset4'
         RowCount = 0
         object frxDBDataset4BASE_ICMS: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 15.118120000000000000
-          Top = 26.456710000000000000
-          Width = 79.370130000000000000
+          Left = 18.897650000000000000
+          Top = 83.149660000000000000
+          Width = 71.811070000000000000
           Height = 18.897650000000000000
           DataField = 'BASE_ICMS'
           DataSet = frxDBDataset4
@@ -2460,8 +2507,8 @@
         end
         object Memo18: TfrxMemoView
           AllowVectorExport = True
-          Left = 15.118120000000000000
-          Top = 7.559060000000000000
+          Left = 3.779530000000000000
+          Top = 64.252010000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
@@ -2471,9 +2518,9 @@
         object frxDBDataset4ALIQUOTA_ICMS: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 124.724490000000000000
-          Top = 26.456710000000000000
-          Width = 79.370130000000000000
+          Left = 143.622140000000000000
+          Top = 83.149660000000000000
+          Width = 22.677180000000000000
           Height = 18.897650000000000000
           DataField = 'ALIQUOTA_ICMS'
           DataSet = frxDBDataset4
@@ -2484,9 +2531,9 @@
         end
         object Memo19: TfrxMemoView
           AllowVectorExport = True
-          Left = 124.724490000000000000
-          Top = 7.559060000000000000
-          Width = 79.370130000000000000
+          Left = 109.606370000000000000
+          Top = 64.252010000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
@@ -2495,8 +2542,8 @@
         object frxDBDataset4TOTAL_ICMS: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 230.551330000000000000
-          Top = 26.456710000000000000
+          Left = 257.008040000000000000
+          Top = 83.149660000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'TOTAL_ICMS'
@@ -2508,19 +2555,39 @@
         end
         object Memo20: TfrxMemoView
           AllowVectorExport = True
-          Left = 230.551330000000000000
-          Top = 7.559060000000000000
-          Width = 79.370130000000000000
+          Left = 245.669450000000000000
+          Top = 64.252010000000000000
+          Width = 90.708720000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'TOTAL_ICMS')
         end
+        object Memo21: TfrxMemoView
+          AllowVectorExport = True
+          Left = 162.519790000000000000
+          Top = 83.149660000000000000
+          Width = 15.118120000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '%')
+        end
+      end
+      object MasterData3: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 98.267780000000000000
+        Top = 612.283860000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset5
+        DataSetName = 'frxDBDataset5'
+        RowCount = 0
         object frxDBDataset5BASE_IPI: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 15.118120000000000000
-          Top = 75.590600000000000000
+          Left = 18.897650000000000000
+          Top = 41.574830000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'BASE_IPI'
@@ -2530,10 +2597,10 @@
           Memo.UTF8W = (
             '[frxDBDataset5."BASE_IPI"]')
         end
-        object Memo21: TfrxMemoView
+        object Memo22: TfrxMemoView
           AllowVectorExport = True
-          Left = 15.118120000000000000
-          Top = 56.692950000000000000
+          Left = 3.779530000000000000
+          Top = 22.677180000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
@@ -2543,9 +2610,9 @@
         object frxDBDataset5ALIQUOTA_IPI: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 124.724490000000000000
-          Top = 75.590600000000000000
-          Width = 79.370130000000000000
+          Left = 143.622140000000000000
+          Top = 41.574830000000000000
+          Width = 18.897650000000000000
           Height = 18.897650000000000000
           DataField = 'ALIQUOTA_IPI'
           DataSet = frxDBDataset5
@@ -2554,21 +2621,31 @@
           Memo.UTF8W = (
             '[frxDBDataset5."ALIQUOTA_IPI"]')
         end
-        object Memo22: TfrxMemoView
+        object Memo23: TfrxMemoView
           AllowVectorExport = True
-          Left = 124.724490000000000000
-          Top = 56.692950000000000000
-          Width = 79.370130000000000000
+          Left = 109.606370000000000000
+          Top = 22.677180000000000000
+          Width = 105.826840000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             'ALIQUOTA_IPI')
         end
+        object Memo24: TfrxMemoView
+          AllowVectorExport = True
+          Left = 158.740260000000000000
+          Top = 41.574830000000000000
+          Width = 15.118120000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '%')
+        end
         object frxDBDataset5TOTAL_IPI: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 230.551330000000000000
-          Top = 75.590600000000000000
+          Left = 257.008040000000000000
+          Top = 41.574830000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           DataField = 'TOTAL_IPI'
@@ -2578,10 +2655,10 @@
           Memo.UTF8W = (
             '[frxDBDataset5."TOTAL_IPI"]')
         end
-        object Memo23: TfrxMemoView
+        object Memo25: TfrxMemoView
           AllowVectorExport = True
-          Left = 230.551330000000000000
-          Top = 56.692950000000000000
+          Left = 245.669450000000000000
+          Top = 22.677180000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
@@ -2589,92 +2666,130 @@
             'TOTAL_IPI')
         end
       end
+      object MasterData4: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 60.472480000000000000
+        Top = 873.071430000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset3
+        DataSetName = 'frxDBDataset3'
+        RowCount = 0
+        object frxDBDataset3E4_DESCRI: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 105.826840000000000000
+          Top = 18.897650000000000000
+          Width = 120.944960000000000000
+          Height = 18.897650000000000000
+          DataField = 'E4_DESCRI'
+          DataSet = frxDBDataset3
+          DataSetName = 'frxDBDataset3'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset3."E4_DESCRI"]')
+        end
+        object Memo26: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 18.897650000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'COND. PAG.')
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 994.016390000000000000
+        Width = 718.110700000000000000
+        object SysMemo1: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 52.913420000000000000
+          Width = 75.590600000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DATE]')
+        end
+        object SysMemo2: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 200.315090000000000000
+          Width = 75.590600000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[TIME]')
+        end
+        object SysMemo3: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 616.063390000000000000
+          Width = 83.149660000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[PAGE#] of [TOTALPAGES#]')
+        end
+        object Memo29: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'DATA:')
+        end
+        object Memo30: TfrxMemoView
+          AllowVectorExport = True
+          Left = 143.622140000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'HORA:')
+        end
+        object Memo31: TfrxMemoView
+          AllowVectorExport = True
+          Left = 555.590910000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'P'#193'GINA:')
+        end
+      end
+      object Child1: TfrxChild
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 45.354360000000000000
+        Top = 544.252320000000000000
+        Width = 718.110700000000000000
+        ToNRows = 0
+        ToNRowsMode = rmCount
+        object Memo33: TfrxMemoView
+          AllowVectorExport = True
+          Left = 495.118430000000000000
+          Top = 18.897650000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL:')
+        end
+        object SysMemo4: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 574.488560000000000000
+          Top = 18.897650000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset2."TOTAL">,MasterData1,2)]')
+        end
+      end
     end
-  end
-  object frxDBDataset2: TfrxDBDataset
-    UserName = 'frxDBDataset2'
-    CloseDataSource = False
-    FieldAliases.Strings = (
-      'NUMERO_DO_PEDIDO=NUMERO_DO_PEDIDO'
-      'ITEM=ITEM'
-      'PRODUTO=PRODUTO'
-      'DESCRI'#199#195'O_DO_PRODUTO=DESCRI'#199#195'O_DO_PRODUTO'
-      'UNIDADE=UNIDADE'
-      'SEGUNDA_UNIDADE=SEGUNDA_UNIDADE'
-      'QNT_SEGUM_UND=QNT_SEGUM_UND'
-      'QUANTIDADE=QUANTIDADE'
-      'PRE'#199'O=PRE'#199'O'
-      'TOTAL=TOTAL'
-      'ALIQUOTA_IPI=ALIQUOTA_IPI'
-      'BASE_ICMS=BASE_ICMS'
-      'BASE_IPI=BASE_IPI'
-      'ALIQUOTA_ICMS=ALIQUOTA_ICMS'
-      'DESCONTO=DESCONTO'
-      'CONDI'#199#195'O_DE_PAGAMENTO=CONDI'#199#195'O_DE_PAGAMENTO'
-      'DATA_DE_ENTREGA=DATA_DE_ENTREGA'
-      'NUMERO_DA_SOLICITA'#199#195'O=NUMERO_DA_SOLICITA'#199#195'O'
-      'VALOR_DO_FRETE=VALOR_DO_FRETE'
-      'TIPO_FRETE=TIPO_FRETE'
-      'VALOR_DA_DESPESA=VALOR_DA_DESPESA'
-      'SEGURO=SEGURO'
-      'FORNECEDOR=FORNECEDOR'
-      'CONTATO=CONTATO'
-      'EMISS'#195'O=EMISS'#195'O')
-    DataSet = ADOQuery1
-    BCDToCurrency = False
-    Left = 200
-    Top = 200
-  end
-  object frxDBDataset3: TfrxDBDataset
-    UserName = 'frxDBDataset3'
-    CloseDataSource = False
-    DataSet = ADOQuery7
-    BCDToCurrency = False
-    Left = 288
-    Top = 192
-  end
-  object DataSource10: TDataSource
-    DataSet = ADOQuery10
-    Left = 400
-    Top = 128
-  end
-  object ADOQuery10: TADOQuery
-    Connection = ADOConnection1
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      
-        'select sum(c7_baseicm) as BASE_ICMS, c7_picm as ALIQUOTA_ICMS, (' +
-        'c7_picm / 100 * sum(c7_baseicm)) as TOTAL_ICMS from sc7010 GROUP' +
-        ' BY C7_PICM')
-    Left = 816
-    Top = 120
-    object ADOQuery10BASE_ICMS: TFloatField
-      FieldName = 'BASE_ICMS'
-      ReadOnly = True
-    end
-    object ADOQuery10ALIQUOTA_ICMS: TFloatField
-      FieldName = 'ALIQUOTA_ICMS'
-    end
-    object ADOQuery10TOTAL_ICMS: TFloatField
-      FieldName = 'TOTAL_ICMS'
-      ReadOnly = True
-    end
-  end
-  object frxDBDataset4: TfrxDBDataset
-    UserName = 'frxDBDataset4'
-    CloseDataSource = False
-    DataSet = ADOQuery10
-    BCDToCurrency = False
-    Left = 400
-    Top = 248
-  end
-  object frxDBDataset5: TfrxDBDataset
-    UserName = 'frxDBDataset5'
-    CloseDataSource = False
-    DataSet = ADOQuery11
-    BCDToCurrency = False
-    Left = 480
-    Top = 240
   end
 end

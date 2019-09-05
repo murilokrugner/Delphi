@@ -116,7 +116,6 @@ type
     DataSource7: TDataSource;
     ADOQuery7: TADOQuery;
     frxDBDataset1: TfrxDBDataset;
-    frxReport1: TfrxReport;
     IMPRIMIR: TBitBtn;
     frxDBDataset2: TfrxDBDataset;
     frxDBDataset3: TfrxDBDataset;
@@ -170,6 +169,7 @@ type
     ADOQuery10BASE_ICMS: TFloatField;
     ADOQuery10ALIQUOTA_ICMS: TFloatField;
     ADOQuery10TOTAL_ICMS: TFloatField;
+    frxReport1: TfrxReport;
     procedure frxPreview1Click(Sender: TObject);
     procedure IMPRIMIRClick(Sender: TObject);
   private
@@ -187,7 +187,6 @@ implementation
 
 procedure TForm3.IMPRIMIRClick(Sender: TObject);
 begin;
-  frxReport1.Variables['TfrxSysMemoView.SysMemo1'] := 'teste';
   frxReport1.ShowReport;
 
 end;
