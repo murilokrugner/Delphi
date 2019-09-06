@@ -32,7 +32,6 @@ type
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
-    ProgressBar1: TProgressBar;
     ActivityIndicator1: TActivityIndicator;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);

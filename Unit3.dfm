@@ -4711,9 +4711,6 @@
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
-      ExplicitLeft = 16
-      ExplicitWidth = 1101
-      ExplicitHeight = 159
       object Label8: TLabel
         Left = 23
         Top = 37
@@ -4878,10 +4875,6 @@
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
-      ExplicitLeft = -12
-      ExplicitTop = 46
-      ExplicitWidth = 1113
-      ExplicitHeight = 159
       object Label2: TLabel
         Left = 24
         Top = 24
@@ -5115,8 +5108,6 @@
     object TabSheet3: TTabSheet
       Caption = 'Frete/Despesas'
       ImageIndex = 2
-      ExplicitWidth = 1353
-      ExplicitHeight = 159
       object Label13: TLabel
         Left = 80
         Top = 96
@@ -5272,8 +5263,6 @@
       Font.Style = []
       ImageIndex = 3
       ParentFont = False
-      ExplicitWidth = 1353
-      ExplicitHeight = 159
       object Label23: TLabel
         Left = 25
         Top = 24
@@ -5342,8 +5331,6 @@
     object TabSheet5: TTabSheet
       Caption = 'Descontos'
       ImageIndex = 4
-      ExplicitWidth = 1353
-      ExplicitHeight = 159
       object Label18: TLabel
         Left = 96
         Top = 21
@@ -5488,8 +5475,6 @@
     object Mensagem: TTabSheet
       Caption = 'Mensagem/Reajuste'
       ImageIndex = 5
-      ExplicitWidth = 1353
-      ExplicitHeight = 159
       object Label29: TLabel
         Left = 168
         Top = 29
@@ -5552,9 +5537,9 @@
   end
   object DBGrid1: TDBGrid
     Left = 216
-    Top = 51
+    Top = 47
     Width = 1161
-    Height = 690
+    Height = 515
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -5566,9 +5551,9 @@
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
+    TitleFont.Height = -17
     TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+    TitleFont.Style = [fsBold]
   end
   object IMPRIMIR: TBitBtn
     Left = 1035
@@ -6082,7 +6067,7 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43713.352183148100000000
-    ReportOptions.LastChange = 43713.452277696760000000
+    ReportOptions.LastChange = 43714.457144328710000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -6110,6 +6095,10 @@
       item
         DataSet = frxDBDataset5
         DataSetName = 'frxDBDataset5'
+      end
+      item
+        DataSet = frxDBDataset6
+        DataSetName = 'frxDBDataset6'
       end>
     Variables = <>
     Style = <>
@@ -6953,10 +6942,9 @@
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 34.015770000000000000
+        Height = 49.133890000000000000
         Top = 487.559370000000000000
         Width = 718.110700000000000000
-        Child = frxReport1.Child1
         DataSet = frxDBDataset2
         DataSetName = 'frxDBDataset2'
         RowCount = 0
@@ -7155,8 +7143,8 @@
       object MasterData2: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 117.165430000000000000
-        Top = 733.228820000000000000
+        Height = 136.063080000000000000
+        Top = 653.858690000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset4
         DataSetName = 'frxDBDataset4'
@@ -7247,8 +7235,8 @@
       object MasterData3: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 98.267780000000000000
-        Top = 612.283860000000000000
+        Height = 71.811070000000000000
+        Top = 559.370440000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset5
         DataSetName = 'frxDBDataset5'
@@ -7340,7 +7328,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 60.472480000000000000
-        Top = 873.071430000000000000
+        Top = 812.598950000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset3
         DataSetName = 'frxDBDataset3'
@@ -7374,7 +7362,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 994.016390000000000000
+        Top = 933.543910000000000000
         Width = 718.110700000000000000
         object SysMemo1: TfrxSysMemoView
           AllowVectorExport = True
@@ -7431,35 +7419,16 @@
             'P'#193'GINA:')
         end
       end
-      object Child1: TfrxChild
-        FillType = ftBrush
-        Frame.Typ = []
-        Height = 45.354360000000000000
-        Top = 544.252320000000000000
-        Width = 718.110700000000000000
-        ToNRows = 0
-        ToNRowsMode = rmCount
-        object Memo33: TfrxMemoView
-          AllowVectorExport = True
-          Left = 495.118430000000000000
-          Top = 18.897650000000000000
-          Width = 56.692950000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'TOTAL:')
-        end
-        object SysMemo4: TfrxSysMemoView
-          AllowVectorExport = True
-          Left = 574.488560000000000000
-          Top = 18.897650000000000000
-          Width = 94.488250000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[SUM(<frxDBDataset2."TOTAL">,MasterData1,2)]')
-        end
-      end
     end
+  end
+  object frxDBDataset6: TfrxDBDataset
+    UserName = 'frxDBDataset6'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'c7_total=c7_total')
+    DataSet = ADOQuery3
+    BCDToCurrency = False
+    Left = 296
+    Top = 272
   end
 end

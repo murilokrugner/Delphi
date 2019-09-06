@@ -175,6 +175,7 @@ type
     Image1: TImage;
     Image3: TImage;
     Image2: TImage;
+    frxDBDataset6: TfrxDBDataset;
     procedure frxPreview1Click(Sender: TObject);
     procedure IMPRIMIRClick(Sender: TObject);
   private

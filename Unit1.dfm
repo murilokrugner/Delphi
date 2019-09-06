@@ -4750,22 +4750,15 @@
     OnClick = Button3Click
   end
   object ActivityIndicator1: TActivityIndicator
-    Left = 80
-    Top = 240
+    Left = 88
+    Top = 697
     IndicatorColor = aicWhite
-  end
-  object ProgressBar1: TProgressBar
-    Left = 8
-    Top = 312
-    Width = 185
-    Height = 17
-    TabOrder = 6
   end
   object DBGrid1: TDBGrid
     Left = 216
     Top = 50
     Width = 1146
-    Height = 657
+    Height = 679
     Margins.Top = 4
     Color = clInactiveCaption
     DataSource = DataSource1
