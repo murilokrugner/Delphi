@@ -12,7 +12,7 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -4669,16 +4669,17 @@ object Form4: TForm4
       0DFA14FF0BFCFEA1E31490385C0000000049454E44AE426082}
   end
   object DBGrid1: TDBGrid
-    Left = 215
-    Top = 39
+    Left = 223
+    Top = 63
     Width = 682
-    Height = 522
+    Height = 506
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = 16
     Font.Name = 'Tahoma'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 0
@@ -4692,7 +4693,7 @@ object Form4: TForm4
     Left = 789
     Top = 8
     Width = 108
-    Height = 25
+    Height = 33
     Caption = 'OK'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4705,16 +4706,22 @@ object Form4: TForm4
   end
   object Edit1: TEdit
     Left = 449
-    Top = 8
+    Top = 14
     Width = 207
-    Height = 21
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
   object Button2: TButton
     Left = 662
     Top = 8
     Width = 121
-    Height = 25
+    Height = 32
     Caption = 'PESQUISAR'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4727,9 +4734,15 @@ object Form4: TForm4
   end
   object ComboBox1: TComboBox
     Left = 223
-    Top = 8
+    Top = 14
     Width = 220
-    Height = 21
+    Height = 24
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
     Text = 'Selecione'
     Items.Strings = (

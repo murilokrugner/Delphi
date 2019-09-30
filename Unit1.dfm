@@ -2,6 +2,8 @@
   AlignWithMargins = True
   Left = 0
   Top = 0
+  VertScrollBar.Color = clHighlight
+  VertScrollBar.ParentColor = False
   ActiveControl = Edit1
   AutoSize = True
   Caption = 'PEDIDOS DE COMPRA'
@@ -14,7 +16,9 @@
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poDefault
+  WindowState = wsMaximized
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -1424,6 +1428,7 @@
       4500145145001451450014514500145145001451450014514500145145001451
       4500145145001451450014514500145145001451450014514500145145001451
       4500145145007FFFD9}
+    OnClick = Image1Click
   end
   object Image2: TImage
     Left = 216
@@ -4720,7 +4725,7 @@
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 1257
+    Left = 1247
     Top = 8
     Width = 105
     Height = 35
@@ -4737,7 +4742,7 @@
   object Button3: TButton
     Left = 1041
     Top = 8
-    Width = 210
+    Width = 200
     Height = 34
     Caption = 'Pedidos n'#227'o entregues'
     Font.Charset = DEFAULT_CHARSET
@@ -4756,9 +4761,9 @@
   end
   object DBGrid1: TDBGrid
     Left = 216
-    Top = 50
+    Top = 64
     Width = 1146
-    Height = 679
+    Height = 687
     Margins.Top = 4
     Color = clInactiveCaption
     DataSource = DataSource1
@@ -4833,10 +4838,6 @@
       end>
   end
   object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=SQLOLEDB.1;Password=totvs123;Persist Security Info=True' +
-      ';User ID=totvs;Initial Catalog=TOTVSDB;Data Source=COMPRAS03'
     DefaultDatabase = 'TOTVSDB'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
@@ -4844,7 +4845,6 @@
     Top = 8
   end
   object ADOQuery1: TADOQuery
-    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>

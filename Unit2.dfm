@@ -3449,6 +3449,7 @@ object Form2: TForm2
   OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 7
   object Image2: TImage
@@ -6537,9 +6538,9 @@ object Form2: TForm2
   end
   object SpeedButton1: TSpeedButton
     Left = 624
-    Top = 278
+    Top = 272
     Width = 361
-    Height = 130
+    Height = 128
     Align = alCustom
     Glyph.Data = {
       3E140000424D3E140000000000003E000000280000003B010000800000000100
@@ -8143,8 +8144,8 @@ object Form2: TForm2
     ParentFont = False
   end
   object SpeedButton2: TSpeedButton
-    Left = 584
-    Top = 462
+    Left = 592
+    Top = 430
     Width = 441
     Height = 130
     Glyph.Data = {
@@ -10617,8 +10618,6 @@ object Form2: TForm2
     Margins.Right = 2
     Margins.Bottom = 2
     Panels = <>
-    ExplicitLeft = 16
-    ExplicitTop = 748
   end
   object Button1: TButton
     Left = 32

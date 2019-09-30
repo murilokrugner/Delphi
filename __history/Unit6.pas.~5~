@@ -1,0 +1,59 @@
+unit Unit6;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, IniFiles, Unit1, Unit3, Forms;
+
+type
+  TDataModule6 = class(TDataModule)
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule6: TDataModule6;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDataModule6.DataModuleCreate(Sender: TObject);
+var
+  caminho : String;
+  servidor, banco, usuario, senha, porta, driverServidor, NomeEstacao : string;
+  arqIni : TiniFile;
+begin
+  arqIni := TIniFile.Create(ExtractFilePath(Application.ExeName)+'Config.ini');
+
+
+
+  servidor := arqIni.ReadString('banco_dados', 'conexao',    '');
+  driverservidor := arqIni.ReadString('banco_dados', 'driver',      '');
+  porta := arqIni.ReadString('banco_dados', 'port',        '');
+  banco := arqIni.ReadString('banco_dados', 'database',    '');
+  usuario := arqIni.ReadString('banco_dados', 'user',        '');
+  senha := arqIni.ReadString('banco_dados', 'password',    '');
+  NomeEstacao := arqIni.ReadString('banco_dados', 'WorkStation', '');
+  Unit1.Form1.ADOConnection1.ConnectionString := 'Provider='+DriverServidor+';'+
+                                'Persist Security Info=True;'+
+                                'User ID='+usuario+';'+
+                                'Password='+senha+';'+
+                                'Initial Catalog='+banco+';'+
+                                'Data Source='+servidor+';'+
+                                'Auto Translate=True;'+
+                                'Packet Size=4096;'+
+                                'Workstation ID='+NomeEstacao+';'+
+                                'Network Library=DBMSSOCN';
+
+
+  Unit1.Form1.ADOConnection1.Connected := true;
+
+end;
+
+end.

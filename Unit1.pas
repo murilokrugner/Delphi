@@ -7,7 +7,8 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.Grids,
   Vcl.DBGrids, Vcl.StdCtrls, Vcl.Menus, Vcl.WinXCtrls, frxClass, frxDBSet,
-  Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.ComCtrls;
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.ComCtrls,
+  IniFiles;
 
 type
   TForm1 = class(TForm)
@@ -40,6 +41,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -328,6 +331,46 @@ begin
   Unit3.Form3.Edit1.Text := cnpjConvert;
 
   Unit3.Form3.ShowModal;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+var  servidor, banco, usuario, senha : string;
+arqIni : TiniFile;
+begin
+  ADOConnection1.Connected := False;
+  arqIni := Tinifile.Create('C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Win32\Debug\configuracao.ini');
+  servidor := arqIni.ReadString('CONEXAO', 'SERVIDOR','');
+  banco	:= arqIni.ReadString('CONEXAO', 'BANCO', '');
+  usuario  := arqIni.ReadString('CONEXAO', 'USUARIO', '');
+  senha	:= arqIni.ReadString('CONEXAO', 'SENHA', '');
+  ADOConnection1.ConnectionString := 'Provider=SQLOLEDB.1;Password='+chr(39) + senha + chr(39)+';'
+  +'Persist Security Info=True;User ID='+chr(39) + usuario + chr(39)+';Initial Catalog='+chr(39) + banco + chr(39)+';'
+  +'Data Source='+chr(39) + servidor + chr(39)+';Use Procedure for Prepare=1;Auto Translate=True;'
+  +'Packet Size=4096;Workstation ID='+chr(39) + servidor + chr(39)+';'
+  +'Use Encryption for Data=False;Tag with column collation when possible=False';
+  ADOConnection1.Connected := true;
+  ADOQuery1.Active := true;
+
+end;
+
+procedure TForm1.Image1Click(Sender: TObject);
+Const
+  nTamOriginal = 1366; // Será o 100% da escala
+Var
+  nEscala : Double; // Vai me dar o percentual de Transformação escalar
+  nPorcento : Integer; // Vai me dar em percentual inteiro o valor
+begin
+  With TForm1 do
+  begin
+    if nTamOriginal <> Screen.Width then
+  begin
+    nEscala := ((Screen.Width-nTamOriginal)/nTamOriginal);
+    nPorcento := Round((nEscala*100) + 100);
+    Self.Width := Round(Self.Width * (nEscala+1));
+    Self.Height := Round(Self.Height * (nEscala+1));
+    Self.ScaleBy(nPorcento,100);
+  end;
+  end;
 end;
 
 procedure TForm1.Sair1Click(Sender: TObject);

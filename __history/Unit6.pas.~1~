@@ -1,0 +1,36 @@
+unit Unit6;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, IniFiles, Unit1, Forms;
+
+type
+  TDataModule6 = class(TDataModule)
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule6: TDataModule6;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDataModule6.DataModuleCreate(Sender: TObject);
+var
+  iniConf,param:string;
+begin
+  iniConf:=TIniFile.Create(ExtractFilePath(Application.ExeName)+'conf.ini');
+  param:= iniConf.ReadString('banco_dados','conexao','');
+  Unit1.Form1.ADOConnection1.ConnectionString := param;
+  Unit1.Form1.ADOConnection1.Connected := true;
+end;
+
+end.

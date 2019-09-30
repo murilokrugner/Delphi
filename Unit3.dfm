@@ -13,7 +13,9 @@
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poDefault
+  WindowState = wsMaximized
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image2: TImage
@@ -4701,7 +4703,7 @@
     Top = 568
     Width = 1230
     Height = 181
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -4850,7 +4852,7 @@
       object Edit5: TEdit
         Left = 912
         Top = 96
-        Width = 225
+        Width = 217
         Height = 27
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -4864,7 +4866,7 @@
       object DBEdit29: TDBEdit
         Left = 912
         Top = 24
-        Width = 225
+        Width = 217
         Height = 27
         DataField = 'E4_DESCRI'
         DataSource = DataSource7
@@ -4903,7 +4905,7 @@
       end
       object Label4: TLabel
         Left = 24
-        Top = 128
+        Top = 112
         Width = 138
         Height = 19
         Caption = 'Primeira Compra'
@@ -4915,8 +4917,8 @@
         ParentFont = False
       end
       object Label5: TLabel
-        Left = 392
-        Top = 128
+        Left = 360
+        Top = 112
         Width = 122
         Height = 19
         Caption = 'Ultima Compra'
@@ -4928,8 +4930,8 @@
         ParentFont = False
       end
       object Label6: TLabel
-        Left = 887
-        Top = 32
+        Left = 840
+        Top = 24
         Width = 72
         Height = 19
         Caption = 'Telefone'
@@ -4941,7 +4943,7 @@
         ParentFont = False
       end
       object Label7: TLabel
-        Left = 887
+        Left = 840
         Top = 72
         Width = 55
         Height = 19
@@ -4954,8 +4956,8 @@
         ParentFont = False
       end
       object Label19: TLabel
-        Left = 887
-        Top = 120
+        Left = 775
+        Top = 117
         Width = 42
         Height = 19
         Caption = 'CNPJ'
@@ -5028,7 +5030,7 @@
       end
       object DBEdit5: TDBEdit
         Left = 976
-        Top = 39
+        Top = 15
         Width = 145
         Height = 27
         DataField = 'a2_tel'
@@ -5044,7 +5046,7 @@
       end
       object DBEdit6: TDBEdit
         Left = 976
-        Top = 72
+        Top = 64
         Width = 145
         Height = 27
         DataField = 'a2_est'
@@ -5059,8 +5061,8 @@
         TabOrder = 5
       end
       object Edit8: TEdit
-        Left = 168
-        Top = 127
+        Left = 184
+        Top = 112
         Width = 153
         Height = 27
         Font.Charset = DEFAULT_CHARSET
@@ -5072,9 +5074,9 @@
         TabOrder = 6
       end
       object Edit9: TEdit
-        Left = 528
-        Top = 127
-        Width = 161
+        Left = 506
+        Top = 112
+        Width = 152
         Height = 27
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5096,8 +5098,8 @@
         Visible = False
       end
       object Edit1: TEdit
-        Left = 976
-        Top = 120
+        Left = 840
+        Top = 109
         Width = 281
         Height = 27
         ReadOnly = True
@@ -5109,7 +5111,7 @@
       Caption = 'Frete/Despesas'
       ImageIndex = 2
       object Label13: TLabel
-        Left = 80
+        Left = 24
         Top = 96
         Width = 116
         Height = 19
@@ -5122,7 +5124,7 @@
         ParentFont = False
       end
       object Label14: TLabel
-        Left = 469
+        Left = 357
         Top = 40
         Width = 109
         Height = 19
@@ -5135,8 +5137,8 @@
         ParentFont = False
       end
       object Label15: TLabel
-        Left = 469
-        Top = 104
+        Left = 357
+        Top = 96
         Width = 68
         Height = 19
         Caption = 'Despesa'
@@ -5148,8 +5150,8 @@
         ParentFont = False
       end
       object Label16: TLabel
-        Left = 979
-        Top = 32
+        Left = 751
+        Top = 40
         Width = 57
         Height = 19
         Caption = 'Seguro'
@@ -5161,7 +5163,7 @@
         ParentFont = False
       end
       object Label17: TLabel
-        Left = 855
+        Left = 751
         Top = 104
         Width = 181
         Height = 19
@@ -5174,7 +5176,7 @@
         ParentFont = False
       end
       object DBEdit12: TDBEdit
-        Left = 216
+        Left = 160
         Top = 88
         Width = 121
         Height = 27
@@ -5190,7 +5192,7 @@
         TabOrder = 0
       end
       object DBEdit13: TDBEdit
-        Left = 619
+        Left = 523
         Top = 32
         Width = 121
         Height = 27
@@ -5206,7 +5208,7 @@
         TabOrder = 1
       end
       object DBEdit14: TDBEdit
-        Left = 619
+        Left = 523
         Top = 96
         Width = 121
         Height = 27
@@ -5222,8 +5224,8 @@
         TabOrder = 2
       end
       object DBEdit15: TDBEdit
-        Left = 1064
-        Top = 24
+        Left = 960
+        Top = 32
         Width = 121
         Height = 27
         DataField = 'SEGURO'
@@ -5238,7 +5240,7 @@
         TabOrder = 3
       end
       object DBEdit16: TDBEdit
-        Left = 1064
+        Left = 960
         Top = 96
         Width = 121
         Height = 27
@@ -5293,7 +5295,7 @@
         Left = 83
         Top = 3
         Width = 990
-        Height = 78
+        Height = 62
         DataSource = DataSource10
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5310,9 +5312,9 @@
       end
       object DBGrid3: TDBGrid
         Left = 83
-        Top = 79
+        Top = 72
         Width = 990
-        Height = 77
+        Height = 65
         DataSource = DataSource11
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5536,16 +5538,17 @@
     end
   end
   object DBGrid1: TDBGrid
-    Left = 216
-    Top = 47
-    Width = 1161
-    Height = 515
+    Left = 223
+    Top = 63
+    Width = 1139
+    Height = 499
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 0
@@ -6067,7 +6070,7 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43713.352183148100000000
-    ReportOptions.LastChange = 43714.457144328710000000
+    ReportOptions.LastChange = 43732.402466562500000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -6942,7 +6945,7 @@
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 49.133890000000000000
+        Height = 71.811070000000000000
         Top = 487.559370000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset2
@@ -7060,6 +7063,16 @@
           Memo.UTF8W = (
             '[frxDBDataset2."QNT_SEGUM_UND"]')
         end
+        object SysMemo4: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 574.488560000000000000
+          Top = 49.133890000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset2."TOTAL">,MasterData1,2)]')
+        end
       end
       object Header1: TfrxHeader
         FillType = ftBrush
@@ -7144,7 +7157,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 136.063080000000000000
-        Top = 653.858690000000000000
+        Top = 676.535870000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset4
         DataSetName = 'frxDBDataset4'
@@ -7236,7 +7249,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 71.811070000000000000
-        Top = 559.370440000000000000
+        Top = 582.047620000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset5
         DataSetName = 'frxDBDataset5'
@@ -7328,7 +7341,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 60.472480000000000000
-        Top = 812.598950000000000000
+        Top = 835.276130000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset3
         DataSetName = 'frxDBDataset3'
@@ -7362,7 +7375,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 933.543910000000000000
+        Top = 956.221090000000000000
         Width = 718.110700000000000000
         object SysMemo1: TfrxSysMemoView
           AllowVectorExport = True

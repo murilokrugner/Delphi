@@ -25,6 +25,7 @@ type
     procedure Compras1Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +50,26 @@ end;
 procedure TForm2.Compras1Click(Sender: TObject);
 begin
   Unit1.Form1.ShowModal;
+end;
+
+Const
+  nTamOriginal = 1366; // Será o 100% da escala
+Var
+  nEscala : Double; // Vai me dar o percentual de Transformação escalar
+  nPorcento : Integer; // Vai me dar em percentual inteiro o valor
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  With TForm2 do
+  begin
+    if nTamOriginal <> Screen.Width then
+  begin
+    nEscala := ((Screen.Width-nTamOriginal)/nTamOriginal);
+    nPorcento := Round((nEscala*100) + 100);
+    Self.Width := Round(Self.Width * (nEscala+1));
+    Self.Height := Round(Self.Height * (nEscala+1));
+    Self.ScaleBy(nPorcento,100);
+  end;
+  end;
 end;
 
 procedure TForm2.Sair1Click(Sender: TObject);
