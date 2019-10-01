@@ -34,6 +34,7 @@ type
     Image2: TImage;
     Image3: TImage;
     ActivityIndicator1: TActivityIndicator;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure ComboBox1Change(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -108,7 +110,7 @@ begin
       + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
       + chr(39) + date + chr(39) +
       ') as DATA_DE_ENTREGA from sc7010 where c7_datprf =' + chr(39) +
-      dateConvert + chr(39));
+      dateConvert + chr(39)+ 'and c7_filial = 01 order by c7_num desc');
     ADOQuery1.Open
   end
 end;
@@ -170,6 +172,28 @@ begin
     //ProgressBar1.Position:= ProgressBar1.Position+1;
     //ADOQuery1.Next;
   //end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+  date,search:string;
+begin
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Clear;
+
+   date := 'dd/MM/yyyy';
+   search := Edit1.Text;
+
+   ADOQuery1.SQL.Add
+    ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+    + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
+    'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
+    + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+    + chr(39) + date + chr(39) +
+    ') as DATA_DE_ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where c7_datprf >= getdate() and C7_QUJE != c7_quant and C7_FILIAL = 02 and a2_nome = '
+    + chr(39) + search + chr(39) + 'order by c7_num desc');
+
+  ADOQuery1.Open
 end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);
@@ -250,7 +274,7 @@ begin
     + chr(39) + date + chr(39) +
     ') AS DATA_DE_ENTREGA, C7_NUMSC AS NUMERO_DA_SOLICITAÇÃO,  C7_FRETE AS VALOR_DO_FRETE, C7_TPFRETE AS TIPO_FRETE, C7_DESPESA AS VALOR_DA_DESPESA,'
     + 'C7_SEGURO AS SEGURO ,c7_fornece AS FORNECEDOR,  C7_CONTATO AS CONTATO, format(convert(date, C7_EMISSAO, 103),'
-    + chr(39) + date + chr(39) + ') AS EMISSÃO FROM SC7010 WHERE C7_NUM = ' +
+    + chr(39) + date + chr(39) + ') AS EMISSÃO, C7_OBS AS OBSERVAÇÕES, SC1010.C1_SOLICIT AS SOLICITANTE FROM SC7010 JOIN SC1010 ON C1_NUM = C7_NUMSC WHERE C7_NUM = ' +
     chr(39) + select + chr(39));
 
   Unit3.Form3.ADOQuery2.SQL.Add
@@ -338,7 +362,7 @@ var  servidor, banco, usuario, senha : string;
 arqIni : TiniFile;
 begin
   ADOConnection1.Connected := False;
-  arqIni := Tinifile.Create('C:\Users\Compras 3\Documents\Embarcadero\Studio\Curso\Win32\Debug\configuracao.ini');
+  arqIni := Tinifile.Create('C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\consulta-protheus\Win32\Debug\configuracao.ini');
   servidor := arqIni.ReadString('CONEXAO', 'SERVIDOR','');
   banco	:= arqIni.ReadString('CONEXAO', 'BANCO', '');
   usuario  := arqIni.ReadString('CONEXAO', 'USUARIO', '');

@@ -8,7 +8,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Data.Win.ADODB,
   Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, Vcl.Menus, Vcl.ComCtrls,
   Vcl.Buttons, frxClass, frxDBSet, frxPreview, frxExportBaseDialog,
-  frxExportPDF, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+  frxExportPDF, Vcl.Imaging.pngimage, IniFiles, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
 
 type
   TForm3 = class(TForm)
@@ -124,31 +124,6 @@ type
     ADOQuery7E4_DESCRI: TStringField;
     DBEdit29: TDBEdit;
     Label31: TLabel;
-    ADOQuery1NUMERO_DO_PEDIDO: TStringField;
-    ADOQuery1ITEM: TStringField;
-    ADOQuery1PRODUTO: TStringField;
-    ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField;
-    ADOQuery1UNIDADE: TStringField;
-    ADOQuery1SEGUNDA_UNIDADE: TStringField;
-    ADOQuery1QNT_SEGUM_UND: TFloatField;
-    ADOQuery1QUANTIDADE: TFloatField;
-    ADOQuery1PREÇO: TFloatField;
-    ADOQuery1TOTAL: TFloatField;
-    ADOQuery1ALIQUOTA_IPI: TFloatField;
-    ADOQuery1BASE_ICMS: TFloatField;
-    ADOQuery1BASE_IPI: TFloatField;
-    ADOQuery1ALIQUOTA_ICMS: TFloatField;
-    ADOQuery1DESCONTO: TFloatField;
-    ADOQuery1CONDIÇÃO_DE_PAGAMENTO: TStringField;
-    ADOQuery1DATA_DE_ENTREGA: TWideStringField;
-    ADOQuery1NUMERO_DA_SOLICITAÇÃO: TStringField;
-    ADOQuery1VALOR_DO_FRETE: TFloatField;
-    ADOQuery1TIPO_FRETE: TStringField;
-    ADOQuery1VALOR_DA_DESPESA: TFloatField;
-    ADOQuery1SEGURO: TFloatField;
-    ADOQuery1FORNECEDOR: TStringField;
-    ADOQuery1CONTATO: TStringField;
-    ADOQuery1EMISSÃO: TWideStringField;
     DBGrid2: TDBGrid;
     DataSource10: TDataSource;
     ADOQuery10: TADOQuery;
@@ -176,6 +151,33 @@ type
     Image3: TImage;
     Image2: TImage;
     frxDBDataset6: TfrxDBDataset;
+    ADOQuery1NUMERO_DO_PEDIDO: TStringField;
+    ADOQuery1ITEM: TStringField;
+    ADOQuery1PRODUTO: TStringField;
+    ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField;
+    ADOQuery1UNIDADE: TStringField;
+    ADOQuery1SEGUNDA_UNIDADE: TStringField;
+    ADOQuery1QNT_SEGUM_UND: TFloatField;
+    ADOQuery1QUANTIDADE: TFloatField;
+    ADOQuery1PREÇO: TFloatField;
+    ADOQuery1TOTAL: TFloatField;
+    ADOQuery1ALIQUOTA_IPI: TFloatField;
+    ADOQuery1BASE_IPI: TFloatField;
+    ADOQuery1ALIQUOTA_ICMS: TFloatField;
+    ADOQuery1BASE_ICMS: TFloatField;
+    ADOQuery1DESCONTO: TFloatField;
+    ADOQuery1CONDIÇÃO_DE_PAGAMENTO: TStringField;
+    ADOQuery1DATA_DE_ENTREGA: TWideStringField;
+    ADOQuery1NUMERO_DA_SOLICITAÇÃO: TStringField;
+    ADOQuery1VALOR_DO_FRETE: TFloatField;
+    ADOQuery1TIPO_FRETE: TStringField;
+    ADOQuery1VALOR_DA_DESPESA: TFloatField;
+    ADOQuery1SEGURO: TFloatField;
+    ADOQuery1FORNECEDOR: TStringField;
+    ADOQuery1CONTATO: TStringField;
+    ADOQuery1EMISSÃO: TWideStringField;
+    ADOQuery1OBSERVAÇÕES: TStringField;
+    ADOQuery1SOLICITANTE: TStringField;
     procedure frxPreview1Click(Sender: TObject);
     procedure IMPRIMIRClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -199,24 +201,26 @@ begin;
 end;
 
 procedure TForm3.FormCreate(Sender: TObject);
-Const
-  nTamOriginal = 1366; // Será o 100% da escala
-Var
-  nEscala : Double; // Vai me dar o percentual de Transformação escalar
-  nPorcento : Integer; // Vai me dar em percentual inteiro o valor
+
+var
+  arqIni : TiniFile;
+  servidor, banco, usuario, senha : string;
 begin
-  With TForm3 do
-  begin
-    if nTamOriginal <> Screen.Width then
-  begin
-    nEscala := ((Screen.Width-nTamOriginal)/nTamOriginal);
-    nPorcento := Round((nEscala*100) + 100);
-    Self.Width := Round(Self.Width * (nEscala+1));
-    Self.Height := Round(Self.Height * (nEscala+1));
-    Self.ScaleBy(nPorcento,100);
+  ADOConnection1.Connected := False;
+  arqIni := Tinifile.Create('C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\consulta-protheus\Win32\Debug\configuracao.ini');
+  servidor := arqIni.ReadString('CONEXAO', 'SERVIDOR','');
+  banco	:= arqIni.ReadString('CONEXAO', 'BANCO', '');
+  usuario  := arqIni.ReadString('CONEXAO', 'USUARIO', '');
+  senha	:= arqIni.ReadString('CONEXAO', 'SENHA', '');
+  ADOConnection1.ConnectionString := 'Provider=SQLOLEDB.1;Password='+chr(39) + senha + chr(39)+';'
+  +'Persist Security Info=True;User ID='+chr(39) + usuario + chr(39)+';Initial Catalog='+chr(39) + banco + chr(39)+';'
+  +'Data Source='+chr(39) + servidor + chr(39)+';Use Procedure for Prepare=1;Auto Translate=True;'
+  +'Packet Size=4096;Workstation ID='+chr(39) + servidor + chr(39)+';'
+  +'Use Encryption for Data=False;Tag with column collation when possible=False';
+  ADOConnection1.Connected := true;
+  ADOQuery1.Active := true;
   end;
-  end;
-end;
+
 
 procedure TForm3.frxPreview1Click(Sender: TObject);
 begin

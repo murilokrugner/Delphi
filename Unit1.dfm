@@ -4725,8 +4725,8 @@
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 1247
-    Top = 8
+    Left = 55
+    Top = 200
     Width = 105
     Height = 35
     Caption = 'Recarregar'
@@ -4740,8 +4740,8 @@
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 1041
-    Top = 8
+    Left = 8
+    Top = 128
     Width = 200
     Height = 34
     Caption = 'Pedidos n'#227'o entregues'
@@ -4760,10 +4760,10 @@
     IndicatorColor = aicWhite
   end
   object DBGrid1: TDBGrid
-    Left = 216
+    Left = 223
     Top = 64
-    Width = 1146
-    Height = 687
+    Width = 1139
+    Height = 677
     Margins.Top = 4
     Color = clInactiveCaption
     DataSource = DataSource1
@@ -4836,6 +4836,21 @@
         Width = 110
         Visible = True
       end>
+  end
+  object Button4: TButton
+    Left = 1056
+    Top = 8
+    Width = 209
+    Height = 34
+    Caption = 'Fornec. n'#227'o entregues'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+    OnClick = Button4Click
   end
   object ADOConnection1: TADOConnection
     DefaultDatabase = 'TOTVSDB'

@@ -1,7 +1,7 @@
 object Form5: TForm5
   Left = 0
   Top = 0
-  Caption = 'Form5'
+  Caption = 'MODULOS'
   ClientHeight = 456
   ClientWidth = 235
   Color = 16771022
@@ -17,7 +17,7 @@ object Form5: TForm5
     Left = 80
     Top = 64
     Width = 73
-    Height = 25
+    Height = 19
     Caption = 'COMPRAS'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

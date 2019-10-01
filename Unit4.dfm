@@ -2,7 +2,7 @@ object Form4: TForm4
   Left = 0
   Top = 0
   AutoSize = True
-  Caption = 'Form4'
+  Caption = 'FORNECEDORES'
   ClientHeight = 749
   ClientWidth = 905
   Color = 16771022
@@ -13,6 +13,7 @@ object Form4: TForm4
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -4751,10 +4752,6 @@ object Form4: TForm4
       'C'#211'DIGO')
   end
   object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=SQLOLEDB.1;Password=totvs123;Persist Security Info=True' +
-      ';User ID=totvs;Initial Catalog=TOTVSDB;Data Source=COMPRAS03'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
     Left = 32

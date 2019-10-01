@@ -26,6 +26,7 @@ type
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,7 +40,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit1, Unit5;
+uses Unit1, Unit5, Unit7;
 
 procedure TForm2.Button1Click(Sender: TObject);
 begin
@@ -80,6 +81,11 @@ end;
 procedure TForm2.SpeedButton1Click(Sender: TObject);
 begin
   Unit5.Form5.ShowModal;
+end;
+
+procedure TForm2.SpeedButton2Click(Sender: TObject);
+begin
+  Unit7.Form7.ShowModal;
 end;
 
 procedure TForm2.SpeedButton3Click(Sender: TObject);

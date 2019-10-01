@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
   Data.Win.ADODB, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, IniFiles;
 
 type
   TForm4 = class(TForm)
@@ -25,6 +25,7 @@ type
     ADOQuery1a2_nome: TStringField;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,6 +79,25 @@ begin
     ADOQuery1.Open;
     Edit1.Clear;
   end;
+end;
+
+procedure TForm4.FormCreate(Sender: TObject);
+var  servidor, banco, usuario, senha : string;
+    arqIni : TiniFile;
+begin
+    ADOConnection1.Connected := False;
+    arqIni := Tinifile.Create('C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\consulta-protheus\Win32\Debug\configuracao.ini');
+    servidor := arqIni.ReadString('CONEXAO', 'SERVIDOR','');
+    banco	:= arqIni.ReadString('CONEXAO', 'BANCO', '');
+    usuario  := arqIni.ReadString('CONEXAO', 'USUARIO', '');
+    senha	:= arqIni.ReadString('CONEXAO', 'SENHA', '');
+    ADOConnection1.ConnectionString := 'Provider=SQLOLEDB.1;Password='+chr(39) + senha + chr(39)+';'
+    +'Persist Security Info=True;User ID='+chr(39) + usuario + chr(39)+';Initial Catalog='+chr(39) + banco + chr(39)+';'
+    +'Data Source='+chr(39) + servidor + chr(39)+';Use Procedure for Prepare=1;Auto Translate=True;'
+    +'Packet Size=4096;Workstation ID='+chr(39) + servidor + chr(39)+';'
+    +'Use Encryption for Data=False;Tag with column collation when possible=False';
+    ADOConnection1.Connected := true;
+    ADOQuery1.Active := true;
 end;
 
 end.
