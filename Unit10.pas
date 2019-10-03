@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Imaging.pngimage,
   Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, IniFiles, Vcl.StdCtrls, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls, Data.Win.ADODB;
+  Vcl.ExtCtrls, Data.Win.ADODB, Vcl.Mask, Vcl.ComCtrls;
 
 type
   TForm10 = class(TForm)
@@ -19,6 +19,88 @@ type
     ADOConnection1: TADOConnection;
     DataSource1: TDataSource;
     ADOQuery1: TADOQuery;
+    DataSource2: TDataSource;
+    DataSource3: TDataSource;
+    DataSource4: TDataSource;
+    DataSource5: TDataSource;
+    DataSource6: TDataSource;
+    DataSource7: TDataSource;
+    DataSource8: TDataSource;
+    DataSource9: TDataSource;
+    DataSource10: TDataSource;
+    ADOQuery2: TADOQuery;
+    ADOQuery3: TADOQuery;
+    ADOQuery4: TADOQuery;
+    ADOQuery5: TADOQuery;
+    ADOQuery6: TADOQuery;
+    ADOQuery7: TADOQuery;
+    ADOQuery8: TADOQuery;
+    ADOQuery9: TADOQuery;
+    ADOQuery10: TADOQuery;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label31: TLabel;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    Edit5: TEdit;
+    DBEdit29: TDBEdit;
+    TabSheet2: TTabSheet;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label19: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    DBEdit19: TDBEdit;
+    Edit2: TEdit;
+    TabSheet3: TTabSheet;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    DBEdit12: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    DBEdit16: TDBEdit;
+    TabSheet4: TTabSheet;
+    Label23: TLabel;
+    Label24: TLabel;
+    DBGrid2: TDBGrid;
+    DBGrid3: TDBGrid;
+    TabSheet5: TTabSheet;
+    Label18: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    DBEdit11: TDBEdit;
+    DBEdit17: TDBEdit;
+    DBEdit18: TDBEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Mensagem: TTabSheet;
+    Label29: TLabel;
+    Label30: TLabel;
+    DBEdit21: TDBEdit;
+    DBEdit24: TDBEdit;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
