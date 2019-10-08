@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Imaging.pngimage,
   Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, IniFiles, Vcl.StdCtrls, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls, Data.Win.ADODB, Vcl.Mask, Vcl.ComCtrls;
+  Vcl.ExtCtrls, Data.Win.ADODB, Vcl.Mask, Vcl.ComCtrls, frxClass, frxDBSet,
+  Vcl.Buttons;
 
 type
   TForm10 = class(TForm)
@@ -101,7 +102,16 @@ type
     Label30: TLabel;
     DBEdit21: TDBEdit;
     DBEdit24: TDBEdit;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxDBDataset2: TfrxDBDataset;
+    frxDBDataset3: TfrxDBDataset;
+    frxDBDataset4: TfrxDBDataset;
+    frxDBDataset5: TfrxDBDataset;
+    frxDBDataset6: TfrxDBDataset;
+    IMPRIMIR: TBitBtn;
     procedure FormCreate(Sender: TObject);
+    procedure IMPRIMIRClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -134,6 +144,11 @@ begin
   ADOConnection1.Connected := true;
   //ADOQuery1.Active := true;
 
+end;
+
+procedure TForm10.IMPRIMIRClick(Sender: TObject);
+begin
+  frxReport1.ShowReport;
 end;
 
 end.

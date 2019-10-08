@@ -1,0 +1,147 @@
+unit Unit10;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Imaging.pngimage,
+  Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, IniFiles, Vcl.StdCtrls, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Data.Win.ADODB, Vcl.Mask, Vcl.ComCtrls, frxClass, frxDBSet;
+
+type
+  TForm10 = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Label1: TLabel;
+    DBText1: TDBText;
+    DBGrid1: TDBGrid;
+    Image3: TImage;
+    ADOConnection1: TADOConnection;
+    DataSource1: TDataSource;
+    ADOQuery1: TADOQuery;
+    DataSource2: TDataSource;
+    DataSource3: TDataSource;
+    DataSource4: TDataSource;
+    DataSource5: TDataSource;
+    DataSource6: TDataSource;
+    DataSource7: TDataSource;
+    DataSource8: TDataSource;
+    DataSource9: TDataSource;
+    DataSource10: TDataSource;
+    ADOQuery2: TADOQuery;
+    ADOQuery3: TADOQuery;
+    ADOQuery4: TADOQuery;
+    ADOQuery5: TADOQuery;
+    ADOQuery6: TADOQuery;
+    ADOQuery7: TADOQuery;
+    ADOQuery8: TADOQuery;
+    ADOQuery9: TADOQuery;
+    ADOQuery10: TADOQuery;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label31: TLabel;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    Edit5: TEdit;
+    DBEdit29: TDBEdit;
+    TabSheet2: TTabSheet;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label19: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    DBEdit19: TDBEdit;
+    Edit2: TEdit;
+    TabSheet3: TTabSheet;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    DBEdit12: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    DBEdit16: TDBEdit;
+    TabSheet4: TTabSheet;
+    Label23: TLabel;
+    Label24: TLabel;
+    DBGrid2: TDBGrid;
+    DBGrid3: TDBGrid;
+    TabSheet5: TTabSheet;
+    Label18: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    DBEdit11: TDBEdit;
+    DBEdit17: TDBEdit;
+    DBEdit18: TDBEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Mensagem: TTabSheet;
+    Label29: TLabel;
+    Label30: TLabel;
+    DBEdit21: TDBEdit;
+    DBEdit24: TDBEdit;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxDBDataset2: TfrxDBDataset;
+    frxDBDataset3: TfrxDBDataset;
+    frxDBDataset4: TfrxDBDataset;
+    frxDBDataset5: TfrxDBDataset;
+    frxDBDataset6: TfrxDBDataset;
+    frxDBDataset7: TfrxDBDataset;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form10: TForm10;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm10.FormCreate(Sender: TObject);
+var
+  arqIni : TiniFile;
+  servidor, banco, usuario, senha : string;
+begin
+  ADOConnection1.Connected := False;
+  arqIni := Tinifile.Create('C:\Users\Compras 3\Documents\Embarcadero\Studio\Projects\consulta-protheus\Win32\Debug\configuracao.ini');
+  servidor := arqIni.ReadString('CONEXAO', 'SERVIDOR','');
+  banco	:= arqIni.ReadString('CONEXAO', 'BANCO', '');
+  usuario  := arqIni.ReadString('CONEXAO', 'USUARIO', '');
+  senha	:= arqIni.ReadString('CONEXAO', 'SENHA', '');
+  ADOConnection1.ConnectionString := 'Provider=SQLOLEDB.1;Password='+chr(39) + senha + chr(39)+';'
+  +'Persist Security Info=True;User ID='+chr(39) + usuario + chr(39)+';Initial Catalog='+chr(39) + banco + chr(39)+';'
+  +'Data Source='+chr(39) + servidor + chr(39)+';Use Procedure for Prepare=1;Auto Translate=True;'
+  +'Packet Size=4096;Workstation ID='+chr(39) + servidor + chr(39)+';'
+  +'Use Encryption for Data=False;Tag with column collation when possible=False';
+  ADOConnection1.Connected := true;
+  //ADOQuery1.Active := true;
+
+end;
+
+end.
