@@ -5,7 +5,7 @@
   AutoSize = True
   Caption = 'PEDIDO'
   ClientHeight = 749
-  ClientWidth = 1370
+  ClientWidth = 1453
   Color = 16771022
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3120,7 +3120,7 @@
     Top = 8
     Width = 113
     Height = 33
-    DataField = 'NUMERO_DO_PEDIDO'
+    DataField = 'PEDIDO'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
@@ -4703,7 +4703,7 @@
     Top = 568
     Width = 1230
     Height = 181
-    ActivePage = TabSheet2
+    ActivePage = Mensagem
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -4790,7 +4790,7 @@
         Top = 32
         Width = 185
         Height = 27
-        DataField = 'VALOR_DO_FRETE'
+        DataField = 'FRETE'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5180,7 +5180,7 @@
         Top = 88
         Width = 121
         Height = 27
-        DataField = 'VALOR_DO_FRETE'
+        DataField = 'FRETE'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5212,7 +5212,7 @@
         Top = 96
         Width = 121
         Height = 27
-        DataField = 'VALOR_DA_DESPESA'
+        DataField = 'DESPESA'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -5538,6 +5538,7 @@
     end
   end
   object DBGrid1: TDBGrid
+    AlignWithMargins = True
     Left = 223
     Top = 63
     Width = 1139
@@ -5560,7 +5561,7 @@
     Columns = <
       item
         Expanded = False
-        FieldName = 'NUMERO_DO_PEDIDO'
+        FieldName = 'PEDIDO'
         Visible = True
       end
       item
@@ -5575,17 +5576,17 @@
       end
       item
         Expanded = False
-        FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
+        FieldName = 'DESC_PRODUTO'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'UNIDADE'
+        FieldName = 'UN'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'SEGUNDA_UNIDADE'
+        FieldName = 'SEG_UN'
         Visible = True
       end
       item
@@ -5595,7 +5596,7 @@
       end
       item
         Expanded = False
-        FieldName = 'QUANTIDADE'
+        FieldName = 'QUANT'
         Visible = True
       end
       item
@@ -5635,22 +5636,22 @@
       end
       item
         Expanded = False
-        FieldName = 'CONDI'#199#195'O_DE_PAGAMENTO'
+        FieldName = 'COND_PAG'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'DATA_DE_ENTREGA'
+        FieldName = 'ENTREGA'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'NUMERO_DA_SOLICITA'#199#195'O'
+        FieldName = 'SOLICIT'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'VALOR_DO_FRETE'
+        FieldName = 'FRETE'
         Visible = True
       end
       item
@@ -5660,7 +5661,7 @@
       end
       item
         Expanded = False
-        FieldName = 'VALOR_DA_DESPESA'
+        FieldName = 'DESPESA'
         Visible = True
       end
       item
@@ -5670,7 +5671,7 @@
       end
       item
         Expanded = False
-        FieldName = 'FORNECEDOR'
+        FieldName = 'FORNEC'
         Visible = True
       end
       item
@@ -5685,12 +5686,12 @@
       end
       item
         Expanded = False
-        FieldName = 'OBSERVA'#199#213'ES'
+        FieldName = 'OBS'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'SOLICITANTE'
+        FieldName = 'SOLIC'
         Visible = True
       end>
   end
@@ -5722,30 +5723,30 @@
     Parameters = <>
     SQL.Strings = (
       
-        'SELECT C7_NUM AS NUMERO_DO_PEDIDO, C7_ITEM AS ITEM, C7_PRODUTO A' +
-        'S PRODUTO, C7_DESCRI AS DESCRI'#199#195'O_DO_PRODUTO, '
+        'SELECT C7_NUM AS PEDIDO, C7_ITEM AS ITEM, C7_PRODUTO AS PRODUTO,' +
+        ' C7_DESCRI AS DESC_PRODUTO, '
       
-        'C7_UM AS UNIDADE, C7_SEGUM as SEGUNDA_UNIDADE, C7_QTSEGUM AS QNT' +
-        '_SEGUM_UND, C7_QUANT AS QUANTIDADE, '
+        'C7_UM AS UN, C7_SEGUM as SEG_UN, C7_QTSEGUM AS QNT_SEGUM_UND, C7' +
+        '_QUANT AS QUANT, '
       
         'C7_PRECO AS PRE'#199'O, C7_TOTAL AS TOTAL, C7_IPI AS ALIQUOTA_IPI, C7' +
         '_BASEIPI AS BASE_IPI, C7_PICM AS ALIQUOTA_ICMS, '
       
-        'C7_BASEICM AS BASE_ICMS, C7_VLDESC AS DESCONTO, C7_COND AS CONDI' +
-        #199#195'O_DE_PAGAMENTO, format(convert(date, C7_DATPRF, 103), '#39'dd/MM/y' +
-        'yyy'#39') as DATA_DE_ENTREGA, '
+        'C7_BASEICM AS BASE_ICMS, C7_VLDESC AS DESCONTO, C7_COND AS COND_' +
+        'PAG, format(convert(date, C7_DATPRF, 103), '#39'dd/MM/yyyy'#39') as ENTR' +
+        'EGA, '
       
-        'C7_NUMSC AS NUMERO_DA_SOLICITA'#199#195'O, C7_FRETE AS VALOR_DO_FRETE, C' +
-        '7_FREPPCC AS TIPO_FRETE, C7_DESPESA AS VALOR_DA_DESPESA, '
+        'C7_NUMSC AS SOLICIT, C7_FRETE AS FRETE, C7_FREPPCC AS TIPO_FRETE' +
+        ', C7_DESPESA AS DESPESA, '
       
-        'C7_SEGURO AS SEGURO, C7_FORNECE AS FORNECEDOR, C7_CONTATO AS CON' +
-        'TATO, format(convert(date, C7_EMISSAO, 103), '#39'dd/MM/yyyy'#39') AS EM' +
-        'ISS'#195'O, C7_OBS AS OBSERVA'#199#213'ES, SC1010.C1_SOLICIT AS SOLICITANTE '
+        'C7_SEGURO AS SEGURO, C7_FORNECE AS FORNEC, C7_CONTATO AS CONTATO' +
+        ', format(convert(date, C7_EMISSAO, 103), '#39'dd/MM/yyyy'#39') AS EMISS'#195 +
+        'O, C7_OBS AS OBS, SC1010.C1_SOLICIT AS SOLIC'
       'FROM SC7010 JOIN SC1010 ON C1_NUM = C7_NUMSC ')
     Left = 824
     Top = 8
-    object ADOQuery1NUMERO_DO_PEDIDO: TStringField
-      FieldName = 'NUMERO_DO_PEDIDO'
+    object ADOQuery1PEDIDO: TStringField
+      FieldName = 'PEDIDO'
       Size = 6
     end
     object ADOQuery1ITEM: TStringField
@@ -5756,23 +5757,23 @@
       FieldName = 'PRODUTO'
       Size = 15
     end
-    object ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField
-      FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
+    object ADOQuery1DESC_PRODUTO: TStringField
+      FieldName = 'DESC_PRODUTO'
       Size = 60
     end
-    object ADOQuery1UNIDADE: TStringField
-      FieldName = 'UNIDADE'
+    object ADOQuery1UN: TStringField
+      FieldName = 'UN'
       Size = 2
     end
-    object ADOQuery1SEGUNDA_UNIDADE: TStringField
-      FieldName = 'SEGUNDA_UNIDADE'
+    object ADOQuery1SEG_UN: TStringField
+      FieldName = 'SEG_UN'
       Size = 2
     end
     object ADOQuery1QNT_SEGUM_UND: TFloatField
       FieldName = 'QNT_SEGUM_UND'
     end
-    object ADOQuery1QUANTIDADE: TFloatField
-      FieldName = 'QUANTIDADE'
+    object ADOQuery1QUANT: TFloatField
+      FieldName = 'QUANT'
     end
     object ADOQuery1PREÇO: TFloatField
       FieldName = 'PRE'#199'O'
@@ -5795,34 +5796,34 @@
     object ADOQuery1DESCONTO: TFloatField
       FieldName = 'DESCONTO'
     end
-    object ADOQuery1CONDIÇÃO_DE_PAGAMENTO: TStringField
-      FieldName = 'CONDI'#199#195'O_DE_PAGAMENTO'
+    object ADOQuery1COND_PAG: TStringField
+      FieldName = 'COND_PAG'
       Size = 3
     end
-    object ADOQuery1DATA_DE_ENTREGA: TWideStringField
-      FieldName = 'DATA_DE_ENTREGA'
+    object ADOQuery1ENTREGA: TWideStringField
+      FieldName = 'ENTREGA'
       ReadOnly = True
       Size = 4000
     end
-    object ADOQuery1NUMERO_DA_SOLICITAÇÃO: TStringField
-      FieldName = 'NUMERO_DA_SOLICITA'#199#195'O'
+    object ADOQuery1SOLICIT: TStringField
+      FieldName = 'SOLICIT'
       Size = 6
     end
-    object ADOQuery1VALOR_DO_FRETE: TFloatField
-      FieldName = 'VALOR_DO_FRETE'
+    object ADOQuery1FRETE: TFloatField
+      FieldName = 'FRETE'
     end
     object ADOQuery1TIPO_FRETE: TStringField
       FieldName = 'TIPO_FRETE'
       Size = 2
     end
-    object ADOQuery1VALOR_DA_DESPESA: TFloatField
-      FieldName = 'VALOR_DA_DESPESA'
+    object ADOQuery1DESPESA: TFloatField
+      FieldName = 'DESPESA'
     end
     object ADOQuery1SEGURO: TFloatField
       FieldName = 'SEGURO'
     end
-    object ADOQuery1FORNECEDOR: TStringField
-      FieldName = 'FORNECEDOR'
+    object ADOQuery1FORNEC: TStringField
+      FieldName = 'FORNEC'
       Size = 6
     end
     object ADOQuery1CONTATO: TStringField
@@ -5834,12 +5835,12 @@
       ReadOnly = True
       Size = 4000
     end
-    object ADOQuery1OBSERVAÇÕES: TStringField
-      FieldName = 'OBSERVA'#199#213'ES'
+    object ADOQuery1OBS: TStringField
+      FieldName = 'OBS'
       Size = 30
     end
-    object ADOQuery1SOLICITANTE: TStringField
-      FieldName = 'SOLICITANTE'
+    object ADOQuery1SOLIC: TStringField
+      FieldName = 'SOLIC'
       Size = 25
     end
   end
@@ -6137,14 +6138,14 @@
     UserName = 'frxDBDataset2'
     CloseDataSource = False
     FieldAliases.Strings = (
-      'NUMERO_DO_PEDIDO=NUMERO_DO_PEDIDO'
+      'PEDIDO=PEDIDO'
       'ITEM=ITEM'
       'PRODUTO=PRODUTO'
-      'DESCRI'#199#195'O_DO_PRODUTO=DESCRI'#199#195'O_DO_PRODUTO'
-      'UNIDADE=UNIDADE'
-      'SEGUNDA_UNIDADE=SEGUNDA_UNIDADE'
+      'DESC_PRODUTO=DESC_PRODUTO'
+      'UN=UN'
+      'SEG_UN=SEG_UN'
       'QNT_SEGUM_UND=QNT_SEGUM_UND'
-      'QUANTIDADE=QUANTIDADE'
+      'QUANT=QUANT'
       'PRE'#199'O=PRE'#199'O'
       'TOTAL=TOTAL'
       'ALIQUOTA_IPI=ALIQUOTA_IPI'
@@ -6152,18 +6153,18 @@
       'ALIQUOTA_ICMS=ALIQUOTA_ICMS'
       'BASE_ICMS=BASE_ICMS'
       'DESCONTO=DESCONTO'
-      'CONDI'#199#195'O_DE_PAGAMENTO=CONDI'#199#195'O_DE_PAGAMENTO'
-      'DATA_DE_ENTREGA=DATA_DE_ENTREGA'
-      'NUMERO_DA_SOLICITA'#199#195'O=NUMERO_DA_SOLICITA'#199#195'O'
-      'VALOR_DO_FRETE=VALOR_DO_FRETE'
+      'COND_PAG=COND_PAG'
+      'ENTREGA=ENTREGA'
+      'SOLICIT=SOLICIT'
+      'FRETE=FRETE'
       'TIPO_FRETE=TIPO_FRETE'
-      'VALOR_DA_DESPESA=VALOR_DA_DESPESA'
+      'DESPESA=DESPESA'
       'SEGURO=SEGURO'
-      'FORNECEDOR=FORNECEDOR'
+      'FORNEC=FORNEC'
       'CONTATO=CONTATO'
       'EMISS'#195'O=EMISS'#195'O'
-      'OBSERVA'#199#213'ES=OBSERVA'#199#213'ES'
-      'SOLICITANTE=SOLICITANTE')
+      'OBS=OBS'
+      'SOLICIT_1=SOLICIT_1')
     DataSource = DataSource1
     BCDToCurrency = False
     Left = 200

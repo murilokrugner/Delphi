@@ -8,7 +8,7 @@
   AutoSize = True
   Caption = 'PEDIDOS DE COMPRA'
   ClientHeight = 749
-  ClientWidth = 1370
+  ClientWidth = 1400
   Color = 16771022
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -4760,9 +4760,10 @@
     IndicatorColor = aicWhite
   end
   object DBGrid1: TDBGrid
+    AlignWithMargins = True
     Left = 223
     Top = 64
-    Width = 1139
+    Width = 1174
     Height = 677
     Margins.Top = 4
     Color = clInactiveCaption
@@ -4786,54 +4787,47 @@
     Columns = <
       item
         Expanded = False
-        FieldName = 'NUMERO_DO_PEDIDO'
-        Width = 144
+        FieldName = 'PEDIDO'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'DATA_DE_EMISS'#195'O'
-        Width = 168
+        FieldName = 'EMISS'#195'O'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'CODIGO_DO_FORNECEDOR'
-        Width = 159
+        FieldName = 'FORNECEDOR'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'ITEM'
-        Width = 75
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
+        FieldName = 'PRODUTO'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'UNIDADE'
+        FieldName = 'UN'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'QUANTIDADE'
-        Width = 117
+        FieldName = 'QUANT'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'QUANTIDADE_JA_ENTREGUE'
-        Width = 163
+        FieldName = 'QUANT_ENTREGUE'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'DATA_DE_ENTREGA'
-        Width = 110
+        FieldName = 'ENTREGA'
         Visible = True
       end>
   end
@@ -4865,51 +4859,50 @@
     Parameters = <>
     SQL.Strings = (
       
-        'select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISS' +
-        'AO, 103), '#39'dd/MM/yyyy'#39') as DATA_DE_EMISS'#195'O,  '
+        'select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103), ' +
+        #39'dd/MM/yyyy'#39') as EMISS'#195'O,  '
       
-        'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI A' +
-        'S DESCRI'#199#195'O_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE' +
-        ', '
+        'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO,' +
+        ' C7_UM AS UN, C7_QUANT AS QUANT, '
       
-        'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datpr' +
-        'f, 103), '#39'dd/MM/yyyy'#39') as DATA_DE_ENTREGA FROM '
+        'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),' +
+        ' '#39'dd/MM/yyyy'#39') as ENTREGA FROM '
       'SC7010 where C7_FILIAL = 01 order by c7_num desc')
     Left = 24
     Top = 8
-    object ADOQuery1NUMERO_DO_PEDIDO: TStringField
-      FieldName = 'NUMERO_DO_PEDIDO'
+    object ADOQuery1PEDIDO: TStringField
+      FieldName = 'PEDIDO'
       Size = 6
     end
-    object ADOQuery1DATA_DE_EMISSÃO: TWideStringField
-      FieldName = 'DATA_DE_EMISS'#195'O'
+    object ADOQuery1EMISSÃO: TWideStringField
+      FieldName = 'EMISS'#195'O'
       ReadOnly = True
       Size = 4000
     end
-    object ADOQuery1CODIGO_DO_FORNECEDOR: TStringField
-      FieldName = 'CODIGO_DO_FORNECEDOR'
+    object ADOQuery1FORNECEDOR: TStringField
+      FieldName = 'FORNECEDOR'
       Size = 6
     end
     object ADOQuery1ITEM: TStringField
       FieldName = 'ITEM'
       Size = 4
     end
-    object ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField
-      FieldName = 'DESCRI'#199#195'O_DO_PRODUTO'
+    object ADOQuery1PRODUTO: TStringField
+      FieldName = 'PRODUTO'
       Size = 60
     end
-    object ADOQuery1UNIDADE: TStringField
-      FieldName = 'UNIDADE'
+    object ADOQuery1UN: TStringField
+      FieldName = 'UN'
       Size = 2
     end
-    object ADOQuery1QUANTIDADE: TFloatField
-      FieldName = 'QUANTIDADE'
+    object ADOQuery1QUANT: TFloatField
+      FieldName = 'QUANT'
     end
-    object ADOQuery1QUANTIDADE_JA_ENTREGUE: TFloatField
-      FieldName = 'QUANTIDADE_JA_ENTREGUE'
+    object ADOQuery1QUANT_ENTREGUE: TFloatField
+      FieldName = 'QUANT_ENTREGUE'
     end
-    object ADOQuery1DATA_DE_ENTREGA: TWideStringField
-      FieldName = 'DATA_DE_ENTREGA'
+    object ADOQuery1ENTREGA: TWideStringField
+      FieldName = 'ENTREGA'
       ReadOnly = True
       Size = 4000
     end

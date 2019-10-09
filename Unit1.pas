@@ -20,21 +20,21 @@ type
     DBGrid1: TDBGrid;
     DataSource1: TDataSource;
     Button2: TButton;
-    ADOQuery1NUMERO_DO_PEDIDO: TStringField;
-    ADOQuery1DATA_DE_EMISSÃO: TWideStringField;
-    ADOQuery1CODIGO_DO_FORNECEDOR: TStringField;
-    ADOQuery1ITEM: TStringField;
-    ADOQuery1DESCRIÇÃO_DO_PRODUTO: TStringField;
-    ADOQuery1UNIDADE: TStringField;
-    ADOQuery1QUANTIDADE: TFloatField;
-    ADOQuery1QUANTIDADE_JA_ENTREGUE: TFloatField;
-    ADOQuery1DATA_DE_ENTREGA: TWideStringField;
     Button3: TButton;
     Image1: TImage;
     Image2: TImage;
     Image3: TImage;
     ActivityIndicator1: TActivityIndicator;
     Button4: TButton;
+    ADOQuery1PEDIDO: TStringField;
+    ADOQuery1EMISSÃO: TWideStringField;
+    ADOQuery1FORNECEDOR: TStringField;
+    ADOQuery1ITEM: TStringField;
+    ADOQuery1PRODUTO: TStringField;
+    ADOQuery1UN: TStringField;
+    ADOQuery1QUANT: TFloatField;
+    ADOQuery1QUANT_ENTREGUE: TFloatField;
+    ADOQuery1ENTREGA: TWideStringField;
     procedure Button1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
@@ -78,7 +78,7 @@ begin
   begin
     Edit1.Clear;
     ADOQuery1.SQL.Add
-      ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+      ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
       + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
       'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
       + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
@@ -91,7 +91,7 @@ begin
   begin
     Edit1.Clear;
     ADOQuery1.SQL.Add
-      ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+      ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
       + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
       'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
       + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
@@ -104,7 +104,7 @@ begin
   begin
     Edit1.Clear;
     ADOQuery1.SQL.Add
-      ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+      ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
       + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
       'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
       + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
@@ -125,7 +125,7 @@ begin
   date := 'dd/MM/yyyy';
 
   ADOQuery1.SQL.Add
-    ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+    ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
     + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
     'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
     + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
@@ -146,7 +146,7 @@ begin
 
   ActivityIndicator1.StartAnimation;
   ADOQuery1.SQL.Add
-    ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+    ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
     + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
     'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
     + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
@@ -185,7 +185,7 @@ begin
    search := Edit1.Text;
 
    ADOQuery1.SQL.Add
-    ('select c7_num as NUMERO_DO_PEDIDO, format(convert(date, C7_EMISSAO, 103),'
+    ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
     + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
     'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
     + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
@@ -268,14 +268,14 @@ begin
   date := 'dd/MM/yyyy';
 
   Unit3.Form3.ADOQuery1.SQL.Add
-    ('SELECT C7_NUM AS NUMERO_DO_PEDIDO,  c7_item as ITEM, c7_produto as PRODUTO, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, c7_um as UNIDADE, c7_segum as SEGUNDA_UNIDADE,'
-    + 'C7_QTSEGUM AS QNT_SEGUM_UND, c7_quant AS QUANTIDADE, C7_PRECO AS PREÇO, C7_TOTAL AS TOTAL, C7_IPI AS ALIQUOTA_IPI, C7_BASEICM AS BASE_ICMS, C7_BASEIPI AS BASE_IPI, C7_PICM AS ALIQUOTA_ICMS,'
-    + 'C7_DESC AS DESCONTO, C7_COND AS CONDIÇÃO_DE_PAGAMENTO, format(convert(date, C7_DATPRF, 103),'
-    + chr(39) + date + chr(39) +
-    ') AS DATA_DE_ENTREGA, C7_NUMSC AS NUMERO_DA_SOLICITAÇÃO,  C7_FRETE AS VALOR_DO_FRETE, C7_TPFRETE AS TIPO_FRETE, C7_DESPESA AS VALOR_DA_DESPESA,'
-    + 'C7_SEGURO AS SEGURO ,c7_fornece AS FORNECEDOR,  C7_CONTATO AS CONTATO, format(convert(date, C7_EMISSAO, 103),'
-    + chr(39) + date + chr(39) + ') AS EMISSÃO, C7_OBS AS OBSERVAÇÕES, SC1010.C1_SOLICIT AS SOLICITANTE FROM SC7010 JOIN SC1010 ON C1_NUM = C7_NUMSC WHERE C7_NUM = ' +
-    chr(39) + select + chr(39));
+    ('SELECT C7_NUM AS PEDIDO, C7_ITEM AS ITEM, C7_PRODUTO AS PRODUTO, C7_DESCRI AS DESC_PRODUTO,'+
+    'C7_UM AS UN, C7_SEGUM as SEG_UN, C7_QTSEGUM AS QNT_SEGUM_UND, C7_QUANT AS QUANT,'+
+    'C7_PRECO AS PREÇO, C7_TOTAL AS TOTAL, C7_IPI AS ALIQUOTA_IPI, C7_BASEIPI AS BASE_IPI, C7_PICM AS ALIQUOTA_ICMS,'+
+    'C7_BASEICM AS BASE_ICMS, C7_VLDESC AS DESCONTO, C7_COND AS COND_PAG, format(convert(date, C7_DATPRF, 103), '+ chr(39) + date + chr(39) +') as ENTREGA,'+
+    'C7_NUMSC AS SOLICIT, C7_FRETE AS FRETE, C7_FREPPCC AS TIPO_FRETE, C7_DESPESA AS DESPESA,'+
+    'C7_SEGURO AS SEGURO, C7_FORNECE AS FORNEC, C7_CONTATO AS CONTATO, format(convert(date, C7_EMISSAO, 103), '+ chr(39) + date + chr(39) +') AS EMISSÃO, ' +
+    'C7_OBS AS OBS, SC1010.C1_SOLICIT AS SOLIC FROM SC7010 JOIN SC1010 ON C1_NUM = C7_NUMSC where c7_num = ' + chr(39) + select + chr(39));
+
 
   Unit3.Form3.ADOQuery2.SQL.Add
     ('select top 1 a2_nome, a2_end, a2_cgc as CNPJ, a2_pricom, a2_ultcom, a2_tel, a2_est from sa2010 JOIN sc7010 on c7_fornece = a2_cod where c7_num = '

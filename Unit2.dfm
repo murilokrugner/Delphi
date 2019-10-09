@@ -4,7 +4,7 @@ object Form2: TForm2
   AutoSize = True
   Caption = 'INICIO'
   ClientHeight = 749
-  ClientWidth = 1370
+  ClientWidth = 1386
   Color = 16771022
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -10612,7 +10612,7 @@ object Form2: TForm2
   object StatusBar1: TStatusBar
     Left = 0
     Top = 740
-    Width = 1370
+    Width = 1386
     Height = 9
     Margins.Left = 2
     Margins.Top = 2
