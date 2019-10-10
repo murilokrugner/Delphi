@@ -79,11 +79,11 @@ begin
     Edit1.Clear;
     ADOQuery1.SQL.Add
       ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
-      + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
-      'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
-      + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+      + chr(39) + date + chr(39) + ') as EMISSÃO,' +
+      'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO, C7_UM AS UN, C7_QUANT AS QUANT,'
+      + 'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),'
       + chr(39) + date + chr(39) +
-      ') as DATA_DE_ENTREGA FROM SC7010 where c7_num =' + chr(39) + search
+      ') as ENTREGA FROM SC7010 where c7_num =' + chr(39) + search
       + chr(39));
     ADOQuery1.Open
   end
@@ -92,11 +92,11 @@ begin
     Edit1.Clear;
     ADOQuery1.SQL.Add
       ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
-      + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
-      'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
-      + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+      + chr(39) + date + chr(39) + ') as EMISSÃO,' +
+      'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO, C7_UM AS UN, C7_QUANT AS QUANT,'
+      + 'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),'
       + chr(39) + date + chr(39) +
-      ') as DATA_DE_ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where a2_nome = '
+      ') as ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where a2_nome = '
       + chr(39) + search + chr(39) + 'and c7_filial = 01 order by c7_num desc');
     ADOQuery1.Open
   end
@@ -105,11 +105,11 @@ begin
     Edit1.Clear;
     ADOQuery1.SQL.Add
       ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
-      + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
-      'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
-      + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+      + chr(39) + date + chr(39) + ') as EMISSÃO,' +
+      'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO, C7_UM AS UN, C7_QUANT AS QUANT,'
+      + 'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),'
       + chr(39) + date + chr(39) +
-      ') as DATA_DE_ENTREGA from sc7010 where c7_datprf =' + chr(39) +
+      ') as ENTREGA from sc7010 where c7_datprf =' + chr(39) +
       dateConvert + chr(39)+ 'and c7_filial = 01 order by c7_num desc');
     ADOQuery1.Open
   end
@@ -126,11 +126,11 @@ begin
 
   ADOQuery1.SQL.Add
     ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
-    + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
-    'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
-    + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+    + chr(39) + date + chr(39) + ') as EMISSÃO,' +
+    'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO, C7_UM AS UN, C7_QUANT AS QUANT,'
+    + 'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),'
     + chr(39) + date + chr(39) +
-    ') as DATA_DE_ENTREGA FROM SC7010 where C7_FILIAL = 01 order by c7_num desc');
+    ') as ENTREGA FROM SC7010 where C7_FILIAL = 01 order by c7_num desc');
   ADOQuery1.Open;
 
 end;
@@ -147,11 +147,11 @@ begin
   ActivityIndicator1.StartAnimation;
   ADOQuery1.SQL.Add
     ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
-    + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
-    'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
-    + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+    + chr(39) + date + chr(39) + ') as EMISSÃO,' +
+    'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO, C7_UM AS UN, C7_QUANT AS QUANT,'
+    + 'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),'
     + chr(39) + date + chr(39) +
-    ') as DATA_DE_ENTREGA FROM SC7010 where c7_datprf >= getdate() and C7_QUJE != c7_quant and C7_FILIAL = 01 order by c7_num desc');
+    ') as ENTREGA FROM SC7010 where c7_datprf >= getdate() and C7_QUJE != c7_quant and C7_FILIAL = 01 order by c7_num desc');
 
   ADOQuery1.Open;
 
@@ -186,11 +186,11 @@ begin
 
    ADOQuery1.SQL.Add
     ('select c7_num as PEDIDO, format(convert(date, C7_EMISSAO, 103),'
-    + chr(39) + date + chr(39) + ') as DATA_DE_EMISSÃO,' +
-    'C7_FORNECE AS CODIGO_DO_FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS DESCRIÇÃO_DO_PRODUTO, C7_UM AS UNIDADE, C7_QUANT AS QUANTIDADE,'
-    + 'C7_QUJE AS QUANTIDADE_JA_ENTREGUE, format(convert(date, c7_datprf, 103),'
+    + chr(39) + date + chr(39) + ') as EMISSÃO,' +
+    'C7_FORNECE AS FORNECEDOR, C7_ITEM AS ITEM, C7_DESCRI AS PRODUTO, C7_UM AS UN, C7_QUANT AS QUANT,'
+    + 'C7_QUJE AS QUANT_ENTREGUE, format(convert(date, c7_datprf, 103),'
     + chr(39) + date + chr(39) +
-    ') as DATA_DE_ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where c7_datprf >= getdate() and C7_QUJE != c7_quant and C7_FILIAL = 02 and a2_nome = '
+    ') as ENTREGA FROM SC7010 JOIN sa2010 on a2_cod = c7_fornece where c7_datprf >= getdate() and C7_QUJE != c7_quant and C7_FILIAL = 02 and a2_nome = '
     + chr(39) + search + chr(39) + 'order by c7_num desc');
 
   ADOQuery1.Open
@@ -242,6 +242,8 @@ var
 
   cnpj: string;
   cnpjConvert: string;
+
+  solict: string;
 begin
   Unit3.Form3.ADOQuery1.Close;
   Unit3.Form3.ADOQuery1.SQL.Clear;
@@ -261,6 +263,8 @@ begin
   Unit3.Form3.ADOQuery10.SQL.Clear;
   Unit3.Form3.ADOQuery11.Close;
   Unit3.Form3.ADOQuery11.SQL.Clear;
+  Unit3.Form3.ADOQuery13.Close;
+  Unit3.Form3.ADOQuery13.SQL.Clear;
   Unit3.Form3.ADOQuery17.Close;
   Unit3.Form3.ADOQuery17.SQL.Clear;
 
@@ -274,8 +278,7 @@ begin
     'C7_BASEICM AS BASE_ICMS, C7_VLDESC AS DESCONTO, C7_COND AS COND_PAG, format(convert(date, C7_DATPRF, 103), '+ chr(39) + date + chr(39) +') as ENTREGA,'+
     'C7_NUMSC AS SOLICIT, C7_FRETE AS FRETE, C7_FREPPCC AS TIPO_FRETE, C7_DESPESA AS DESPESA,'+
     'C7_SEGURO AS SEGURO, C7_FORNECE AS FORNEC, C7_CONTATO AS CONTATO, format(convert(date, C7_EMISSAO, 103), '+ chr(39) + date + chr(39) +') AS EMISSÃO, ' +
-    'C7_OBS AS OBS, SC1010.C1_SOLICIT AS SOLIC FROM SC7010 JOIN SC1010 ON C1_NUM = C7_NUMSC where c7_num = ' + chr(39) + select + chr(39));
-
+    'C7_OBS AS OBS FROM SC7010 where c7_num = ' + chr(39) + select + chr(39));
 
   Unit3.Form3.ADOQuery2.SQL.Add
     ('select top 1 a2_nome, a2_end, a2_cgc as CNPJ, a2_pricom, a2_ultcom, a2_tel, a2_est from sa2010 JOIN sc7010 on c7_fornece = a2_cod where c7_num = '
@@ -301,11 +304,17 @@ begin
   Unit3.Form3.ADOQuery11.SQL.Add
     ('select sum(c7_baseipi) as BASE_IPI, c7_ipi as ALIQUOTA_IPI, (c7_ipi / 100 * sum(c7_baseipi)) as TOTAL_IPI from sc7010 where c7_num ='
     + chr(39) + select + chr(39) + 'GROUP BY C7_IPI');
+
+  Unit3.Form3.ADOQuery1.Open;
+  solict := Unit3.Form3.DBEdit22.Text;
+
+  Unit3.Form3.ADOQuery13.SQL.Add
+    ('SELECT top 1 C1_SOLICIT FROM SC1010 WHERE C1_NUM = '+ chr(39) + solict + chr(39));
+
   Unit3.Form3.ADOQuery17.SQL.Add
     ('select top 1 sum(c7_baseipi) as base_ipi2 from sc7010 where c7_num =' +
     chr(39) + select + chr(39) + 'group by c7_baseipi order by c7_baseipi asc');
 
-  Unit3.Form3.ADOQuery1.Open;
   Unit3.Form3.ADOQuery2.Open;
   Unit3.Form3.ADOQuery3.Open;
   Unit3.Form3.ADOQuery4.Open;
@@ -314,7 +323,10 @@ begin
   Unit3.Form3.ADOQuery7.Open;
   Unit3.Form3.ADOQuery10.Open;
   Unit3.Form3.ADOQuery11.Open;
+  Unit3.Form3.ADOQuery13.Open;
   Unit3.Form3.ADOQuery17.Open;
+
+  Unit3.Form3.Label21.Caption := Unit3.Form3.DBEdit20.Text;
 
   totalProdutos := StrToFloat(Unit3.Form3.DBEdit10.Text);
   totalFrete := StrToFloat(Unit3.Form3.DBEdit12.Text);

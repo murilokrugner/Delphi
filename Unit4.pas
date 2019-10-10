@@ -74,6 +74,14 @@ begin
   else
   if ComboBox1.ItemIndex = 2 then
   begin
+    ADOQuery1.SQL.Add('select a2_nome from sa2010 where A2_NREDUZ like' + chr(39) +
+    Value + '%' + chr(39));
+    ADOQuery1.Open;
+    Edit1.Clear;
+  end
+  else
+  if ComboBox1.ItemIndex = 3 then
+  begin
     ADOQuery1.SQL.Add('select a2_nome from sa2010 where a2_cod =' + chr(39) +
     Value + chr(39));
     ADOQuery1.Open;

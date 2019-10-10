@@ -177,7 +177,14 @@ type
     ADOQuery1CONTATO: TStringField;
     ADOQuery1EMISSÃO: TWideStringField;
     ADOQuery1OBS: TStringField;
-    ADOQuery1SOLIC: TStringField;
+    ADOQuery13: TADOQuery;
+    DataSource13: TDataSource;
+    ADOQuery13C1_SOLICIT: TStringField;
+    Label20: TLabel;
+    DBEdit22: TDBEdit;
+    DBEdit20: TDBEdit;
+    Label21: TLabel;
+    frxDBDataset7: TfrxDBDataset;
     procedure frxPreview1Click(Sender: TObject);
     procedure IMPRIMIRClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

@@ -4,8 +4,8 @@
   ActiveControl = DBGrid1
   AutoSize = True
   Caption = 'PEDIDO'
-  ClientHeight = 749
-  ClientWidth = 1453
+  ClientHeight = 761
+  ClientWidth = 1371
   Color = 16771022
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,9 +19,9 @@
   PixelsPerInch = 96
   TextHeight = 13
   object Image2: TImage
-    Left = 216
+    Left = 215
     Top = 0
-    Width = 1148
+    Width = 1156
     Height = 57
     Picture.Data = {
       0A544A504547496D6167657F800100FFD8FFE000104A46494600010101012C01
@@ -3103,7 +3103,7 @@
       28A2800A28A2800A28A2803FFFD9}
   end
   object Label1: TLabel
-    Left = 604
+    Left = 666
     Top = 8
     Width = 105
     Height = 33
@@ -3116,7 +3116,7 @@
     ParentFont = False
   end
   object DBText1: TDBText
-    Left = 733
+    Left = 795
     Top = 8
     Width = 113
     Height = 33
@@ -3133,7 +3133,7 @@
     Left = 0
     Top = 0
     Width = 217
-    Height = 749
+    Height = 761
     Picture.Data = {
       0A544A504547496D616765FAAE0000FFD8FFE000104A46494600010101012C01
       2C0000FFE100464578696600004D4D002A000000080002010E00020000001800
@@ -4539,7 +4539,7 @@
   end
   object Image3: TImage
     Left = 28
-    Top = 32
+    Top = 44
     Width = 161
     Height = 65
     Picture.Data = {
@@ -4698,12 +4698,199 @@
       3324FD6F4543C03E02BB90DA22413B6D3FD23FA12160833E4543C0067D8A8680
       0DFA14FF0BFCFEA1E31490385C0000000049454E44AE426082}
   end
+  object Label20: TLabel
+    Left = 227
+    Top = 17
+    Width = 150
+    Height = 22
+    Caption = 'SOLICITADO POR:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label21: TLabel
+    Left = 383
+    Top = 17
+    Width = 170
+    Height = 22
+    Caption = 'nome'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    AlignWithMargins = True
+    Left = 223
+    Top = 63
+    Width = 1143
+    Height = 386
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -17
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = [fsBold]
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'PEDIDO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ITEM'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PRODUTO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESC_PRODUTO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UN'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SEG_UN'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QNT_SEGUM_UND'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QUANT'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PRE'#199'O'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TOTAL'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ALIQUOTA_IPI'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'BASE_IPI'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ALIQUOTA_ICMS'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'BASE_ICMS'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESCONTO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'COND_PAG'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ENTREGA'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SOLICIT'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FRETE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TIPO_FRETE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESPESA'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SEGURO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FORNEC'
+        Width = 167
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CONTATO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMISS'#195'O'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'OBS'
+        Width = 76
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SOLIC'
+        Width = 83
+        Visible = True
+      end>
+  end
   object PageControl1: TPageControl
     Left = 223
-    Top = 568
-    Width = 1230
-    Height = 181
-    ActivePage = Mensagem
+    Top = 455
+    Width = 1148
+    Height = 306
+    ActivePage = TabSheet2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -4850,7 +5037,7 @@
         TabOrder = 3
       end
       object Edit5: TEdit
-        Left = 912
+        Left = 903
         Top = 96
         Width = 217
         Height = 27
@@ -5537,167 +5724,9 @@
       end
     end
   end
-  object DBGrid1: TDBGrid
-    AlignWithMargins = True
-    Left = 223
-    Top = 63
-    Width = 1139
-    Height = 499
-    DataSource = DataSource1
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    ParentFont = False
-    ReadOnly = True
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -17
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = [fsBold]
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'PEDIDO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ITEM'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PRODUTO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DESC_PRODUTO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'UN'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'SEG_UN'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QNT_SEGUM_UND'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QUANT'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'PRE'#199'O'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'TOTAL'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ALIQUOTA_IPI'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'BASE_IPI'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ALIQUOTA_ICMS'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'BASE_ICMS'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DESCONTO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'COND_PAG'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ENTREGA'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'SOLICIT'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'FRETE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'TIPO_FRETE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'DESPESA'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'SEGURO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'FORNEC'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'CONTATO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'EMISS'#195'O'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'OBS'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'SOLIC'
-        Visible = True
-      end>
-  end
   object IMPRIMIR: TBitBtn
-    Left = 1035
-    Top = 8
+    Left = 1237
+    Top = 12
     Width = 111
     Height = 33
     Caption = 'IMPRIMIR'
@@ -5709,6 +5738,28 @@
     ParentFont = False
     TabOrder = 2
     OnClick = IMPRIMIRClick
+  end
+  object DBEdit22: TDBEdit
+    Left = 984
+    Top = 35
+    Width = 121
+    Height = 12
+    DataField = 'SOLICIT'
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 3
+    Visible = False
+  end
+  object DBEdit20: TDBEdit
+    Left = 984
+    Top = 17
+    Width = 121
+    Height = 12
+    DataField = 'C1_SOLICIT'
+    DataSource = DataSource13
+    ReadOnly = True
+    TabOrder = 4
+    Visible = False
   end
   object ADOConnection1: TADOConnection
     DefaultDatabase = 'TOTVSDB'
@@ -5741,8 +5792,8 @@
       
         'C7_SEGURO AS SEGURO, C7_FORNECE AS FORNEC, C7_CONTATO AS CONTATO' +
         ', format(convert(date, C7_EMISSAO, 103), '#39'dd/MM/yyyy'#39') AS EMISS'#195 +
-        'O, C7_OBS AS OBS, SC1010.C1_SOLICIT AS SOLIC'
-      'FROM SC7010 JOIN SC1010 ON C1_NUM = C7_NUMSC ')
+        'O, '
+      'C7_OBS AS OBS FROM SC7010 ')
     Left = 824
     Top = 8
     object ADOQuery1PEDIDO: TStringField
@@ -5838,10 +5889,6 @@
     object ADOQuery1OBS: TStringField
       FieldName = 'OBS'
       Size = 30
-    end
-    object ADOQuery1SOLIC: TStringField
-      FieldName = 'SOLIC'
-      Size = 25
     end
   end
   object DataSource1: TDataSource
@@ -6163,8 +6210,7 @@
       'FORNEC=FORNEC'
       'CONTATO=CONTATO'
       'EMISS'#195'O=EMISS'#195'O'
-      'OBS=OBS'
-      'SOLICIT_1=SOLICIT_1')
+      'OBS=OBS')
     DataSource = DataSource1
     BCDToCurrency = False
     Left = 200
@@ -6241,7 +6287,7 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43713.352183148100000000
-    ReportOptions.LastChange = 43740.637136944450000000
+    ReportOptions.LastChange = 43748.597044375000000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -6273,6 +6319,10 @@
       item
         DataSet = frxDBDataset6
         DataSetName = 'frxDBDataset6'
+      end
+      item
+        DataSet = frxDBDataset7
+        DataSetName = 'frxDBDataset7'
       end>
     Variables = <>
     Style = <>
@@ -6894,7 +6944,7 @@
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."NUMERO_DO_PEDIDO"]')
+            '[frxDBDataset2."PEDIDO"]')
           ParentFont = False
         end
         object Memo36: TfrxMemoView
@@ -6932,14 +6982,13 @@
           AllowVectorExport = True
           Left = 613.732530000000000000
           Top = 33.559060000000000000
-          Width = 64.252010000000000000
+          Width = 97.585343330000000000
           Height = 18.897650000000000000
-          DataField = 'NUMERO_DA_SOLICITA'#199#195'O'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."NUMERO_DA_SOLICITA'#199#195'O"]')
+            '[frxDBDataset7."C1_SOLICIT"]')
         end
         object Memo39: TfrxMemoView
           AllowVectorExport = True
@@ -6972,20 +7021,6 @@
           Memo.UTF8W = (
             'N'#176)
           ParentFont = False
-        end
-        object Memo41: TfrxMemoView
-          IndexTag = 1
-          AllowVectorExport = True
-          Left = 602.432900000000000000
-          Top = 56.204700000000000000
-          Width = 115.315090000000000000
-          Height = 18.897650000000000000
-          DataField = 'SOLICITANTE'
-          DataSet = frxDBDataset2
-          DataSetName = 'frxDBDataset2'
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDBDataset2."SOLICITANTE"]')
         end
         object Memo42: TfrxMemoView
           AllowVectorExport = True
@@ -7061,12 +7096,11 @@
           Top = 27.094310000000000000
           Width = 249.630180000000000000
           Height = 18.897650000000000000
-          DataField = 'DESCRI'#199#195'O_DO_PRODUTO'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."DESCRI'#199#195'O_DO_PRODUTO"]')
+            '[frxDBDataset2."DESC_PRODUTO"]')
         end
         object frxDBDataset2UNIDADE: TfrxMemoView
           IndexTag = 1
@@ -7075,12 +7109,11 @@
           Top = 27.094310000000000000
           Width = 22.118120000000000000
           Height = 18.897650000000000000
-          DataField = 'UNIDADE'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."UNIDADE"]')
+            '[frxDBDataset2."UN"]')
         end
         object frxDBDataset2QUANTIDADE: TfrxMemoView
           IndexTag = 1
@@ -7089,12 +7122,11 @@
           Top = 27.094310000000000000
           Width = 26.036796670000000000
           Height = 18.897650000000000000
-          DataField = 'QUANTIDADE'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."QUANTIDADE"]')
+            '[frxDBDataset2."QUANT"]')
         end
         object frxDBDataset2PREO: TfrxMemoView
           IndexTag = 1
@@ -7103,7 +7135,6 @@
           Top = 27.094310000000000000
           Width = 61.370130000000000000
           Height = 18.897650000000000000
-          DataField = 'PRE'#199'O'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
@@ -7117,7 +7148,6 @@
           Top = 27.094310000000000000
           Width = 68.370130000000000000
           Height = 18.897650000000000000
-          DataField = 'TOTAL'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
@@ -7227,12 +7257,11 @@
           Top = 57.572767790000000000
           Width = 34.451453330000000000
           Height = 18.897650000000000000
-          DataField = 'SEGUNDA_UNIDADE'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."SEGUNDA_UNIDADE"]')
+            '[frxDBDataset2."SEG_UN"]')
         end
         object frxDBDataset2QNT_SEGUM_UND: TfrxMemoView
           IndexTag = 1
@@ -7241,7 +7270,6 @@
           Top = 57.572767780000000000
           Width = 122.703463340000000000
           Height = 18.897650000000000000
-          DataField = 'QNT_SEGUM_UND'
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
@@ -7781,5 +7809,35 @@
     BCDToCurrency = False
     Left = 296
     Top = 272
+  end
+  object ADOQuery13: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT C1_SOLICIT FROM SC1010, SC7010 WHERE SC7010.C7_NUMSC = SC' +
+        '1010.C1_NUM')
+    Left = 720
+    Top = 384
+    object ADOQuery13C1_SOLICIT: TStringField
+      FieldName = 'C1_SOLICIT'
+      Size = 25
+    end
+  end
+  object DataSource13: TDataSource
+    DataSet = ADOQuery13
+    Left = 816
+    Top = 384
+  end
+  object frxDBDataset7: TfrxDBDataset
+    UserName = 'frxDBDataset7'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'C1_SOLICIT=C1_SOLICIT')
+    DataSource = DataSource13
+    BCDToCurrency = False
+    Left = 528
+    Top = 336
   end
 end

@@ -4749,6 +4749,7 @@ object Form4: TForm4
     Items.Strings = (
       'CNPJ'
       'NOME'
+      'NOME FANTASIA'
       'C'#211'DIGO')
   end
   object ADOConnection1: TADOConnection
