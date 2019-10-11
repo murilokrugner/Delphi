@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<TfrxReport Version="6.4.10" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43713,3521831481" ReportOptions.Description.Text="" ReportOptions.LastChange="43748,597044375" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+<TfrxReport Version="6.4.10" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43713,3521831481" ReportOptions.Description.Text="" ReportOptions.LastChange="43749,4497409954" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
   <Datasets>
     <item DataSet="frxDBDataset1" DataSetName="frxDBDataset1"/>
     <item DataSet="frxDBDataset2" DataSetName="frxDBDataset2"/>
@@ -22,7 +22,7 @@
       <TfrxMemoView Name="Memo40" AllowVectorExport="True" Left="290,47248" Top="40,67718" Width="26,45671" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="0" ParentFont="False" Text="N°"/>
       <TfrxMemoView Name="Memo42" AllowVectorExport="True" Left="515,4329" Top="57,2047" Width="79,48825" Height="15,11812" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="SOLICITANTE:"/>
     </TfrxReportTitle>
-    <TfrxMasterData Name="MasterData1" AllowMirrorMode="True" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="113,89765" Left="0" Top="434,64595" Width="718,1107" AllowSplit="True" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" PrintChildIfInvisible="True" RowCount="0">
+    <TfrxMasterData Name="MasterData1" AllowMirrorMode="True" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="92,78653889" Left="0" Top="434,64595" Width="718,1107" AllowSplit="True" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" PrintChildIfInvisible="True" RowCount="0">
       <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="46" Top="27" Width="7,48825" Height="22,89765" Frame.Typ="0" Text="|"/>
       <TfrxMemoView Name="frxDBDataset2ITEM" IndexTag="1" AllowVectorExport="True" Left="9" Top="27" Width="30,23624" Height="18,89765" DataField="ITEM" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" Frame.Typ="0" Text="[frxDBDataset2.&#34;ITEM&#34;]"/>
       <TfrxMemoView Name="frxDBDataset2PRODUTO" IndexTag="1" AllowVectorExport="True" Left="58" Top="27,09431" Width="36,94496" Height="18,89765" DataField="PRODUTO" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" Frame.Typ="0" Text="[frxDBDataset2.&#34;PRODUTO&#34;]"/>
@@ -31,8 +31,6 @@
       <TfrxMemoView Name="frxDBDataset2QUANTIDADE" IndexTag="1" AllowVectorExport="True" Left="449,66666666" Top="27,09431" Width="26,03679667" Height="18,89765" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" Frame.Typ="0" Text="[frxDBDataset2.&#34;QUANT&#34;]"/>
       <TfrxMemoView Name="frxDBDataset2PREO" IndexTag="1" AllowVectorExport="True" Left="534" Top="27,09431" Width="61,37013" Height="18,89765" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" Frame.Typ="0" Text="[frxDBDataset2.&#34;PREÇO&#34;]"/>
       <TfrxMemoView Name="frxDBDataset2TOTAL" IndexTag="1" AllowVectorExport="True" Left="643" Top="27,09431" Width="68,37013" Height="18,89765" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" Frame.Typ="0" Text="[frxDBDataset2.&#34;TOTAL&#34;]"/>
-      <TfrxMemoView Name="Memo10" AllowVectorExport="True" Left="7" Top="4,09431" Width="704,48825" Height="18,89765" Frame.Typ="0" Text="------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
-      <TfrxMemoView Name="Memo11" AllowVectorExport="True" Left="5" Top="84,09431" Width="704,48825" Height="11,89765" Frame.Typ="0" Text="------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
       <TfrxMemoView Name="Memo19" AllowVectorExport="True" Left="102" Top="27,66914" Width="7,48825" Height="22,89765" Frame.Typ="0" Text="|"/>
       <TfrxMemoView Name="Memo20" AllowVectorExport="True" Left="386" Top="25,66914" Width="7,48825" Height="22,89765" Frame.Typ="0" Text="|"/>
       <TfrxMemoView Name="Memo21" AllowVectorExport="True" Left="431" Top="25,66914" Width="7,48825" Height="22,89765" Frame.Typ="0" Text="|"/>
@@ -44,7 +42,7 @@
       <TfrxMemoView Name="frxDBDataset2QNT_SEGUM_UND" IndexTag="1" AllowVectorExport="True" Left="539,77777777" Top="57,57276778" Width="122,70346334" Height="18,89765" DataSet="frxDBDataset2" DataSetName="frxDBDataset2" Frame.Typ="0" Text="[frxDBDataset2.&#34;QNT_SEGUM_UND&#34;]"/>
       <TfrxMemoView Name="Memo51" AllowVectorExport="True" Left="385,77777778" Top="57,57276778" Width="111,15491667" Height="18,89765" Frame.Typ="0" Text="Segunda unidade:"/>
     </TfrxMasterData>
-    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="76,89940222" Left="0" Top="676,53587" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset4" DataSetName="frxDBDataset4" RowCount="0">
+    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="76,89940222" Left="0" Top="657,63822" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset4" DataSetName="frxDBDataset4" RowCount="0">
       <TfrxMemoView Name="frxDBDataset4BASE_ICMS" IndexTag="1" AllowVectorExport="True" Left="14" Top="28,72418" Width="79,37013" Height="18,89765" DataField="BASE_ICMS" DataSet="frxDBDataset4" DataSetName="frxDBDataset4" Frame.Typ="0" Text="[frxDBDataset4.&#34;BASE_ICMS&#34;]"/>
       <TfrxMemoView Name="Memo24" AllowVectorExport="True" Left="14" Top="9,82653" Width="79,37013" Height="18,89765" Frame.Typ="0" Text="BASE_ICMS"/>
       <TfrxMemoView Name="frxDBDataset4ALIQUOTA_ICMS" IndexTag="1" AllowVectorExport="True" Left="126" Top="28,72418" Width="117,37013" Height="19,89765" DataField="ALIQUOTA_ICMS" DataSet="frxDBDataset4" DataSetName="frxDBDataset4" Frame.Typ="0" Text="[frxDBDataset4.&#34;ALIQUOTA_ICMS&#34;]"/>
@@ -53,7 +51,7 @@
       <TfrxMemoView Name="Memo26" AllowVectorExport="True" Left="285" Top="10,82653" Width="197,37013" Height="19,39765" Frame.Typ="0" Text="TOTAL_ICMS"/>
       <TfrxMemoView Name="Memo27" AllowVectorExport="True" Left="6" Top="49,82653" Width="704,48825" Height="18,89765" Frame.Typ="0" Text="------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
     </TfrxMasterData>
-    <TfrxMasterData Name="MasterData3" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="74,67718" Left="0" Top="774,80365" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset5" DataSetName="frxDBDataset5" RowCount="0">
+    <TfrxMasterData Name="MasterData3" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="74,67718" Left="0" Top="755,906" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset5" DataSetName="frxDBDataset5" RowCount="0">
       <TfrxMemoView Name="frxDBDataset5BASE_IPI" IndexTag="1" AllowVectorExport="True" Left="14" Top="34,23593" Width="76,37013" Height="25,89765" DataField="BASE_IPI" DataSet="frxDBDataset5" DataSetName="frxDBDataset5" Frame.Typ="0" Text="[frxDBDataset5.&#34;BASE_IPI&#34;]"/>
       <TfrxMemoView Name="Memo28" AllowVectorExport="True" Left="14" Top="8,33828" Width="76,37013" Height="25,89765" Frame.Typ="0" Text="BASE_IPI"/>
       <TfrxMemoView Name="frxDBDataset5ALIQUOTA_IPI" IndexTag="1" AllowVectorExport="True" Left="126" Top="36,23593" Width="114,37013" Height="22,89765" DataField="ALIQUOTA_IPI" DataSet="frxDBDataset5" DataSetName="frxDBDataset5" Frame.Typ="0" Text="[frxDBDataset5.&#34;ALIQUOTA_IPI&#34;]"/>
@@ -70,7 +68,7 @@
       <TfrxMemoView Name="Memo17" AllowVectorExport="True" Left="509" Top="2,43815667" Width="85,48825" Height="18,89765" Frame.Typ="0" Text="Valor Unitário"/>
       <TfrxMemoView Name="Memo18" AllowVectorExport="True" Left="628,66666666" Top="0,77149" Width="45,48825" Height="18,89765" Frame.Typ="0" Text="Total"/>
     </TfrxHeader>
-    <TfrxMasterData Name="MasterData4" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="83,67718" Left="0" Top="570,70903" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset6" DataSetName="frxDBDataset6" RowCount="0">
+    <TfrxMasterData Name="MasterData4" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="83,67718" Left="0" Top="551,81138" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset6" DataSetName="frxDBDataset6" RowCount="0">
       <TfrxMemoView Name="frxDBDataset6c7_total" IndexTag="1" AllowVectorExport="True" Left="628" Top="19,0705" Width="79,37013" Height="18,89765" DataField="c7_total" DataSet="frxDBDataset6" DataSetName="frxDBDataset6" Frame.Typ="0" Text="[frxDBDataset6.&#34;c7_total&#34;]"/>
       <TfrxMemoView Name="Memo45" AllowVectorExport="True" Left="427" Top="19,0705" Width="164,48825" Height="18,89765" Frame.Typ="0" Text="TOTAL DOS PRODUTOS:"/>
       <TfrxMemoView Name="Memo46" AllowVectorExport="True" Left="597" Top="19,0705" Width="29" Height="19" Frame.Typ="0" Text="R$ -"/>
@@ -90,8 +88,8 @@
       <TfrxMemoView Name="Memo43" AllowVectorExport="True" Left="7,77777778" Top="74" Width="44,48825" Height="18,89765" Frame.Typ="0" Text="CNPJ:"/>
       <TfrxMemoView Name="Memo44" AllowVectorExport="True" Left="418,77777778" Top="0" Width="79,48825" Height="18,89765" Frame.Typ="0" Text="TELEFONE:"/>
     </TfrxMasterData>
-    <TfrxMasterData Name="MasterData6" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="37,12162444" Left="0" Top="873,07143" Width="718,1107" ColumnWidth="0" ColumnGap="0" RowCount="0"/>
-    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="69,34384667" Left="0" Top="971,33921" Width="718,1107">
+    <TfrxMasterData Name="MasterData6" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="37,12162444" Left="0" Top="854,17378" Width="718,1107" ColumnWidth="0" ColumnGap="0" RowCount="0"/>
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="69,34384667" Left="0" Top="952,44156" Width="718,1107">
       <TfrxSysMemoView Name="SysMemo1" AllowVectorExport="True" Left="0,66666667" Top="50,65553334" Width="95,48825" Height="18,89765" Frame.Typ="0" Text="[DATE]"/>
       <TfrxSysMemoView Name="SysMemo2" AllowVectorExport="True" Left="100,66666667" Top="50,65553334" Width="91,48825" Height="18,89765" Frame.Typ="0" Text="[TIME]"/>
       <TfrxSysMemoView Name="SysMemo3" AllowVectorExport="True" Left="635,22222223" Top="50,65553334" Width="76,48825" Height="18,89765" Frame.Typ="0" Text="[PAGE#] of [TOTALPAGES#]"/>

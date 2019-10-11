@@ -13,8 +13,7 @@
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDefault
-  WindowState = wsMaximized
+  Position = poDesktopCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -4714,7 +4713,7 @@
   object Label21: TLabel
     Left = 383
     Top = 17
-    Width = 170
+    Width = 44
     Height = 22
     Caption = 'nome'
     Font.Charset = DEFAULT_CHARSET
@@ -4729,11 +4728,11 @@
     Left = 223
     Top = 63
     Width = 1143
-    Height = 386
+    Height = 443
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -4742,7 +4741,7 @@
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -17
+    TitleFont.Height = -13
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = [fsBold]
     Columns = <
@@ -4887,13 +4886,13 @@
   end
   object PageControl1: TPageControl
     Left = 223
-    Top = 455
+    Top = 512
     Width = 1148
-    Height = 306
+    Height = 249
     ActivePage = TabSheet2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -4903,12 +4902,12 @@
       object Label8: TLabel
         Left = 23
         Top = 37
-        Width = 43
-        Height = 19
+        Width = 34
+        Height = 16
         Caption = 'Frete'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -4916,12 +4915,12 @@
       object Label9: TLabel
         Left = 23
         Top = 104
-        Width = 83
-        Height = 19
+        Width = 68
+        Height = 16
         Caption = 'Descontos'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -4929,12 +4928,12 @@
       object Label10: TLabel
         Left = 328
         Top = 40
-        Width = 57
-        Height = 19
+        Width = 46
+        Height = 16
         Caption = 'Seguro'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -4942,12 +4941,12 @@
       object Label11: TLabel
         Left = 720
         Top = 104
-        Width = 177
-        Height = 19
+        Width = 137
+        Height = 16
         Caption = 'Valor Total do Pedido'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -4955,12 +4954,12 @@
       object Label12: TLabel
         Left = 328
         Top = 104
-        Width = 154
-        Height = 19
+        Width = 122
+        Height = 16
         Caption = 'Total dos Produtos'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -4968,20 +4967,20 @@
       object Label31: TLabel
         Left = 720
         Top = 31
-        Width = 168
-        Height = 19
+        Width = 133
+        Height = 16
         Caption = 'Cond. de pagamento'
       end
       object DBEdit7: TDBEdit
         Left = 120
         Top = 32
         Width = 185
-        Height = 27
+        Height = 24
         DataField = 'FRETE'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -4992,12 +4991,12 @@
         Left = 120
         Top = 96
         Width = 169
-        Height = 27
+        Height = 24
         DataField = 'DESCONTO'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5008,12 +5007,12 @@
         Left = 508
         Top = 32
         Width = 173
-        Height = 27
+        Height = 24
         DataField = 'SEGURO'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5024,12 +5023,12 @@
         Left = 508
         Top = 96
         Width = 173
-        Height = 27
+        Height = 24
         DataField = 'C7_TOTAL'
         DataSource = DataSource3
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5040,10 +5039,10 @@
         Left = 903
         Top = 96
         Width = 217
-        Height = 27
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5051,10 +5050,10 @@
         TabOrder = 4
       end
       object DBEdit29: TDBEdit
-        Left = 912
+        Left = 903
         Top = 24
         Width = 217
-        Height = 27
+        Height = 24
         DataField = 'E4_DESCRI'
         DataSource = DataSource7
         ReadOnly = True
@@ -5067,12 +5066,12 @@
       object Label2: TLabel
         Left = 24
         Top = 24
-        Width = 47
-        Height = 19
+        Width = 35
+        Height = 16
         Caption = 'Nome'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5080,12 +5079,12 @@
       object Label3: TLabel
         Left = 24
         Top = 72
-        Width = 75
-        Height = 19
+        Width = 60
+        Height = 16
         Caption = 'Endere'#231'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5093,12 +5092,12 @@
       object Label4: TLabel
         Left = 24
         Top = 112
-        Width = 138
-        Height = 19
+        Width = 106
+        Height = 16
         Caption = 'Primeira Compra'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5106,12 +5105,12 @@
       object Label5: TLabel
         Left = 360
         Top = 112
-        Width = 122
-        Height = 19
+        Width = 92
+        Height = 16
         Caption = 'Ultima Compra'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5119,12 +5118,12 @@
       object Label6: TLabel
         Left = 840
         Top = 24
-        Width = 72
-        Height = 19
+        Width = 55
+        Height = 16
         Caption = 'Telefone'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5132,12 +5131,12 @@
       object Label7: TLabel
         Left = 840
         Top = 72
-        Width = 55
-        Height = 19
+        Width = 44
+        Height = 16
         Caption = 'Estado'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5145,20 +5144,20 @@
       object Label19: TLabel
         Left = 775
         Top = 117
-        Width = 42
-        Height = 19
+        Width = 30
+        Height = 16
         Caption = 'CNPJ'
       end
       object DBEdit1: TDBEdit
         Left = 112
         Top = 24
         Width = 457
-        Height = 27
+        Height = 24
         DataField = 'a2_nome'
         DataSource = DataSource2
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5169,12 +5168,12 @@
         Left = 112
         Top = 72
         Width = 457
-        Height = 27
+        Height = 24
         DataField = 'a2_end'
         DataSource = DataSource2
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5219,12 +5218,12 @@
         Left = 976
         Top = 15
         Width = 145
-        Height = 27
+        Height = 24
         DataField = 'a2_tel'
         DataSource = DataSource2
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5235,12 +5234,12 @@
         Left = 976
         Top = 64
         Width = 145
-        Height = 27
+        Height = 24
         DataField = 'a2_est'
         DataSource = DataSource2
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5249,12 +5248,12 @@
       end
       object Edit8: TEdit
         Left = 184
-        Top = 112
+        Top = 113
         Width = 153
-        Height = 27
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5264,10 +5263,10 @@
         Left = 506
         Top = 112
         Width = 152
-        Height = 27
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5277,7 +5276,7 @@
         Left = 1144
         Top = 3
         Width = 72
-        Height = 27
+        Height = 24
         DataField = 'CNPJ'
         DataSource = DataSource2
         ReadOnly = True
@@ -5288,7 +5287,7 @@
         Left = 840
         Top = 109
         Width = 281
-        Height = 27
+        Height = 24
         ReadOnly = True
         TabOrder = 9
         Text = 'Edit1'
@@ -5300,12 +5299,12 @@
       object Label13: TLabel
         Left = 24
         Top = 96
-        Width = 116
-        Height = 19
+        Width = 92
+        Height = 16
         Caption = 'Valor do Frete'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5313,12 +5312,12 @@
       object Label14: TLabel
         Left = 357
         Top = 40
-        Width = 109
-        Height = 19
+        Width = 84
+        Height = 16
         Caption = 'Tipo de Frete'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5326,12 +5325,12 @@
       object Label15: TLabel
         Left = 357
         Top = 96
-        Width = 68
-        Height = 19
+        Width = 55
+        Height = 16
         Caption = 'Despesa'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5339,12 +5338,12 @@
       object Label16: TLabel
         Left = 751
         Top = 40
-        Width = 57
-        Height = 19
+        Width = 46
+        Height = 16
         Caption = 'Seguro'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5352,12 +5351,12 @@
       object Label17: TLabel
         Left = 751
         Top = 104
-        Width = 181
-        Height = 19
+        Width = 146
+        Height = 16
         Caption = 'Total (frete+despesa)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5366,12 +5365,12 @@
         Left = 160
         Top = 88
         Width = 121
-        Height = 27
+        Height = 24
         DataField = 'FRETE'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5382,12 +5381,12 @@
         Left = 523
         Top = 32
         Width = 121
-        Height = 27
+        Height = 24
         DataField = 'TIPO_FRETE'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5398,12 +5397,12 @@
         Left = 523
         Top = 96
         Width = 121
-        Height = 27
+        Height = 24
         DataField = 'DESPESA'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5414,12 +5413,12 @@
         Left = 960
         Top = 32
         Width = 121
-        Height = 27
+        Height = 24
         DataField = 'SEGURO'
         DataSource = DataSource1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5430,12 +5429,12 @@
         Left = 960
         Top = 96
         Width = 121
-        Height = 27
+        Height = 24
         DataField = 'total_frete'
         DataSource = DataSource5
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5455,12 +5454,12 @@
       object Label23: TLabel
         Left = 25
         Top = 24
-        Width = 42
-        Height = 19
+        Width = 32
+        Height = 16
         Caption = 'ICMS'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5468,12 +5467,12 @@
       object Label24: TLabel
         Left = 25
         Top = 104
-        Width = 25
-        Height = 19
+        Width = 18
+        Height = 16
         Caption = 'IPI'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5486,7 +5485,7 @@
         DataSource = DataSource10
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -19
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5505,7 +5504,7 @@
         DataSource = DataSource11
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -19
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5523,12 +5522,12 @@
       object Label18: TLabel
         Left = 96
         Top = 21
-        Width = 90
-        Height = 19
+        Width = 73
+        Height = 16
         Caption = 'Desconto 1'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5536,12 +5535,12 @@
       object Label25: TLabel
         Left = 304
         Top = 21
-        Width = 90
-        Height = 19
+        Width = 73
+        Height = 16
         Caption = 'Desconto 2'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5549,12 +5548,12 @@
       object Label26: TLabel
         Left = 496
         Top = 21
-        Width = 90
-        Height = 19
+        Width = 73
+        Height = 16
         Caption = 'Desconto 3'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5562,12 +5561,12 @@
       object Label27: TLabel
         Left = 800
         Top = 15
-        Width = 148
-        Height = 19
+        Width = 117
+        Height = 16
         Caption = 'Total do Desconto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5575,12 +5574,12 @@
       object Label28: TLabel
         Left = 808
         Top = 85
-        Width = 129
-        Height = 19
+        Width = 99
+        Height = 16
         Caption = 'Total do Pedido'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5589,12 +5588,12 @@
         Left = 80
         Top = 46
         Width = 137
-        Height = 27
+        Height = 24
         DataField = 'desconto1'
         DataSource = DataSource4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5604,12 +5603,12 @@
         Left = 280
         Top = 46
         Width = 145
-        Height = 27
+        Height = 24
         DataField = 'desconto2'
         DataSource = DataSource4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5620,12 +5619,12 @@
         Left = 472
         Top = 46
         Width = 145
-        Height = 27
+        Height = 24
         DataField = 'desconto3'
         DataSource = DataSource4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5636,10 +5635,10 @@
         Left = 800
         Top = 40
         Width = 148
-        Height = 27
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5650,10 +5649,10 @@
         Left = 800
         Top = 110
         Width = 148
-        Height = 27
+        Height = 24
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5667,12 +5666,12 @@
       object Label29: TLabel
         Left = 168
         Top = 29
-        Width = 137
-        Height = 19
+        Width = 109
+        Height = 16
         Caption = 'Cod / Mensagem'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5680,12 +5679,12 @@
       object Label30: TLabel
         Left = 856
         Top = 29
-        Width = 123
-        Height = 19
+        Width = 98
+        Height = 16
         Caption = 'Cod / Reajuste'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5694,12 +5693,12 @@
         Left = 88
         Top = 54
         Width = 289
-        Height = 27
+        Height = 24
         DataField = 'c7_msg'
         DataSource = DataSource6
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5710,12 +5709,12 @@
         Left = 768
         Top = 54
         Width = 289
-        Height = 27
+        Height = 24
         DataField = 'c7_reajust'
         DataSource = DataSource6
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
@@ -5732,7 +5731,7 @@
     Caption = 'IMPRIMIR'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -5743,7 +5742,7 @@
     Left = 984
     Top = 35
     Width = 121
-    Height = 12
+    Height = 21
     DataField = 'SOLICIT'
     DataSource = DataSource1
     ReadOnly = True
@@ -5754,7 +5753,7 @@
     Left = 984
     Top = 17
     Width = 121
-    Height = 12
+    Height = 21
     DataField = 'C1_SOLICIT'
     DataSource = DataSource13
     ReadOnly = True
@@ -6287,7 +6286,7 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43713.352183148100000000
-    ReportOptions.LastChange = 43748.597044375000000000
+    ReportOptions.LastChange = 43749.449740995370000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -7043,7 +7042,7 @@
         AllowMirrorMode = True
         FillType = ftBrush
         Frame.Typ = []
-        Height = 113.897650000000000000
+        Height = 92.786538890000000000
         Top = 434.645950000000000000
         Width = 718.110700000000000000
         AllowSplit = True
@@ -7153,32 +7152,6 @@
           Frame.Typ = []
           Memo.UTF8W = (
             '[frxDBDataset2."TOTAL"]')
-        end
-        object Memo10: TfrxMemoView
-          AllowVectorExport = True
-          Left = 7.000000000000000000
-          Top = 4.094310000000000000
-          Width = 704.488250000000000000
-          Height = 18.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            
-              '----------------------------------------------------------------' +
-              '----------------------------------------------------------------' +
-              '----------------------------')
-        end
-        object Memo11: TfrxMemoView
-          AllowVectorExport = True
-          Left = 5.000000000000000000
-          Top = 84.094310000000000000
-          Width = 704.488250000000000000
-          Height = 11.897650000000000000
-          Frame.Typ = []
-          Memo.UTF8W = (
-            
-              '----------------------------------------------------------------' +
-              '----------------------------------------------------------------' +
-              '----------------------------')
         end
         object Memo19: TfrxMemoView
           AllowVectorExport = True
@@ -7291,7 +7264,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 76.899402220000000000
-        Top = 676.535870000000000000
+        Top = 657.638220000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset4
         DataSetName = 'frxDBDataset4'
@@ -7386,7 +7359,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 74.677180000000000000
-        Top = 774.803650000000000000
+        Top = 755.906000000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset5
         DataSetName = 'frxDBDataset5'
@@ -7545,7 +7518,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 83.677180000000000000
-        Top = 570.709030000000000000
+        Top = 551.811380000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset6
         DataSetName = 'frxDBDataset6'
@@ -7757,7 +7730,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 37.121624440000000000
-        Top = 873.071430000000000000
+        Top = 854.173780000000000000
         Width = 718.110700000000000000
         RowCount = 0
       end
@@ -7765,7 +7738,7 @@
         FillType = ftBrush
         Frame.Typ = []
         Height = 69.343846670000000000
-        Top = 971.339210000000000000
+        Top = 952.441560000000000000
         Width = 718.110700000000000000
         object SysMemo1: TfrxSysMemoView
           AllowVectorExport = True

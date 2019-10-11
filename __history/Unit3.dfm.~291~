@@ -3131,9 +3131,9 @@
   end
   object Image1: TImage
     Left = 0
-    Top = 12
+    Top = 0
     Width = 217
-    Height = 749
+    Height = 761
     Picture.Data = {
       0A544A504547496D616765FAAE0000FFD8FFE000104A46494600010101012C01
       2C0000FFE100464578696600004D4D002A000000080002010E00020000001800
@@ -4698,20 +4698,6 @@
       3324FD6F4543C03E02BB90DA22413B6D3FD23FA12160833E4543C0067D8A8680
       0DFA14FF0BFCFEA1E31490385C0000000049454E44AE426082}
   end
-  object NOME: TDBText
-    Left = 383
-    Top = 17
-    Width = 201
-    Height = 22
-    DataField = 'C1_SOLICIT'
-    DataSource = DataSource13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWhite
-    Font.Height = -18
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object Label20: TLabel
     Left = 227
     Top = 17
@@ -4725,11 +4711,24 @@
     Font.Style = []
     ParentFont = False
   end
+  object Label21: TLabel
+    Left = 383
+    Top = 17
+    Width = 170
+    Height = 22
+    Caption = 'nome'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
-    Left = 215
+    Left = 223
     Top = 63
-    Width = 1148
+    Width = 1143
     Height = 386
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
@@ -4860,6 +4859,7 @@
       item
         Expanded = False
         FieldName = 'FORNEC'
+        Width = 167
         Visible = True
       end
       item
@@ -4875,11 +4875,13 @@
       item
         Expanded = False
         FieldName = 'OBS'
+        Width = 76
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'SOLIC'
+        Width = 83
         Visible = True
       end>
   end
@@ -4888,7 +4890,7 @@
     Top = 455
     Width = 1148
     Height = 306
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -4898,8 +4900,6 @@
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Totais'
-      ExplicitWidth = 1222
-      ExplicitHeight = 147
       object Label8: TLabel
         Left = 23
         Top = 37
@@ -5037,7 +5037,7 @@
         TabOrder = 3
       end
       object Edit5: TEdit
-        Left = 912
+        Left = 903
         Top = 96
         Width = 217
         Height = 27
@@ -5064,9 +5064,6 @@
     object TabSheet2: TTabSheet
       Caption = 'Inf. Fornecedor'
       ImageIndex = 1
-      ExplicitTop = 0
-      ExplicitWidth = 1222
-      ExplicitHeight = 177
       object Label2: TLabel
         Left = 24
         Top = 24
@@ -5300,8 +5297,6 @@
     object TabSheet3: TTabSheet
       Caption = 'Frete/Despesas'
       ImageIndex = 2
-      ExplicitWidth = 1222
-      ExplicitHeight = 147
       object Label13: TLabel
         Left = 24
         Top = 96
@@ -5457,8 +5452,6 @@
       Font.Style = []
       ImageIndex = 3
       ParentFont = False
-      ExplicitWidth = 1222
-      ExplicitHeight = 147
       object Label23: TLabel
         Left = 25
         Top = 24
@@ -5527,8 +5520,6 @@
     object TabSheet5: TTabSheet
       Caption = 'Descontos'
       ImageIndex = 4
-      ExplicitWidth = 1222
-      ExplicitHeight = 147
       object Label18: TLabel
         Left = 96
         Top = 21
@@ -5673,8 +5664,6 @@
     object Mensagem: TTabSheet
       Caption = 'Mensagem/Reajuste'
       ImageIndex = 5
-      ExplicitWidth = 1222
-      ExplicitHeight = 147
       object Label29: TLabel
         Left = 168
         Top = 29
@@ -5749,6 +5738,28 @@
     ParentFont = False
     TabOrder = 2
     OnClick = IMPRIMIRClick
+  end
+  object DBEdit22: TDBEdit
+    Left = 984
+    Top = 35
+    Width = 121
+    Height = 12
+    DataField = 'SOLICIT'
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 3
+    Visible = False
+  end
+  object DBEdit20: TDBEdit
+    Left = 984
+    Top = 17
+    Width = 121
+    Height = 12
+    DataField = 'C1_SOLICIT'
+    DataSource = DataSource13
+    ReadOnly = True
+    TabOrder = 4
+    Visible = False
   end
   object ADOConnection1: TADOConnection
     DefaultDatabase = 'TOTVSDB'
@@ -6276,7 +6287,7 @@
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43713.352183148100000000
-    ReportOptions.LastChange = 43748.378721145830000000
+    ReportOptions.LastChange = 43748.597044375000000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -6308,6 +6319,10 @@
       item
         DataSet = frxDBDataset6
         DataSetName = 'frxDBDataset6'
+      end
+      item
+        DataSet = frxDBDataset7
+        DataSetName = 'frxDBDataset7'
       end>
     Variables = <>
     Style = <>
@@ -6967,13 +6982,13 @@
           AllowVectorExport = True
           Left = 613.732530000000000000
           Top = 33.559060000000000000
-          Width = 64.252010000000000000
+          Width = 97.585343330000000000
           Height = 18.897650000000000000
           DataSet = frxDBDataset2
           DataSetName = 'frxDBDataset2'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset2."SOLICIT"]')
+            '[frxDBDataset7."C1_SOLICIT"]')
         end
         object Memo39: TfrxMemoView
           AllowVectorExport = True
@@ -7814,5 +7829,15 @@
     DataSet = ADOQuery13
     Left = 816
     Top = 384
+  end
+  object frxDBDataset7: TfrxDBDataset
+    UserName = 'frxDBDataset7'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'C1_SOLICIT=C1_SOLICIT')
+    DataSource = DataSource13
+    BCDToCurrency = False
+    Left = 528
+    Top = 336
   end
 end

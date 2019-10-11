@@ -8,7 +8,7 @@
   AutoSize = True
   Caption = 'PEDIDOS DE COMPRA'
   ClientHeight = 757
-  ClientWidth = 1407
+  ClientWidth = 1409
   Color = 16771022
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,7 @@
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDefault
-  WindowState = wsMaximized
+  Position = poDesktopCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -4678,7 +4677,7 @@
   object Edit1: TEdit
     Left = 495
     Top = 8
-    Width = 443
+    Width = 530
     Height = 31
     Color = clInactiveCaption
     Font.Charset = DEFAULT_CHARSET
@@ -4710,14 +4709,14 @@
       'Data de Entrega')
   end
   object Button1: TButton
-    Left = 944
+    Left = 1040
     Top = 8
     Width = 98
     Height = 34
     Caption = 'Pesquisar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -4732,7 +4731,7 @@
     Caption = 'Recarregar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -4747,7 +4746,7 @@
     Caption = 'Pedidos n'#227'o entregues'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -4761,8 +4760,8 @@
   end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
-    Left = 221
-    Top = 72
+    Left = 223
+    Top = 64
     Width = 1183
     Height = 677
     Margins.Top = 4
@@ -4771,7 +4770,7 @@
     GradientEndColor = clGray
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
     Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -4788,11 +4787,6 @@
       item
         Expanded = False
         FieldName = 'PEDIDO'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'EMISS'#195'O'
         Visible = True
       end
       item
@@ -4826,23 +4820,29 @@
       item
         Expanded = False
         FieldName = 'QUANT_ENTREGUE'
+        Width = 122
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'ENTREGA'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMISS'#195'O'
+        Visible = True
       end>
   end
   object Button4: TButton
-    Left = 1063
+    Left = 1159
     Top = 8
     Width = 209
     Height = 34
     Caption = 'Fornec. n'#227'o entregues'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
