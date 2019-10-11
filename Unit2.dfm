@@ -6537,10 +6537,11 @@ object Form2: TForm2
       28A2800A28A2800A28A2803FFFD9}
   end
   object SpeedButton1: TSpeedButton
-    Left = 624
-    Top = 272
-    Width = 361
+    Left = 584
+    Top = 296
+    Width = 441
     Height = 128
+    Cursor = crHandPoint
     Align = alCustom
     Glyph.Data = {
       3E140000424D3E140000000000003E000000280000003B010000800000000100
@@ -8120,18 +8121,18 @@ object Form2: TForm2
   object Label1: TLabel
     Left = 624
     Top = 90
-    Width = 367
-    Height = 62
+    Width = 401
+    Height = 58
     Caption = 'BEM VINDO(A)!'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -48
-    Font.Name = 'Tempus Sans ITC'
+    Font.Name = 'Tahoma'
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 680
+    Left = 696
     Top = 194
     Width = 233
     Height = 29
@@ -8144,10 +8145,12 @@ object Form2: TForm2
     ParentFont = False
   end
   object SpeedButton2: TSpeedButton
-    Left = 592
-    Top = 430
+    Left = 584
+    Top = 446
     Width = 441
     Height = 130
+    Cursor = crHandPoint
+    Enabled = False
     Glyph.Data = {
       36E60000424D36E60000000000003604000028000000C1010000800000000100
       08000000000000E20000C30E0000C30E00000001000000000000000000000000
@@ -10625,10 +10628,11 @@ object Form2: TForm2
     Top = 221
     Width = 146
     Height = 41
+    Cursor = crHandPoint
     Caption = 'SAIR'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False

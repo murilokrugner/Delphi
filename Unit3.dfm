@@ -4889,6 +4889,7 @@
     Top = 512
     Width = 1148
     Height = 249
+    Cursor = crHandPoint
     ActivePage = TabSheet2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -5728,6 +5729,7 @@
     Top = 12
     Width = 111
     Height = 33
+    Cursor = crHandPoint
     Caption = 'IMPRIMIR'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

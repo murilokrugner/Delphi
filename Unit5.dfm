@@ -1452,6 +1452,7 @@ object Form5: TForm5
     Top = 95
     Width = 185
     Height = 21
+    Cursor = crDrag
     TabOrder = 0
     Text = 'SELECIONE'
     OnChange = ComboBox1Change

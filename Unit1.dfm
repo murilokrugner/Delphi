@@ -4677,8 +4677,9 @@
   object Edit1: TEdit
     Left = 495
     Top = 8
-    Width = 530
+    Width = 562
     Height = 31
+    Cursor = crIBeam
     Color = clInactiveCaption
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4693,6 +4694,7 @@
     Top = 8
     Width = 259
     Height = 31
+    Cursor = crDrag
     Style = csDropDownList
     Color = clInactiveCaption
     Font.Charset = DEFAULT_CHARSET
@@ -4709,10 +4711,11 @@
       'Data de Entrega')
   end
   object Button1: TButton
-    Left = 1040
+    Left = 1072
     Top = 8
     Width = 98
     Height = 34
+    Cursor = crHandPoint
     Caption = 'Pesquisar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4728,6 +4731,7 @@
     Top = 200
     Width = 105
     Height = 35
+    Cursor = crHandPoint
     Caption = 'Recarregar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4743,6 +4747,7 @@
     Top = 128
     Width = 200
     Height = 34
+    Cursor = crHandPoint
     Caption = 'Pedidos n'#227'o entregues'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -4764,6 +4769,7 @@
     Top = 64
     Width = 1183
     Height = 677
+    Cursor = crHandPoint
     Margins.Top = 4
     Color = clInactiveCaption
     DataSource = DataSource1
@@ -4835,10 +4841,11 @@
       end>
   end
   object Button4: TButton
-    Left = 1159
+    Left = 1183
     Top = 8
     Width = 209
     Height = 34
+    Cursor = crHandPoint
     Caption = 'Fornec. n'#227'o entregues'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
